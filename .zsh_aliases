@@ -1,0 +1,63 @@
+# navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias .3='cd ../../..'
+alias .4='cd ../../../..'
+alias .5='cd ../../../../..'
+
+# merge Xresources
+alias xmerge='xrdb -merge ~/.Xresources'
+
+# xodo reader
+alias xodo='surf https://www.xodo.com/app/\#/'
+
+# tmux
+alias ta="tmux attach -t"
+alias tl="tmux ls"
+
+# ds9
+alias ds2='ds9 -lock frame IMAGE -lock scale yes'
+
+# systemlog
+alias syslog='vim /var/log/syslog'
+
+# mm
+alias mmmemo='vim /home/xiangchong/superonionYoga/doc/mm.csv'
+
+# vim
+alias vim="vim -O"
+
+# Functions
+# kile
+function kile-open {
+    kile $(realpath $1)
+}
+
+# extract file
+function extract ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *.deb)       ar x $1      ;;
+      *.tar.xz)    tar xf $1    ;;
+      *.tar.zst)   unzstd $1    ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+# dotfiles config
+alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'

@@ -1,0 +1,128 @@
+Sxiv.foreground: #657b83
+Sxiv.background: #fdf6e3
+Sxiv.font: mono-10
+
+#define S_base03        #002b36
+#define S_base02        #073642
+#define S_base01        #586e75
+#define S_base00        #657b83
+#define S_base0         #839496
+#define S_base1         #93a1a1
+#define S_base2         #eee8d5
+#define S_base3         #fdf6e3
+
+xterm*background:            S_base03
+xterm*foreground:            S_base0
+xterm*fadeColor:             S_base03
+xterm*cursorColor:           S_base1
+xterm*pointerColorBackground:S_base01
+xterm*pointerColorForeground:S_base1
+
+#define S_yellow        #b58900
+#define S_orange        #cb4b16
+#define S_red           #dc322f
+#define S_magenta       #d33682
+#define S_violet        #6c71c4
+#define S_blue          #268bd2
+#define S_cyan          #2aa198
+#define S_green         #859900
+
+!! black dark/light
+xterm*color0:                S_base02
+xterm*color8:                S_base03
+
+!! red dark/light
+xterm*color1:                S_red
+xterm*color9:                S_orange
+
+!! green dark/light
+xterm*color2:                S_green
+xterm*color10:               S_base01
+!! yellow dark/light
+xterm*color3:                S_yellow
+xterm*color11:               S_base00
+
+!! blue dark/light
+xterm*color4:                S_blue
+xterm*color12:               S_base0
+
+!! magenta dark/light
+xterm*color5:                S_magenta
+xterm*color13:               S_violet
+
+!! cyan dark/light
+xterm*color6:                S_cyan
+xterm*color14:               S_base1
+
+!! white dark/light
+xterm*color7:                S_base2
+xterm*color15:               S_base3
+
+XTerm*reverseVideo: False
+
+
+xterm*transparent:  true
+xterm*fading:       50
+
+xterm*utf8:         true
+xterm*termName:     xterm-256color
+xterm*FaceName:     DejaVu Sans Mono
+xterm*FaceNameDoublesize: WenQuanYi Micro Hei:antialias=true
+xterm.Font:         DejaVu Sans Mono
+xterm*FaceSize :    12
+xterm*FaceSize1:    12
+xterm*FaceSize2:    14
+xterm*FaceSize3:    16
+xterm*FaceSize4:    18
+xterm*FaceSize5:    20
+xterm*renderFont:   true
+xterm*loginShell:   true
+xterm*scaleHeight:  1.01
+xterm.letterSpace:  1
+
+
+! special
+! xterm*foreground:   #000000
+! xterm*background:   #e7e9db
+! xterm*cursorColor:  #4f424c
+
+! Alt key
+xterm*altSendsEscape: true
+xterm*metaSendsEscape: true
+
+! Backspace
+xterm*backarrowKey: false
+xterm*ttyModes: erase ^?
+
+! Scroll line
+xterm*saveLines: 4096
+! right hand side scrollbar...
+XTerm*scrollTtyOutput: false
+xterm*rightScrollBar: false
+xterm*scrollBar: false
+xterm*leftScrollBar: false
+
+! stop output to terminal from jumping down to bottom of scroll again
+! xterm*scrollTtyOutput: false
+
+xterm*boldMode: true
+xterm*colorBDMode: true
+xterm*colorBD: #6F9FE3
+
+! Double-click to select whole URLs :D
+xterm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+
+xterm*selectToClipboard: true
+xterm*vt100*translations: #override \n\
+    Ctrl Shift <Key>V:  insert-selection(CLIPBOARD) \n\
+    Ctrl Shift <Key>C:  select-end(CLIPBOARD) \n\
+    <Key>BackSpace:     string(0x7f) \n\
+	<Key>Delete:        string(0x1b) string("[3~")\n\
+    Ctrl <Key>H:        string(0x1b) string("[D")\n\
+    Ctrl <Key>J:        string(0x1b) string("[B")\n\
+    Ctrl <Key>K:        string(0x1b) string("[A")\n\
+    Ctrl <Key>L:        string(0x1b) string("[C")\n\
+    Ctrl <Key> minus:   smaller-vt-font() \n\
+    Ctrl <Key> plus:    larger-vt-font()
+
+

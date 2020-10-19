@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+
+xset r rate 300 50 # Cursor speed
+displaySetup       # setup Display
+#xsetwacom set "Wacom Pen and multitouch sensor Pen stylus" button 2 3             # setup stylus

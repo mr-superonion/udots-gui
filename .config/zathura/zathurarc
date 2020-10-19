@@ -1,0 +1,22 @@
+set selection-clipboard clipboard
+set statusbar-h-padding 0
+set statusbar-v-padding 0
+set page-padding 1
+map { scroll half-up
+map } scroll half-down
+map r reload
+map R rotate
+map i recolor
+map p print
+
+
+set default-fg "#657b83"
+set default-bg "#fdf6e3"
+set inputbar-fg "#657b83"
+set inputbar-bg "#fdf6e3"
+set statusbar-fg "#657b83"
+set statusbar-bg "#fdf6e3"
+set completion-fg "#657b83"
+set completion-bg "#fdf6e3"
+set completion-highlight-fg "#fdf6e3"
+set completion-highlight-bg "#657b83"
