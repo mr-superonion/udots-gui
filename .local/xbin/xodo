@@ -1,0 +1,4 @@
+#! /bin/sh
+
+[ "$(which chromium-browser)" ] || exit
+chromium-browser https://www.xodo.com/app/\#/

@@ -1,0 +1,3 @@
+#!/usr/bin/env zsh
+
+convert $homeSys/xshare/wallpapers/Debian_Only.jpg \( <( curl wttr.in/"$currentcity"_ntqp2.png ) -resize 800x \) -geometry +20+300 -composite $HOME/Tmp/wallpaper.jpg

@@ -1,0 +1,32 @@
+#!/usr/bin/env sh
+# choose the server to login
+
+# Make sure we have dmemu
+[ "$(which dmenu)" ] || exit
+# Make sure we have expect
+[ "$(which expect)" ] || exit
+
+# A background server for communication
+[ "$(tmux ls 2>/dev/null | grep background )" ] || tmux new-session -d -s background
+
+# Which server to choose
+server=$(grep -v "#" $homeSys/xshare/vpn.info | awk '{print $1}' | dmenu -i -p 'choose the vpn server' -l 20 -fn Arial)
+[ "$server" != "" ] || exit
+
+chosen=$(grep "$server" $homeSys/xshare/vpn.info)
+server=$(echo "$chosen" | awk '{print $1}')
+usrname=$(echo "$chosen" | awk '{print $2}')
+passwd=$(echo "$chosen" | awk '{print $3}')
+
+# Login
+expect -f - <<EOD
+set timeout 3
+spawn vpn connect "$server"
+expect "Connect Anyway?*" {send -- "y\r"}
+expect "Always trust this server and import the certificate?*" {send -- "n\r"}
+expect "Group*" {send -- "\r"}
+expect "Username*" {send -- "\r"}
+expect "Password*" {send -- "$passwd\r"}
+expect "accept*" {send -- "y\r"}
+expect "Connected"
+EOD

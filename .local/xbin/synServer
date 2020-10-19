@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# choose the server to login
+
+# Make sure we have dmemu
+[ "$(which entr)" ] || exit
+echo "$1" | entr -p scp "$1" "$2" &>/dev/null 2>&1 & disown
+exit

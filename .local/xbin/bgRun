@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+# run command in tmux background session
+
+[ "$(which tmux)" ] || exit
+tmux send-keys -t "background:1.1" "$1" Enter

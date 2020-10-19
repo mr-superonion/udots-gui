@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+#LD_LID
+export LD_LIBRARY_PATH="$homeSys/lib":$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH="$homeSys/lib64":$LD_LIBRARY_PATH
+
+[ "$(which tmux)" ] || exit
+# Already in tmux
+[ $TMUX ] && exit
+
+# Get the first idel session name
+session=$(tmux ls -F '#{session_name}|#{?session_attached,attached,not attached}' 2>/dev/null | grep 'not attached$' | grep -v 'background' | tail -n 1 | cut -d '|' -f1)
+
+if [ "$session" = "" ]
+then
+    xterm -e "tmux"
+else
+    xterm -e "tmux attach -t "$session""
+fi

@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+# Make sure we have dmemu
+[ "$(which dmenu)" ] || exit
+
+# Initialization
+[ "$(ssh-add -l 2>/dev/null)" ] || ssh-add /home/xiangchong/.ssh/id_rsa
+
+# choose the server to login
+chosen=$(grep -v "#" $homeSys/xshare/server.info | awk '{print $1}'| dmenu -i -p 'choose the ssh server' -l 20 -fn Arial)
+[ "$chosen" != "" ] || exit
+
+info=$(grep "$chosen" $homeSys/xshare/server.info)
+s=$(echo "$info" | awk '{print $2}')
+
+scp "$s":~/.clipboard ~/.clipboard
+xclip -sel clip ~/.clipboard

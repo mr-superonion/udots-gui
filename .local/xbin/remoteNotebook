@@ -1,0 +1,34 @@
+#!/usr/bin/env zsh
+# choose the server to login
+
+# Initialization
+[ "$(ssh-add -l 2>/dev/null)" ] || ssh-add /home/xiangchong/.ssh/id_rsa
+
+# Which server to choose
+chosen=$(grep -v "#" $homeSys/xshare/server.info | awk '{print $1}'| dmenu -g 1 -i -p 'choose the ssh server' -l 20 -fn Arial)
+[ "$chosen" != "" ] || exit
+
+info=$(grep "$chosen" $homeSys/xshare/server.info)
+s=$(echo "$info" | awk '{print $2}')
+p=$(echo "$info" | awk '{print $3}')
+
+[ "$p" != "" ] || exit
+
+# Connet to remote Jupyter server
+# input is the $(which jupyter) on server
+
+port1="$p"
+port2=$(($RANDOM%63000+2001))
+client=$(ssh "$s" cat \$homeSys/cache/jupyterlab.info | awk '{print $1}')
+port3=$(ssh "$s" cat \$homeSys/cache/jupyterlab.info | awk '{print $2}')
+pids=$(lsof -i :"$port1" | awk '/IPv4/ && /LISTEN/ {print $2}')
+if [ pids ]; then
+    kill $pids
+fi
+cmd="ssh -f -L "$port1":localhost:$port2 $s ssh -L "$port2":localhost:"$port3" -N "$client""
+echo "$cmd"
+eval "$cmd"
+url="http://localhost:$port1"
+echo "URL that will open in your browser:"
+echo "$url"
+chromium-browser "$url"

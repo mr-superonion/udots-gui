@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+source $HOME/.profile
+cachedir="${XDG_CACHE_HOME:-"$HOME/.cache"}";
+cache="$cachedir/papers";
+
+[ ! -e "$cache" ] &&  recordPapers
+
+choose=$(cat $cache | dmenu)
+bib=$(awk 'BEGIN {RS="#"; FS="\n"} '/$choose/' {if ($2 !="") print $1}' $cache)
+bib="$paperDir$bib.bib"
+btex=$(awk 'BEGIN {RS="\n@"; OFS=FS} '/$choose/' {print}' $bib)
+echo "@$btex" | xclip -sel clip
+
+

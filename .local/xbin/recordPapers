@@ -1,0 +1,16 @@
+#!/bin/bash
+
+source $HOME/.profile
+cachedir="${XDG_CACHE_HOME:-"$HOME/.cache"}"
+cache="$cachedir/papers"
+
+[ ! -e "$cachedir" ] && mkdir -p "$cachedir"
+[ -e "$cache" ] &&  rm "$cache"
+
+for bib in $(find $paperDir -type f -name \*.bib);
+do
+    bout=${bib#"$paperDir"}
+    bout=${bout%".bib"}
+    echo "#$bout" | tee -a $cache #1> /dev/null
+    awk 'BEGIN {RS="\n@ARTICLE{|@BOOK{|@INBOOK{"; FS=",\n"} {if ($2 !="") print $1}' $bib | tee -a $cache #1> /dev/null
+done

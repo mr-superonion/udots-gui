@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+export DISPLAY=:0
+# could be different on your system!
+POWERSUPPLY="/sys/class/power_supply/AC/online"
+# how low is too low?
+TOO_LOW=12
+NOT_CHARGING="0"
+
+ICON="$HOME/.config/qtile/battery-icons/battery-caution.png"
+
+BATTERY_LEVEL=$(acpi -b | grep -P -o '[0-9]+(?=%)')
+STATUS=$(cat $POWERSUPPLY)
+
+if [ $BATTERY_LEVEL -le $TOO_LOW -a $STATUS = $NOT_CHARGING ]
+then
+    notify-send -i "$ICON" -t 30000 "Battery low" "Battery level is ${BATTERY_LEVEL}%!"
+    xbacklight -set 20
+fi
+
+exit 0

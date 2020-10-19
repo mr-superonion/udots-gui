@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+[ "$which dmenu" ] || exit
+chosen=$(echo "Lock Screen\nLogout\nShut Down\nReboot" | dmenu -g 1 -i -l 4 -fn Arial -p "Choose Option")
+[ "$chosen" != "" ] || exit
+
+case "$chosen" in
+	"Lock Screen") dm-tool lock;;
+	"Logout") sudo service lightdm restart;;
+	"Shut Down") shutdown now;;
+	"Reboot") reboot;;
+	*) exit;;
+esac
