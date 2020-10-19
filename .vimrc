@@ -21,7 +21,7 @@ set backspace=indent,eol,start
 
 " Mouse
 set ttyfast
-set ttymouse=xterm2
+"set ttymouse=xterm2
 set mouse=a
 vnoremap <C-C> y
 nnoremap <C-V> p
@@ -62,17 +62,6 @@ set hlsearch
 " Automatically wrap text that extends beyond the screen length.
 set wrap
 
-" Addons Control
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'micha/vim-colors-solarized'
-Plugin 'AutoComplPop'
-Plugin 'superonion1993/vim-tmux-navigator'
-call vundle#end()
 
 " File system
 filetype plugin indent on

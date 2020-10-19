@@ -42,3 +42,14 @@ export PYTHONPATH="$homeSys/lib/python3.6/site-packages/":$PYTHONPATH
 export CMAKE_ROOT="homeSys/share/cmake-3.14/"
 export PKG_CONFIG_PATH="$homeSys/lib/pkgconfig/":$PKG_CONFIG_PATH
 export PKG_CONFIG_PATH="$homeSys/lib64/pkgconfig/":$PKG_CONFIG_PATH
+
+
+shareDir="$homeSys/xshare/"
+if [ -d "$shareDir" ]; then
+    for script in $shareDir/*sh; do
+        echo "Loading xinit script $script"
+        if [ -x "$script" -a ! -d "$script" ]; then
+            . "$script"
+        fi
+    done
+fi

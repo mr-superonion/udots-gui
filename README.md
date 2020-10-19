@@ -1,3 +1,27 @@
+# prerequisite
+
+## Build-essential
+
+### Arch
+
+```shell
+sudo pacman -S base-devel
+```
+### Debian
+sudo apt-get install build-essential
+
+
+## Dmenu
+
+```shell
+git clone https://github.com/mr-superonion/dmenu.git
+
+cd dmenu
+
+git checkout patched
+make install
+```
+
 # Install
 
 ```shell
@@ -15,3 +39,4 @@ config checkout
 
 config config status.showUntrackedFiles no
 ```
+
