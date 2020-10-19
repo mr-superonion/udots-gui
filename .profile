@@ -4,7 +4,12 @@
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
-export PATH="/opt/cisco/anyconnect/bin/:$PATH"
+if [ -d "$HOME/.local/xbin" ] ; then
+    PATH="$HOME/.local/xbin:$PATH"
+fi
+if [ -d "/opt/cisco/anyconnect/bin/:$PATH" ] ; then
+    export PATH="/opt/cisco/anyconnect/bin/:$PATH"
+fi
 
 # Default Software
 export sysShell="usr/bin/zsh"
@@ -37,12 +42,3 @@ export PYTHONPATH="$homeSys/lib/python3.6/site-packages/":$PYTHONPATH
 export CMAKE_ROOT="homeSys/share/cmake-3.14/"
 export PKG_CONFIG_PATH="$homeSys/lib/pkgconfig/":$PKG_CONFIG_PATH
 export PKG_CONFIG_PATH="$homeSys/lib64/pkgconfig/":$PKG_CONFIG_PATH
-
-# Remote Server
-export master_ipmu="xiangchong.li@master.ipmu.jp"
-export gfarm_ipmu="xiangchong.li@gfarm.ipmu.jp"
-export gw_ipmu="xiangchong.li@192.168.156.68"
-export member_ipmu="xiangchong.li@157.82.236.20"
-export dellJZ_sjtu="lxc@202.120.13.66"
-
-export currentcity="Kashiwanoha"
