@@ -153,7 +153,7 @@ keys = [
 
     # Lunch useful softwares
     Key([mod, "control"], "t", lazy.spawn('localTerm')),
-    Key([mod, "control"], "w", lazy.spawn('chromium-browser')),
+    Key([mod, "control"], "w", lazy.spawn('firefox')),
     Key([mod, "control"], "m", lazy.spawn('thunderbird')),
     Key([mod, "control"], "f", lazy.spawn('exploreLocal')),
     Key([mod, "control"], "n", lazy.spawn('nm-connection-editor')),
