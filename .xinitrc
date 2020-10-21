@@ -7,7 +7,7 @@
 [ -f ~/.xprofile ] && . ~/.xprofile
 
 # Xresource
-[ -f ~/.Xresources ] && xrdb -merge -I$HOME ~/.Xresources
+[ -f ~/.Xresources ] && xrdb -load $HOME ~/.Xresources
 
 # Key Mapping
 [ -f ~/.Xmodmap ] && xmodmap ~/.Xmodmap

@@ -20,7 +20,7 @@ choices=(
 )
 
 open_command='xdg-open'
-open_manager_command='nemo'
+open_manager_command=$FILEMANAGER
 
 write_selection_to_history_file() {
     sed -i "\:${selected_path}:d" "$history_file"

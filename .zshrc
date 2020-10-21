@@ -67,3 +67,4 @@ fi
 
 # history
 unsetopt share_history
+

@@ -8,7 +8,9 @@
 sudo pacman -S base-devel
 ```
 ### Debian
+```shell
 sudo apt-get install build-essential
+```
 
 
 ## Dmenu
