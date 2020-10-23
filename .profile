@@ -44,6 +44,7 @@ export CMAKE_ROOT="homeSys/share/cmake-3.14/"
 export PKG_CONFIG_PATH="$homeSys/lib/pkgconfig/":$PKG_CONFIG_PATH
 export PKG_CONFIG_PATH="$homeSys/lib64/pkgconfig/":$PKG_CONFIG_PATH
 
+export SSH_AUTH_SOCK=DEFAULT="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 
 shareDir="$homeSys/xshare/"
 if [ -d "$shareDir" ]; then
@@ -54,3 +55,5 @@ if [ -d "$shareDir" ]; then
         fi
     done
 fi
+
+eval `ssh-agent -s`
