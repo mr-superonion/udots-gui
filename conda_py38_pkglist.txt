@@ -18,6 +18,8 @@ conda=4.9.0=py38_0
 conda-package-handling=1.6.1=py38h7b6447c_0
 configobj=5.0.6=pypi_0
 cryptography=2.9.2=py38h1ba5d50_0
+cudatoolkit=11.0.221=h6bb024c_0
+cupy-cuda110=8.0.0=pypi_0
 cycler=0.10.0=py38_0
 dbus=1.13.18=hb2f20db_0
 decorator=4.4.2=py_0
@@ -25,6 +27,7 @@ defusedxml=0.6.0=py_0
 entrypoints=0.3=py38_0
 envisage=4.9.2=pypi_0
 expat=2.2.10=he6710b0_2
+fastrlock=0.5=pypi_0
 fontconfig=2.13.0=h9420a91_0
 freetype=2.10.4=h5ab3b9f_0
 glib=2.66.1=h92f7085_0

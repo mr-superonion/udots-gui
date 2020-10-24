@@ -26,6 +26,7 @@ cpupower
 crda
 cronie
 cryptsetup
+cuda
 dbus-x11
 device-mapper
 dhclient
@@ -112,6 +113,7 @@ lib32-libva-mesa-driver
 lib32-libva-vdpau-driver
 lib32-mesa-demos
 lib32-mesa-vdpau
+lib32-nvidia-455xx-utils
 lib32-vulkan-intel
 lib32-vulkan-radeon
 libdvdcss
@@ -128,6 +130,7 @@ lightdm-gtk-greeter-settings
 linux-firmware
 linux58
 linux58-headers
+linux58-nvidia-455xx
 logrotate
 lsb-release
 lshw
@@ -182,6 +185,7 @@ nss-mdns
 ntfs-3g
 ntp
 numlockx
+nvidia-455xx-utils
 openresolv
 openssh
 orage
@@ -278,6 +282,7 @@ wallpapers-juhraya
 wget
 which
 wpa_supplicant
+wps-office
 wqy-microhei
 xclip
 xcursor-simpleandsoft
