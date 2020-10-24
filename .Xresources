@@ -68,7 +68,11 @@ xterm*utf8:         true
 xterm*termName:     xterm-256color
 xterm*FaceName:     DejaVu Sans Mono
 xterm*FaceNameDoublesize: WenQuanYi Micro Hei:antialias=true
-xterm.Font:         DejaVu Sans Mono
+xterm.Font:         xft:DejaVu Sans Mono, \
+                    xft:Literation Mono Powerline:size=10:antialias=true:hinting=true,\
+                    xft:Noto Mono:size=10:antialias=true:hinting=true,\
+                    xft:Noto Color Emoji,\
+                    xft:Unifont
 xterm*FaceSize :    12
 xterm*FaceSize1:    12
 xterm*FaceSize2:    14
@@ -78,7 +82,7 @@ xterm*FaceSize5:    20
 xterm*renderFont:   true
 xterm*loginShell:   true
 xterm*scaleHeight:  1.01
-xterm.letterSpace:  1
+xterm.letterSpace:  -1
 
 
 ! special
@@ -124,5 +128,4 @@ xterm*vt100*translations: #override \n\
     Ctrl <Key>L:        string(0x1b) string("[C")\n\
     Ctrl <Key> minus:   smaller-vt-font() \n\
     Ctrl <Key> plus:    larger-vt-font()
-
 

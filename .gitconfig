@@ -1,0 +1,13 @@
+[user]
+	email = xiangchong.li@ipmu.jp
+	name = Xiangchong
+	name = Xiangchong
+	name = Xiangchong
+[core]
+	editor = nvim
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+	grep = auto
