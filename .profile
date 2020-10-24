@@ -17,8 +17,9 @@ export VISUAL="vim"
 export EDITOR="vim"
 export BROWSER="firefox"
 export FILEMANAGER="Thunar"
-export homeSys="/home/xiangchong/.local/"
-export paperDir="/home/xiangchong/Documents/Research/Papers/"
+export homeSys="$HOME/.local/"
+export docDir="$HOME/Documents/"
+export paperDir="$docDir/Research/Papers/"
 alias ta="tmux attach -t"
 alias tl="tmux ls"
 
@@ -56,4 +57,3 @@ if [ -d "$shareDir" ]; then
     done
 fi
 
-eval `ssh-agent -s`
