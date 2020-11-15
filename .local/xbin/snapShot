@@ -1,11 +1,11 @@
-#!/usr/bin/env sh
+#!/usr/bin/env zsh
 # choose the server to login
 
 # Make sure we have dmemu
 [ "$(which dmenu)" ] || exit
 
 # Chose option
-chosen=$(echo "Current Window\nRectangle Region" | dmenu -i -p 'choose the vpn server' -l 20 -fn Arial)
+chosen=$(echo "Current Window\nRectangle Region" | dmenu -i -p 'snapshot on?' -l 20 -fn Arial)
 [ "$chosen" != "" ] || exit
 case "$chosen" in
 	"Current Window") scrot -d 0.5 -q 40 -u '%Y-%m-%d-%H-%M-%S.png' -e 'mv $f ~/Tmp/Snapshots/';;

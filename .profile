@@ -37,10 +37,6 @@ export C_INCLUDE_PATH="$homeSys/include":$C_INCLUDE_PATH
 # User g++ header
 export CPLUS_INCLUDE_PATH="$homeSys/include":$CPLUS_INCLUDE_PATH
 
-# User python3 LIB
-export PYTHONPATH="$homeSys/lib/python3.6/site-packages/":$PYTHONPATH
-#export PYTHONPATH="/usr/lib/python3/dist-packages/":$PYTHONPATH
-
 export CMAKE_ROOT="homeSys/share/cmake-3.14/"
 export PKG_CONFIG_PATH="$homeSys/lib/pkgconfig/":$PKG_CONFIG_PATH
 export PKG_CONFIG_PATH="$homeSys/lib64/pkgconfig/":$PKG_CONFIG_PATH

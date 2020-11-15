@@ -93,7 +93,9 @@ gzip
 haveged
 hexchat
 htop
+hwdetect
 inetutils
+inkscape
 intel-ucode
 inxi
 iproute2
@@ -196,6 +198,7 @@ pacman
 pamac-flatpak-plugin
 pamac-gtk
 pamac-snap-plugin
+pasystray
 patch
 pavucontrol
 pciutils
@@ -218,11 +221,13 @@ rsync
 s-nail
 samba
 screenfetch
+scrot
 sed
 shadow
 snapd
 snapd-glib
 spectre-meltdown-checker
+sshfs
 steam-manjaro
 sudo
 sxiv
@@ -256,6 +261,7 @@ thunar-media-tags-plugin
 thunar-volman
 thunderbird
 timeshift
+tllocalmgr-git
 tlp
 tmux
 ttf-arphic-ukai
