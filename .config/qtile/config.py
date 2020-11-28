@@ -137,10 +137,28 @@ keys = [
     Key([win, "shift"], "l",iSwindowL()),
 
     # Adjust size of windows
-    Key([win, "control"], "l",lazy.layout.grow_right(),),
-    Key([win, "control"], "h",lazy.layout.grow_left(),),
-    Key([win, "control"], "k",lazy.layout.grow_up(),),
-    Key([win, "control"], "j",lazy.layout.grow_down(),),
+    Key([win, "control"], "l",
+        lazy.layout.grow_right(),
+        lazy.layout.grow(),
+        lazy.layout.increase_ratio(),
+        lazy.layout.delete(),
+        ),
+    Key([win, "control"], "h",
+        lazy.layout.grow_left(),
+        lazy.layout.shrink(),
+        lazy.layout.decrease_ratio(),
+        lazy.layout.add(),
+        ),
+    Key([win, "control"], "k",
+        lazy.layout.grow_up(),
+        lazy.layout.grow(),
+        lazy.layout.decrease_nmaster(),
+        ),
+    Key([win, "control"], "j",
+        lazy.layout.grow_down(),
+        lazy.layout.shrink(),
+        lazy.layout.increase_nmaster(),
+        ),
 
     # Switch between windows in current stack pane
     Key([win], "j", lazy.layout.down()),
@@ -173,10 +191,10 @@ keys = [
     ),
     # Sound control
     Key([mod], 'l',
-        lazy.spawn("pactl set-sink-volume 0 +5%")
+        lazy.spawn("pactl set-sink-volume $audiosink +5%")
     ),
     Key([mod], 'h',
-        lazy.spawn("pactl set-sink-volume 0 -5%")
+        lazy.spawn("pactl set-sink-volume $audiosink -5%")
     ),
     Key([mod, "control"], "x", lazy.window.kill()),
     Key([mod, "control"], "r", lazy.restart()),

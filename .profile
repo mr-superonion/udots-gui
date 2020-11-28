@@ -53,3 +53,4 @@ if [ -d "$shareDir" ]; then
     done
 fi
 
+eval `ssh-agent -s`

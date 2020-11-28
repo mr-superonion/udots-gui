@@ -12,8 +12,10 @@ inoremap <C-P> <Nop>
 nnoremap S :%s///g<Left><Left>
 
 " Move in command and input mode
-nnoremap { {zz
-nnoremap } }zz
+nnoremap { {zzzv
+nnoremap } }zzzv
+nnoremap n nzzzv
+nnoremap p pzzzv
 
 " Backspace
 set backspace=2
@@ -21,7 +23,6 @@ set backspace=indent,eol,start
 
 " Mouse
 set ttyfast
-"set ttymouse=xterm2
 set mouse=a
 vnoremap <C-C> y
 nnoremap <C-V> p
@@ -67,15 +68,6 @@ set wrap
 filetype plugin indent on
 filetype plugin on
 
-" AutoComplPop
-let g:acp_behaviorCssOmniPropertyLength = -1
-let g:acp_behaviorCssOmniValueLength = -1
-let g:acp_behaviorHtmlOmniLength = -1
-let g:acp_behaviorXmlOmniLength = -1
-let g:acp_behaviorPythonOmniLength = -1
-let g:acp_behaviorKeywordLength = 3
-let g:acp_completeOption = '.,w,b'
-
 " Color setup"
 set background=dark
 " let g:solarized_termcolors=256"
@@ -104,7 +96,6 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set nobackup
 set noswapfile
 set noundofile
-
 
 " Copy and paste
 " " Vim's auto indentation feature does not work properly with text copied
@@ -152,9 +143,18 @@ nnoremap <Bar><Bar> <Esc>/<+\h*+><Enter><S-N>"_ca>
 
 " For text
 " tex
-""autocmd BufRead,BufNewFile,BufFilePre *.tex setlocal spell
-autocmd BufWritePost main.tex silent! execute "!pdflatex % >/dev/null 2>&1" | redraw!
+" autocmd BufRead,BufNewFile,BufFilePre *.tex setlocal spell
+" autocmd BufWritePost ms*.tex silent! execute "!latexmk -pdf % >/dev/null 2>&1" | redraw!
+" autocmd BufWritePost citation.bib silent! execute "!bibtex ms.aux >/dev/null 2>&1" | redraw!
 
+" md
+autocmd BufWritePost *.md silent! execute "!pandoc -c http://member.ipmu.jp/xiangchong.li/mystyle.css -s % --mathjax -o '%:r'.html  >/dev/null 2>&1" | redraw!
+
+" Spell check
+set spelllang=en
+nnoremap <silent> <F11> :set spell!<cr>
+inoremap <silent> <F11> <C-O>:set spell!<cr>
+highlight SpellBad ctermfg=009 ctermbg=000 cterm=underline
 
 " Mark down
 "autocmd BufRead,BufNewFile,BufFilePre *.md setlocal spell
@@ -173,5 +173,5 @@ autocmd BufReadPost *
 set viminfo^=%
 
 nnoremap <C-t> :tabnew<CR>
-nnoremap <C-tab> :tabprevious<CR>
-nnoremap <C-S-tab> :tabnext<CR>
+nnoremap <C-S-n> :tabnext<CR>
+nnoremap <C-S-p> :tabprevious<CR>

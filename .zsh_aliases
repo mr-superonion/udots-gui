@@ -63,7 +63,7 @@ function extract ()
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 # vim
-alias vim='nvim'
+alias vim='TERM="" nvim'
 
 # sudo
 alias sudo='sudo '

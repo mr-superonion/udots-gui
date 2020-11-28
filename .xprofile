@@ -8,4 +8,5 @@ fcitx &
 
 xset r rate 300 50 # Cursor speed
 
-eval `ssh-agent -s`
+displaySetup
+

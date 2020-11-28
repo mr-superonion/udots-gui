@@ -11,4 +11,3 @@
 
 # Key Mapping
 [ -f ~/.Xmodmap ] && xmodmap ~/.Xmodmap
-
