@@ -191,10 +191,10 @@ keys = [
     ),
     # Sound control
     Key([mod], 'l',
-        lazy.spawn("pactl set-sink-volume $audiosink +5%")
+        lazy.spawn("pulseaudio-ctl up")
     ),
     Key([mod], 'h',
-        lazy.spawn("pactl set-sink-volume $audiosink -5%")
+        lazy.spawn("pulseaudio-ctl down")
     ),
     Key([mod, "control"], "x", lazy.window.kill()),
     Key([mod, "control"], "r", lazy.restart()),
