@@ -138,27 +138,27 @@ keys = [
 
     # Adjust size of windows
     Key([win, "control"], "l",
-        lazy.layout.grow_right(),
         lazy.layout.grow(),
         lazy.layout.increase_ratio(),
-        lazy.layout.delete(),
+        # lazy.layout.grow_right(),
+        # lazy.layout.delete(),
         ),
     Key([win, "control"], "h",
-        lazy.layout.grow_left(),
         lazy.layout.shrink(),
         lazy.layout.decrease_ratio(),
-        lazy.layout.add(),
+        # lazy.layout.grow_left(),
+        # lazy.layout.add(),
         ),
-    Key([win, "control"], "k",
-        lazy.layout.grow_up(),
-        lazy.layout.grow(),
-        lazy.layout.decrease_nmaster(),
-        ),
-    Key([win, "control"], "j",
-        lazy.layout.grow_down(),
-        lazy.layout.shrink(),
-        lazy.layout.increase_nmaster(),
-        ),
+    # Key([win, "control"], "k",
+    #     lazy.layout.grow_up(),
+    #     lazy.layout.grow(),
+    #     lazy.layout.decrease_nmaster(),
+    #     ),
+    # Key([win, "control"], "j",
+    #     lazy.layout.grow_down(),
+    #     lazy.layout.shrink(),
+    #     lazy.layout.increase_nmaster(),
+    #     ),
 
     # Switch between windows in current stack pane
     Key([win], "j", lazy.layout.down()),
@@ -201,7 +201,7 @@ keys = [
     Key([mod, "control"], "q", lazy.spawn('leavePC')),
 ]
 
-groups = [Group(i) for i in 'asdfbqw']
+groups = [Group(i) for i in 'asdfbqwer']
 
 
 def go_to_group(gn):
@@ -209,11 +209,11 @@ def go_to_group(gn):
     def __inner(qtile):
         if qtile.current_group.name ==  gn:
             return
-        if gn in ['a','s','d','f','b']:
+        if gn in ['a','s','d','f']:
             qtile.cmd_to_screen(0)
             if qtile.current_group.name != gn:
                 qtile.groups_map[gn].cmd_toscreen(0)
-        elif gn in ['q','w']:
+        elif gn in ['q','w','e','r']:
             qtile.cmd_to_screen(1)
             if qtile.current_group.name != gn:
                 qtile.groups_map[gn].cmd_toscreen(1)
@@ -228,20 +228,20 @@ def mov_win_to_group(gn):
         try:
             window=qtile.current_window
             window.cmd_togroup(gn)
-            if gn in ['a','s','d','f','b']:
+            if gn in ['a','s','d','f']:
                 qtile.cmd_to_screen(0)
                 if qtile.current_group.name != gn:
                     qtile.groups_map[gn].cmd_toscreen(0)
-            elif gn in ['q','w']:
+            elif gn in ['q','w','e','r']:
                 qtile.cmd_to_screen(1)
                 if qtile.current_group.name != gn:
                     qtile.groups_map[gn].cmd_toscreen(1)
         except:
-            if gn in ['a','s','d','f','b']:
+            if gn in ['a','s','d','f']:
                 qtile.cmd_to_screen(0)
                 if qtile.current_group.name != gn:
                     qtile.groups_map[gn].cmd_toscreen(0)
-            elif gn in ['q','w']:
+            elif gn in ['q','w','e','r']:
                 qtile.cmd_to_screen(1)
                 if qtile.current_group.name != gn:
                     qtile.groups_map[gn].cmd_toscreen(1)
@@ -259,149 +259,175 @@ for i in groups:
     )
 
 layouts = [
-    layout.Bsp(
-        fair=True,
-        lower_right=True,
-        grow_amount=5,
-        **layout_theme),
-    layout.Max(
-        **layout_theme),
-]
-
+    # layout.Bsp(
+    #     fair=True,
+    #     lower_right=True,
+    #     grow_amount=5,
+    #     **layout_theme),
+    layout.MonadTall(**layout_theme),
+    layout.Max(**layout_theme),
+    layout.TreeTab(
+         font = "Ubuntu",
+         fontsize = 10,
+         sections = ["FIRST", "SECOND"],
+         section_fontsize = 11,
+         bg_color = "141414",
+         active_bg = "90C435",
+         active_fg = "000000",
+         inactive_bg = "384323",
+         inactive_fg = "a0a0a0",
+         padding_y = 5,
+         section_top = 10,
+         panel_width = 320
+         ),
+    ]
 
 def init_screen1():
     return Screen(
-                top=bar.Bar(
-                    widgets=[
-                        widget.TextBox(
-                            text=" ☵",
-                            foreground=colors[0],
-                            **widget_defaults
-                            ),
-                        widget.CurrentLayout(
-                            **widget_defaults
-                            ),
-                        widget.Sep(
-                            **widget_defaults
-                            ),
-                        widget.GroupBox(
-                            active  =   '#FFFF99',
-                            inactive=   colors[2],
-                            urgent_alert_method='block',
-                            highlight_method='block',
-                            this_current_screen_border=colors[0],
-                            this_screen_border=colors[3],
-                            other_current_screen_border=colors[0],
-                            other_screen_border=colors[3],
-                            disable_drag=True,
-                            spacing =   4,
-                            visible_groups=['a', 's', 'd', 'f','b'],
-                            use_mouse_wheel=False,
-                            **widget_defaults
-                            ),
-                        widget.Sep(
-                            **widget_defaults
-                            ),
-                        widget.TaskList(
-                            border  =   colors[3],
-                            max_title_width=150,
-                            highlight_method='block',
-                            spacing =   3,
-                            padding =   2,
-                            fontsize=   14,
-                            ),
-                        widget.Systray(
-                            background = colors[1],
-                            **widget_defaults,
-                            ),
-                        widget.BatteryIcon(
-                            theme_path='/home/xiangchong/.config/qtile/battery-icons/',
-                            spacing =   3,
-                            padding =   4,
-                            background = colors[1],
-                            opacity=.1,
-                            ),
-                        widget.Sep(
-                            **widget_defaults,
-                            background = colors[1],
-                            ),
-                        widget.Countdown(
-                            date=datetime(2021,7,1),
-                            format='{D} Days',
-                            update_interval=3600,
-                            background = colors[1],
-                            foreground = colors[0],
-                            opacity=.1,
-                            spacing =   3,
-                            padding =   4,
-                            ),
-                        widget.Clock(
-                            background = colors[1],
-                            foreground = colors[0],
-                            format="%a, %m-%d  %H:%M",
-                            opacity=.1,
-                            ),
-                    ],
-                    opacity=.85,
-                    size=26,
-                    background='#12141a',
-                ))
+        top=bar.Bar(
+            widgets=[
+                widget.TextBox(
+                    text=" ☵",
+                    foreground=colors[0],
+                    **widget_defaults
+                    ),
+                widget.CurrentLayout(
+                    **widget_defaults
+                    ),
+                widget.Sep(
+                    **widget_defaults
+                    ),
+                widget.GroupBox(
+                    active  =   '#FFFF99',
+                    inactive=   colors[2],
+                    urgent_alert_method='block',
+                    highlight_method='block',
+                    this_current_screen_border=colors[0],
+                    this_screen_border=colors[3],
+                    other_current_screen_border=colors[0],
+                    other_screen_border=colors[3],
+                    disable_drag=True,
+                    spacing =   4,
+                    visible_groups=['a', 's', 'd', 'f'],
+                    use_mouse_wheel=False,
+                    **widget_defaults
+                    ),
+                widget.Sep(
+                    **widget_defaults
+                    ),
+                # widget.TaskList(
+                #     border  =   colors[3],
+                #     max_title_width=150,
+                #     highlight_method='block',
+                #     spacing =   3,
+                #     padding =   2,
+                #     fontsize=   14,
+                #     ),
+                widget.Prompt(
+                       padding = 10,
+                   ),
+                widget.WindowName(
+                       padding = 0
+                   ),
+                widget.Systray(
+                    background = colors[1],
+                    **widget_defaults,
+                    ),
+                widget.BatteryIcon(
+                    theme_path='/home/xiangchong/.config/qtile/battery-icons/',
+                    spacing =   3,
+                    padding =   4,
+                    background = colors[1],
+                    opacity=.1,
+                    ),
+                widget.Sep(
+                    **widget_defaults,
+                    background = colors[1],
+                    ),
+                widget.Countdown(
+                    date=datetime(2021,7,1),
+                    format='{D} Days',
+                    update_interval=3600,
+                    background = colors[1],
+                    foreground = colors[0],
+                    opacity=.1,
+                    spacing =   3,
+                    padding =   4,
+                    ),
+                widget.Clock(
+                    background = colors[1],
+                    foreground = colors[0],
+                    format="%a, %m-%d  %H:%M",
+                    opacity=.1,
+                    ),
+            ],
+            opacity=.85,
+            size=26,
+            background='#12141a',
+        )
+    )
 
 def init_screen2():
     return Screen(
-                top=bar.Bar(
-                    widgets=[
-                        widget.TextBox(
-                            text=" ☵",
-                            foreground=colors[0],
-                            **widget_defaults
-                            ),
-                        widget.CurrentLayout(
-                            **widget_defaults
-                            ),
-                        widget.Sep(
-                            **widget_defaults
-                            ),
-                        widget.GroupBox(
-                            active  =   '#FFFF99',
-                            inactive=   colors[2],
-                            urgent_alert_method='text',
-                            highlight_method='block',
-                            this_current_screen_border=colors[0],
-                            this_screen_border=colors[3],
-                            other_current_screen_border=colors[0],
-                            other_screen_border=colors[3],
-                            disable_drag=True,
-                            spacing =   4,
-                            visible_groups=['q','w'],
-                            use_mouse_wheel=False,
-                            **widget_defaults
-                            ),
-                        widget.Sep(
-                            **widget_defaults
-                            ),
-                        widget.TaskList(
-                            border=colors[1],
-                            max_title_width=150,
-                            highlight_method='block',
-                            spacing =   3,
-                            padding =   2,
-                            fontsize=   14,
-                            ),
-                        widget.Sep(
-                            **widget_defaults,
-                            background = colors[1],
-                            ),
-                        widget.Clock(
-                            background = colors[1],
-                            foreground = colors[0],
-                            format="%a, %m-%d  %H:%M"
-                            ),
-                    ],
-                    opacity=0.95,
-                    size=26,
-                    background='#12141a',
-                ))
+        top=bar.Bar(
+            widgets=[
+                widget.TextBox(
+                    text=" ☵",
+                    foreground=colors[0],
+                    **widget_defaults
+                    ),
+                widget.CurrentLayout(
+                    **widget_defaults
+                    ),
+                widget.Sep(
+                    **widget_defaults
+                    ),
+                widget.GroupBox(
+                    active  =   '#FFFF99',
+                    inactive=   colors[2],
+                    urgent_alert_method='text',
+                    highlight_method='block',
+                    this_current_screen_border=colors[0],
+                    this_screen_border=colors[3],
+                    other_current_screen_border=colors[0],
+                    other_screen_border=colors[3],
+                    disable_drag=True,
+                    spacing =   4,
+                    visible_groups=['q','w','e','r'],
+                    use_mouse_wheel=False,
+                    **widget_defaults
+                    ),
+                widget.Sep(
+                    **widget_defaults
+                    ),
+                widget.Prompt(
+                       padding = 10,
+                   ),
+                widget.WindowName(
+                       padding = 0
+                   ),
+                # widget.TaskList(
+                #     border=colors[1],
+                #     max_title_width=150,
+                #     highlight_method='block',
+                #     spacing =   3,
+                #     padding =   2,
+                #     fontsize=   14,
+                #     ),
+                widget.Sep(
+                    **widget_defaults,
+                    ),
+                widget.Clock(
+                    background = colors[1],
+                    foreground = colors[0],
+                    format="%a, %m-%d  %H:%M"
+                    ),
+            ],
+            opacity=0.95,
+            size=26,
+            background='#12141a',
+        )
+    )
 
 screens = [
     init_screen1(),
@@ -471,6 +497,12 @@ def set_floating(client):
     if (client.window.get_wm_type() in floating_types
     or client.window.get_wm_transient_for()):
         client.floating = True
+
+@hook.subscribe.client_name_updated
+def set_name(client):
+    client.name=client.name.split(' ')[-1]
+    client.name=client.name.split('/')[-1]
+    client.name=client.name.split('.')[0]
 
 @hook.subscribe.client_focus
 def float_to_front(client):
