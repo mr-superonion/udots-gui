@@ -19,7 +19,15 @@ export CM_MAX_CLIPS=20
 
 SABLE_AUTO_TITLE=true
 
-source ~/.zsh_aliases
+# Temp variables
+if [ -f ~/.tempVar ]; then
+    source  ~/.tempVar
+fi
+
+# Alias
+if [ -f ~/.zsh_aliases ]; then
+    source ~/.zsh_aliases
+fi
 
 plugins=()
 if [[ $DISPLAY ]]; then

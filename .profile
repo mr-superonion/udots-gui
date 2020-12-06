@@ -52,4 +52,7 @@ if [ -d "$shareDir" ]; then
     done
 fi
 
+# initialize an empty temp variable file
+: > ~/.tempVar
+
 eval `ssh-agent -s`
