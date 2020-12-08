@@ -11,7 +11,7 @@ win     =   "mod4"
 myTerm  =   "xterm"
 wmname  =   "LG3D"
 # colors  =   ["#6F9FE3","#222D32","#FFFFFF","#002b36"]
-colors  =   ["#6F9FE3","#222D32","#FFFFFF","#077870"]
+colors  =   ["#6F9FE3","#222D32","#FFFFFF","#1f8780"]
 
 layout_theme={"border_width": 2,
             "margin": 2,

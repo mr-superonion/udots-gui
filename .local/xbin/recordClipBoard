@@ -13,4 +13,4 @@ info=$(grep "$chosen" $homeSys/xshare/server.info)
 s=$(echo "$info" | awk '{print $2}')
 
 scp "$s":~/.clipboard ~/.clipboard
-xclip -sel clip ~/.clipboard
+xsel -b < ~/.clipboard
