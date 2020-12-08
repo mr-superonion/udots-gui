@@ -10,7 +10,8 @@ mod     =   "mod1"
 win     =   "mod4"
 myTerm  =   "xterm"
 wmname  =   "LG3D"
-colors  =   ["#6F9FE3","#222D32","#FFFFFF","#002b36"]
+# colors  =   ["#6F9FE3","#222D32","#FFFFFF","#002b36"]
+colors  =   ["#6F9FE3","#222D32","#FFFFFF","#077870"]
 
 layout_theme={"border_width": 2,
             "margin": 2,
@@ -315,20 +316,21 @@ def init_screen1():
                 widget.Sep(
                     **widget_defaults
                     ),
-                # widget.TaskList(
-                #     border  =   colors[3],
-                #     max_title_width=150,
-                #     highlight_method='block',
-                #     spacing =   3,
-                #     padding =   2,
-                #     fontsize=   14,
-                #     ),
                 widget.Prompt(
                        padding = 10,
                    ),
-                widget.WindowName(
-                       padding = 0
-                   ),
+                widget.TaskList(
+                    border  =   colors[3],
+                    max_title_width=150,
+                    highlight_method='block',
+                    spacing =   5,
+                    padding_x = 4,
+                    margin  =   2,
+                    fontsize=   14,
+                    ),
+                # widget.WindowName(
+                #        padding = 0
+                #    ),
                 widget.Systray(
                     background = colors[1],
                     **widget_defaults,
@@ -403,17 +405,18 @@ def init_screen2():
                 widget.Prompt(
                        padding = 10,
                    ),
-                widget.WindowName(
-                       padding = 0
-                   ),
-                # widget.TaskList(
-                #     border=colors[1],
-                #     max_title_width=150,
-                #     highlight_method='block',
-                #     spacing =   3,
-                #     padding =   2,
-                #     fontsize=   14,
-                #     ),
+                # widget.WindowName(
+                #        padding = 0
+                #    ),
+                widget.TaskList(
+                    border=colors[1],
+                    max_title_width=150,
+                    highlight_method='block',
+                    spacing =   5,
+                    padding_x = 4,
+                    margin  =   2,
+                    fontsize=   14,
+                    ),
                 widget.Sep(
                     **widget_defaults,
                     ),
