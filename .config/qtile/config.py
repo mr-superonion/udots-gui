@@ -20,9 +20,9 @@ layout_theme={"border_width": 2,
             }
 
 widget_defaults = dict(
-    font='Arial',
+    font='Ubuntu',
     fontsize=17,
-    padding=3,
+    padding=5,
 )
 
 def iAdjust_float(client,screen,rmin=1./5,rmax=1./1.5):
@@ -250,7 +250,6 @@ def mov_win_to_group(gn):
     return __inner
 
 
-
 for i in groups:
     keys.append(
         Key([win], i.name, go_to_group(i.name))
@@ -303,10 +302,10 @@ def init_screen1():
                     inactive=   colors[2],
                     urgent_alert_method='block',
                     highlight_method='block',
-                    this_current_screen_border=colors[0],
-                    this_screen_border=colors[3],
-                    other_current_screen_border=colors[0],
-                    other_screen_border=colors[3],
+                    this_current_screen_border=colors[3],
+                    this_screen_border=colors[0],
+                    other_current_screen_border=colors[3],
+                    other_screen_border=colors[0],
                     disable_drag=True,
                     spacing =   4,
                     visible_groups=['a', 's', 'd', 'f'],
@@ -323,8 +322,7 @@ def init_screen1():
                     border  =   colors[3],
                     max_title_width=150,
                     highlight_method='block',
-                    spacing =   5,
-                    padding_x = 4,
+                    spacing =   8,
                     margin  =   2,
                     fontsize=   14,
                     ),
@@ -350,14 +348,13 @@ def init_screen1():
                     date=datetime(2021,7,1),
                     format='{D} Days',
                     update_interval=3600,
-                    background = colors[1],
+                    # background = colors[1],
                     foreground = colors[0],
-                    opacity=.1,
+                    opacity =   .1,
                     spacing =   3,
                     padding =   4,
                     ),
                 widget.Clock(
-                    background = colors[1],
                     foreground = colors[0],
                     format="%a, %m-%d  %H:%M",
                     opacity=.1,
@@ -389,10 +386,10 @@ def init_screen2():
                     inactive=   colors[2],
                     urgent_alert_method='text',
                     highlight_method='block',
-                    this_current_screen_border=colors[0],
-                    this_screen_border=colors[3],
-                    other_current_screen_border=colors[0],
-                    other_screen_border=colors[3],
+                    this_current_screen_border=colors[3],
+                    this_screen_border=colors[0],
+                    other_current_screen_border=colors[3],
+                    other_screen_border=colors[0],
                     disable_drag=True,
                     spacing =   4,
                     visible_groups=['q','w','e','r'],
@@ -409,11 +406,10 @@ def init_screen2():
                 #        padding = 0
                 #    ),
                 widget.TaskList(
-                    border=colors[1],
+                    border=colors[3],
                     max_title_width=150,
                     highlight_method='block',
-                    spacing =   5,
-                    padding_x = 4,
+                    spacing =   8,
                     margin  =   2,
                     fontsize=   14,
                     ),
@@ -421,7 +417,6 @@ def init_screen2():
                     **widget_defaults,
                     ),
                 widget.Clock(
-                    background = colors[1],
                     foreground = colors[0],
                     format="%a, %m-%d  %H:%M"
                     ),
