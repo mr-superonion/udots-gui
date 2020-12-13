@@ -65,8 +65,10 @@ set wrap
 
 
 " File system
-filetype plugin indent on
+" filetype plugin indent on
 filetype plugin on
+filetype indent off
+filetype plugin indent off
 
 " Color setup"
 set background=dark
@@ -87,7 +89,7 @@ set splitbelow
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set autoindent
+" set autoindent
 set nosmartindent
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 

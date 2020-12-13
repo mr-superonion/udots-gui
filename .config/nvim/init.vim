@@ -21,6 +21,7 @@ let g:deoplete#enable_at_startup = 1
 call deoplete#custom#var('omni', 'input_patterns', {
       \ 'tex': g:vimtex#re#deoplete
       \})
+
 let g:vimtex_view_general_viewer='zathura'
 let g:vimtex_view_method='zathura'
 
