@@ -46,11 +46,13 @@ export SSH_AUTH_SOCK=DEFAULT="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 shareDir="$homeSys/xshare/"
 if [ -d "$shareDir" ]; then
     for script in $shareDir/*sh; do
-        echo "Loading xinit script $script"
         if [ -x "$script" -a ! -d "$script" ]; then
             . "$script"
         fi
     done
 fi
+
+# initialize an empty temp variable file
+: > ~/.tempVar
 
 eval `ssh-agent -s`

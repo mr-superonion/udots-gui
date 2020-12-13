@@ -6,6 +6,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
 Plug 'lervag/vimtex'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 set runtimepath^=~/.vim runtimepath+=~/.vim/after

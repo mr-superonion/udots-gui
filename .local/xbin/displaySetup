@@ -2,9 +2,9 @@
 export DISPLAY=:0
 
 if ! xrandr |grep "disconnected" |grep -q $dp2; then
-    xrandr --output $dp1 --primary --mode 1920x1080 --output $dp2 --mode 1360x765  --rate 60.00 --left-of $dp1
+    xrandr --output $dp1 --primary --mode $dpRes1 --output $dp2 --mode $dpRes2  --rate 60.00 --left-of $dp1
 else
-    xrandr --output $dp1 --primary --mode 1920x1080 --output $dp2 --off
+    xrandr --output $dp1 --primary --mode $dpRes1 --output $dp2 --off
 fi
 
 feh --bg-fill "$HOME/Tmp/wallpaper.jpg"
