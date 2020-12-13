@@ -1,0 +1,4 @@
+rsync -zav --update Certificates $gw_ipmu:"$backupDir"
+rsync -zav --update --delete-before Research $gw_ipmu:"$backupDir"
+rsync -zav --update Connections $gw_ipmu:"$backupDir"
+rsync -zav --update Life $gw_ipmu:"$backupDir"
