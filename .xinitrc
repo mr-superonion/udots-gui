@@ -11,3 +11,5 @@
 
 # Key Mapping
 [ -f ~/.Xmodmap ] && xmodmap ~/.Xmodmap
+
+eval $(ssh-agent)
