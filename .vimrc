@@ -71,7 +71,7 @@ filetype indent off
 filetype plugin indent off
 
 " Color setup"
-set background=dark
+" set background=dark
 " let g:solarized_termcolors=256"
 colorscheme solarized
 

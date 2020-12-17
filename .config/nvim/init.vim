@@ -7,7 +7,17 @@ Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-fugitive'
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 call plug#end()
+
+
+
+if exists('g:started_by_firenvim')
+  set laststatus=0
+else
+  set laststatus=2
+endif
+
 
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath=&runtimepath

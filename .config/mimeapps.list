@@ -15,3 +15,15 @@ video/x-ms-wmv=vlc.desktop
 video/x-ogm+ogg=vlc.desktop
 video/x-theora+ogg=vlc.desktop
 text/x-bibtex=nvim.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-RPIQV0.desktop
+message/rfc822=userapp-Thunderbird-RPIQV0.desktop
+x-scheme-handler/webcal=userapp-Thunderbird-4AZQV0.desktop
+text/calendar=userapp-Thunderbird-4AZQV0.desktop
+application/x-extension-ics=userapp-Thunderbird-4AZQV0.desktop
+
+[Added Associations]
+x-scheme-handler/mailto=userapp-Thunderbird-RPIQV0.desktop;
+message/rfc822=userapp-Thunderbird-RPIQV0.desktop;
+x-scheme-handler/webcal=userapp-Thunderbird-4AZQV0.desktop;
+text/calendar=userapp-Thunderbird-4AZQV0.desktop;
+application/x-extension-ics=userapp-Thunderbird-4AZQV0.desktop;
