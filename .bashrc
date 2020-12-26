@@ -14,8 +14,6 @@ export PS1='[\W] \h% '
 
 #Vim
 set -o vi # vi at command line
-export EDITOR=vim
 
 #ls
 ls --color=al > /dev/null 2>&1 && alias ls='ls -F --color=al' || alias ls='ls -G'
-

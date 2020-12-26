@@ -5,9 +5,27 @@
 	name = Xiangchong
 [core]
 	editor = nvim
+	pager = diff-so-fancy | less --tabs=4 -RFXS --pattern '^(Date|added|deleted|modified):'
+
 [color]
+    pager = true
 	branch = auto
 	diff = auto
 	interactive = auto
 	status = auto
 	grep = auto
+	ui = true
+
+[color "diff-highlight"]
+	oldNormal ="red bold"
+	oldHighlight = "red bold 52"
+	newNormal = "magenta bold"
+	newHighlight = "magenta bold 232"
+
+[color "diff"]
+	meta = 11
+	frag = "28 bold"
+	commit = "yellow bold"
+	old = "red bold"
+	new = "magenta bold"
+	whitespace = "red reverse"
