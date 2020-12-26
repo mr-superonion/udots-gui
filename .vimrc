@@ -10,6 +10,7 @@ inoremap <C-P> <Nop>
 " Substitute
 " Replace all is aliased to S.
 nnoremap S :%s///g<Left><Left>
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 " Move in command and input mode
 nnoremap { {zzzv
