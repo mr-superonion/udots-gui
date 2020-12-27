@@ -384,7 +384,7 @@ def init_screen2():
                 widget.GroupBox(
                     active  =   '#FFFF99',
                     inactive=   colors[2],
-                    urgent_alert_method='text',
+                    urgent_alert_method='block',
                     highlight_method='block',
                     this_current_screen_border=colors[3],
                     this_screen_border=colors[0],
