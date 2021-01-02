@@ -10,6 +10,6 @@ choose=$(cat $cache | dmenu)
 bib=$(awk 'BEGIN {RS="#"; FS="\n"} '/$choose/' {if ($2 !="") print $1}' $cache)
 bib="$paperDir$bib.bib"
 btex=$(awk 'BEGIN {RS="\n@"; OFS=FS} '/$choose/' {print}' $bib)
-echo "@$btex" | xclip -sel clip
+echo "@$btex" | xsel --clipboard
 
 

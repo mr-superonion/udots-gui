@@ -4,8 +4,6 @@
 bm=$(ls $homeSys/xshare/bookmarks | dmenu -i -p 'choose the bookmark' -l 20 -fn Arial)
 [ "$bm" != "" ] || exit
 
-Dir=$(awk '/#!/ {print $2}' $homeSys/xshare/bookmarks/$bm)
-
 # Which concept to choose
 chosen=$(grep -v "#" $homeSys/xshare/bookmarks/$bm | awk '{print $1}'| dmenu -i -p 'choose the concept' -l 20 -fn Arial)
 [ "$chosen" != "" ] || exit
@@ -17,5 +15,7 @@ page=$(echo "$info" | awk '{print $3}')
 [ "$pdf" != "" ] || exit
 [ "$page" != "" ] || exit
 
-cmd="zathura -P $page $Dir/$pdf "
+filename=$(find $docDir/Research/Papers -name  "$pdf")
+
+cmd="zathura -P $page $filename"
 eval "$cmd"
