@@ -1,4 +1,6 @@
 #!/usr/bin/env sh
 
 # rsync -zav --force --update --delete-before /home/xiangchong/Documents/homepage/* $member_ipmu:/home/xiangchong.li/public_html/ && echo "synchronized"
-rsync -zav --force --update /home/xiangchong/Documents/homepage/* $member_ipmu:/home/xiangchong.li/public_html/ && echo "synchronized"
+rsync -zav --update /home/xiangchong/Documents/homepage/* $member_ipmu:/home/xiangchong.li/public_html/
+rsync -zav --update --delete-after /home/xiangchong/Documents/homepage/tmp $member_ipmu:/home/xiangchong.li/public_html/
+
