@@ -1,6 +1,6 @@
 [Default Applications]
 application/octet-stream=nvim.desktop
-application/pdf=org.pwmt.zathura-pdf-poppler.desktop
+application/pdf=FoxitReader.desktop
 application/x-gettext-translation=nvim.desktop
 application/xml=nvim.desktop
 application/x-wine-extension-ini=nvim.desktop
@@ -20,6 +20,7 @@ message/rfc822=userapp-Thunderbird-RPIQV0.desktop
 x-scheme-handler/webcal=userapp-Thunderbird-4AZQV0.desktop
 text/calendar=userapp-Thunderbird-4AZQV0.desktop
 application/x-extension-ics=userapp-Thunderbird-4AZQV0.desktop
+application/ppdf=FoxitReader.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=userapp-Thunderbird-RPIQV0.desktop;

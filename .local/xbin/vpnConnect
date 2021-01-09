@@ -21,11 +21,9 @@ passwd=$(echo "$chosen" | awk '{print $3}')
 # Login
 expect -f - <<EOD
 set timeout 3
-spawn vpn connect "$server"
-expect "Connect Anyway?*" {send -- "y\r"}
-expect "Always trust this server and import the certificate?*" {send -- "n\r"}
+spawn /opt/cisco/anyconnect/bin/vpn connect "$server"
 expect "Group*" {send -- "\r"}
-expect "Username*" {send -- "\r"}
+expect "Username*" {send -- "$usrname\r"}
 expect "Password*" {send -- "$passwd\r"}
 expect "accept*" {send -- "y\r"}
 expect "Connected"

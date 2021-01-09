@@ -1,4 +1,4 @@
-rsync -zav --update $gw_ipmu:"$backupDir"/Certificates ./
-rsync -zav --update $gw_ipmu:"$backupDir"/Research  ./
-rsync -zav --update $gw_ipmu:"$backupDir"/Connections ./
-rsync -zav --update $gw_ipmu:"$backupDir"/Life  ./
+rsync -zav --delete-after --update $gw_ipmu:"$backupDir"/Certificates "$HOME"/Documents/
+rsync -zav --delete-after --update $gw_ipmu:"$backupDir"/Research  "$HOME"/Documents/
+rsync -zav --delete-after --update $gw_ipmu:"$backupDir"/Connections "$HOME"/Documents/
+rsync -zav --delete-after --update $gw_ipmu:"$backupDir"/Life  "$HOME"/Documents/
