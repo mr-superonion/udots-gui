@@ -46,7 +46,7 @@ pip3 install --user pynvim
 # Install
 
 ```shell
-git clone --bare https://github.com/mr-superonion.git $HOME/dotfiles
+git clone --bare https://github.com/mr-superonion/dotfiles.git $HOME/dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 mkdir -p config-backup
