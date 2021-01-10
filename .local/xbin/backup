@@ -1,4 +1,5 @@
 rsync -zav --update ~/Documents/Certificates $gw_ipmu:"$backupDir"
 rsync -zav --update --delete-before ~/Documents/Research $gw_ipmu:"$backupDir"
+rsync -zav --update --delete-before ~/Documents/Wallpapers $gw_ipmu:"$backupDir"
 rsync -zav --update ~/Documents/Connections $gw_ipmu:"$backupDir"
 rsync -zav --update ~/Documents/Life $gw_ipmu:"$backupDir"
