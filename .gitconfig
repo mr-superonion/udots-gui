@@ -29,3 +29,5 @@
 	old = "red bold"
 	new = "magenta bold"
 	whitespace = "red reverse"
+[credential]
+	helper = store
