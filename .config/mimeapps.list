@@ -28,4 +28,4 @@ message/rfc822=userapp-Thunderbird-RPIQV0.desktop;
 x-scheme-handler/webcal=userapp-Thunderbird-4AZQV0.desktop;
 text/calendar=userapp-Thunderbird-4AZQV0.desktop;
 application/x-extension-ics=userapp-Thunderbird-4AZQV0.desktop;
-application/pdf=org.pwmt.zathura-pdf-poppler.desktop;foxitreader.desktop;org.gnome.Evince.desktop;
+application/pdf=foxitreader.desktop;org.pwmt.zathura-pdf-poppler.desktop;org.gnome.Evince.desktop;
