@@ -31,6 +31,16 @@ let g:deoplete#enable_at_startup = 1
 call deoplete#custom#var('omni', 'input_patterns', {
       \ 'tex': g:vimtex#re#deoplete
       \})
+let g:vimtex_compiler_latexmk = {
+    \ 'options' : [
+    \   '-pdf',
+    \   '-pdflatex="xelatex --shell-escape %O %S"',
+    \   '-verbose',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \ ]
+    \}
 
 let g:vimtex_view_general_viewer='zathura'
 let g:vimtex_view_method='zathura'
