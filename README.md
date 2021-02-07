@@ -1,19 +1,13 @@
-# Demos
-![Remote server](demo/remote_server.png){ width=800px }
+# Demo
+<img src="demo/remote_server.png" alt="demo" width="600">
 
 
 # prerequisite
 
 ## Build-essential
 
-### Arch
-
 ```shell
-sudo pacman -S base-devel neovim zsh xterm
-```
-### Debian
-```shell
-sudo apt-get install build-essential zsh xterm vim
+sudo pacman -S base-devel neovim zsh xterm tmux
 ```
 
 ## Shell
@@ -22,7 +16,6 @@ sudo apt-get install build-essential zsh xterm vim
 wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 sh install.sh
 ```
-
 
 ## Dmenu
 
@@ -43,6 +36,9 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 pip3 install --user pynvim
 ```
 
+## others
+[other useful packages](http://member.ipmu.jp/xiangchong.li/usefulpac)
+
 # Install
 
 ```shell
@@ -62,3 +58,5 @@ fi;
 config checkout
 config config status.showUntrackedFiles no
 ```
+
+
