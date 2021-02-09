@@ -7,7 +7,7 @@ fi
 if [ -d "$HOME/.local/xbin" ] ; then
     PATH="$HOME/.local/xbin:$PATH"
 fi
-if [ -d "/opt/cisco/anyconnect/bin/:$PATH" ] ; then
+if [ -d "/opt/cisco/anyconnect/bin/" ] ; then
     export PATH="/opt/cisco/anyconnect/bin/:$PATH"
 fi
 
