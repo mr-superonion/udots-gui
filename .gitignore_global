@@ -1,0 +1,16 @@
+*.pyc
+*.swp
+*.swo
+work/*
+work
+*Dir
+paper_*
+*-checkpoint.ipynb
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.synctex.gz
+*.xdv
