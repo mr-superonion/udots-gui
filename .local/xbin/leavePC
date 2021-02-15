@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+[ $atIPMU -eq 1 ] && backup
+
 [ "$(which dmenu 2>/dev/null)" ] || exit
 chosen=$(echo "Lock Screen\nLogout\nShut Down\nReboot" | dmenu -g 1 -i -l 4 -fn Arial -p "Choose Option")
 [ "$chosen" != "" ] || exit

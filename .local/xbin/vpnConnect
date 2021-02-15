@@ -28,3 +28,4 @@ expect "Password*" {send -- "$passwd\r"}
 expect "accept*" {send -- "y\r"}
 expect "Connected"
 EOD
+[ $atIPMU -eq 0 ] && export atIPMU=1 && echo "export atIPMU=1" | tee -a ~/.tempVar

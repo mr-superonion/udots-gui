@@ -62,7 +62,7 @@ function extract ()
 # dotfiles config
 alias config='cleanhistory;/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
-alias cleanhistory="sed -i '/cd/d;/mv/d;/ls/d;/top/d;/clear/d;/exit/d;/boot/d;/vim/d;/ipython/d;/rm/d;/mkdir/d;/displaySetup/d;/;sh/d;/^$/d;/echo/d;/;config/d;/;xrandr$/d;/git stat/d;/;update/d' $HOME/.zsh_history"
+alias cleanhistory="sed -i '/cd/d;/mv/d;/ls/d;/top/d;/clear/d;/exit/d;/boot/d;/vim/d;/ipython/d;/rm/d;/mkdir/d;/displaySetup/d;/;sh/d;/^$/d;/echo/d;/;config/d;/;xrandr$/d;/git stat/d;/;update/d;/;locate/d' $HOME/.zsh_history"
 
 # vim
 alias vim='TERM="" nvim'
