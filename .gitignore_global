@@ -14,3 +14,4 @@ paper_*
 *.log
 *.synctex.gz
 *.xdv
+__*
