@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+rsync -zav --force --update --delete-after $member_ipmu:/home/xiangchong.li/public_html/ /home/xiangchong/Documents/homepage/
+
