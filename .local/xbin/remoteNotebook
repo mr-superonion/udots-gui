@@ -21,11 +21,14 @@ port1="$p"
 port2=$(($RANDOM%63000+2001))
 client=$(ssh "$s" cat \$homeSys/cache/jupyterlab.info | awk '{print $1}')
 port3=$(ssh "$s" cat \$homeSys/cache/jupyterlab.info | awk '{print $2}')
+# kill existing connections
 pids=$(lsof -i :"$port1" | awk '/IPv4/ && /LISTEN/ {print $2}')
 if [ pids ]; then
     kill $pids
 fi
-cmd="ssh -f -L "$port1":localhost:$port2 $s ssh -L "$port2":localhost:"$port3" -N "$client""
+# indirect
+#cmd="ssh -f -L "$port1":localhost:$port2 $s ssh -L "$port2":localhost:"$port3" -N "$client""
+cmd="ssh -f -L "$port1":localhost:$port3 $s -N "$client""
 echo "$cmd"
 eval "$cmd"
 url="http://localhost:$port1"
