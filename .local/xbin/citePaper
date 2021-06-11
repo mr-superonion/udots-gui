@@ -9,4 +9,4 @@ cache="$cachedir/papers";
 choose=$(cat $cache | dmenu)
 bib=$(awk 'BEGIN {RS="#"; FS="\n"} '/$choose/' {if ($2 !="") print $1}' $cache)
 bib="$paperDir$bib.bib"
-awk 'BEGIN {RS="\n@"} '/$choose/' { print }' $bib | xsel --clipboard
+awk 'BEGIN {RS="\n@"} '/$choose/' { print "@" $0}' $bib | xsel --clipboard
