@@ -64,7 +64,6 @@ set hlsearch
 " Automatically wrap text that extends beyond the screen length.
 set wrap
 
-
 " File system
 " filetype plugin indent on
 filetype plugin on
@@ -160,9 +159,11 @@ inoremap <silent> <F11> <C-O>:set spell!<cr>
 highlight SpellBad ctermfg=009 ctermbg=000 cterm=underline
 
 " Mark down
-"autocmd BufRead,BufNewFile,BufFilePre *.md setlocal spell
-"autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 "autocmd BufRead,BufNewFile,BufFilePre *.md nnoremap +f i![<+text+>](<+img+>)<Esc>^
+" autocmd BufEnter,BufRead,BufNewFile *.md setlocal spell
+" autocmd BufEnter,BufRead,BufNewFile *.tex setlocal spell
+" autocmd BufEnter,BufRead,BufNewFile *.md set filetype=markdown
+
 
 " All files
 " Automatically deletes all trailing whitespace on save.

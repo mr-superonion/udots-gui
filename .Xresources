@@ -67,7 +67,7 @@ xterm*fading:       50
 xterm*utf8:         true
 xterm*termName:     xterm-256color
 xterm*FaceName:     DejaVu Sans Mono
-xterm*FaceNameDoublesize: WenQuanYi Micro Hei:antialias=true
+xterm.FaceNameDoublesize: Noto Sans CJK
 xterm.Font:         xft:DejaVu Sans Mono, \
                     xft:Literation Mono Powerline:size=10:antialias=true:hinting=true,\
                     xft:Noto Mono:size=10:antialias=true:hinting=true,\

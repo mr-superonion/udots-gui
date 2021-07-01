@@ -21,12 +21,15 @@ export FILEMANAGER="Thunar"
 export homeSys="$HOME/.local/"
 export docDir="$HOME/Documents/"
 export paperDir="$docDir/Research/Papers/"
-alias ta="tmux attach -t"
-alias tl="tmux ls"
+alias  ta="tmux attach -t"
+alias  tl="tmux ls"
 
 # User PATH
-PATH="$homeSys/bin":$PATH
-PATH="$homeSys/xbin":$PATH
+export PATH="$homeSys/bin":$PATH
+export PATH="$homeSys/xbin":$PATH
+
+# User setup
+export XDG_CONFIG_HOME="$HOME/.config/"
 
 # LIB
 export LIBRARY_PATH="$homeSys/lib":$LIBRARY_PATH
