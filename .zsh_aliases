@@ -8,8 +8,8 @@ alias .5='cd ../../../../..'
 # merge Xresources
 alias xmerge='xrdb -merge ~/.Xresources'
 
-# xodo reader
-alias xodo='surf https://www.xodo.com/app/\#/'
+# xdg-open
+alias open='xdg-open &>/dev/null'
 
 # tmux
 alias ta="tmux attach -t"
@@ -62,7 +62,7 @@ function extract ()
 # dotfiles config
 alias config='cleanhistory;/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
-alias cleanhistory="sed -i '/cd/d;/mv/d;/ls/d;/top/d;/;clear$/d;/exit/d;/boot/d;/vim/d;/ipython/d;/rm/d;/mkdir/d;/displaySetup/d;/;sh/d;/^$/d;/echo/d;/;config/d;/;xrandr$/d;/git stat/d;/;update/d;/;locate/d;/;git commit/d;/;git add/d;/;sxiv/d;/;cp/d' $HOME/.zsh_history"
+alias cleanhistory="sed -i '/cd/d;/mv/d;/ls/d;/top/d;/;clear$/d;/exit/d;/boot/d;/vim/d;/ipython/d;/rm/d;/mkdir/d;/displaySetup/d;/;sh/d;/^$/d;/echo/d;/;config/d;/;xrandr$/d;/git stat/d;/;update/d;/;locate/d;/;git commit/d;/;git add/d;/;sxiv/d;/;cp/d;/;ds9/d;' $HOME/.zsh_history"
 
 # vim
 alias vim='TERM="" nvim'
