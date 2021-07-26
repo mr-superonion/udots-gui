@@ -12,5 +12,5 @@ do
     bout=${bib#"$paperDir"}
     bout=${bout%".bib"}
     echo "#$bout" | tee -a $cache #1> /dev/null
-    awk 'BEGIN {RS="\n@ARTICLE{|@BOOK{|@INBOOK{"; FS=",\n"} {if ($2 !="") print $1}' $bib | tee -a $cache #1> /dev/null
+    awk 'BEGIN {RS="\n@ARTICLE{|@BOOK{|@INBOOK{|\n@INPROCEEDINGS{"; FS=",\n"} {if ($2 !="") print $1}' $bib | tee -a $cache #1> /dev/null
 done
