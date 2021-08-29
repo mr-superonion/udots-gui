@@ -7,7 +7,6 @@ Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-fugitive'
-Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 call plug#end()
 
 

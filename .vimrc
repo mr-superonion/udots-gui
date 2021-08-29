@@ -179,3 +179,5 @@ set viminfo^=%
 nnoremap <C-t> :tabnew<CR>
 nnoremap <C-S-n> :tabnext<CR>
 nnoremap <C-S-p> :tabprevious<CR>
+
+" set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1

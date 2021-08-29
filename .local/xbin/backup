@@ -1,3 +1,10 @@
+versionL=$(tail -1 ~/.backup_versions.txt)
+versionR=$(ssh $gw_ipmu "tail -1 $backupDir/.backup_versions.txt")
+
+[ "$versionL" = "$versionR" ] || exit
+
+date >> ~/.backup_versions.txt
+rsync -zav --update --delete-before ~/.backup_versions.txt $gw_ipmu:"$backupDir"
 rsync -zav --update ~/Documents/Connections $gw_ipmu:"$backupDir"
 rsync -zav --update ~/Documents/Life $gw_ipmu:"$backupDir"
 rsync -zav --update --delete-before ~/Documents/Certificates $gw_ipmu:"$backupDir"
