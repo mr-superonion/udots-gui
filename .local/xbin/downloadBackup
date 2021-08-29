@@ -1,3 +1,4 @@
+rsync -zav --delete-after --update $gw_ipmu:"$backupDir"/.backup_versions.txt "$HOME"/
 rsync -zav --delete-after --update $gw_ipmu:"$backupDir"/Certificates "$HOME"/Documents/
 rsync -zav --delete-after --update $gw_ipmu:"$backupDir"/Research  "$HOME"/Documents/
 rsync -zav --delete-after --update $gw_ipmu:"$backupDir"/Connections "$HOME"/Documents/
