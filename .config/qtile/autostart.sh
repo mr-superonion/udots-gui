@@ -7,5 +7,5 @@
 [ "$(which nm-applet 2>/dev/null)" ] && nm-applet &
 [ "$(which pasystray 2>/dev/null)" ] && pasystray &
 
-updateWeather
+#updateWeather
 displaySetup
