@@ -5,10 +5,11 @@ versionR=$(ssh $gw_ipmu "tail -1 $backupDir/.backup_versions.txt")
 
 date >> ~/.backup_versions.txt
 rsync -zav --update --delete-before ~/.backup_versions.txt $gw_ipmu:"$backupDir"
-rsync -zav --update ~/Documents/Connections $gw_ipmu:"$backupDir"
-rsync -zav --update ~/Documents/Life $gw_ipmu:"$backupDir"
+rsync -zav --update --delete-before ~/Documents/Connections $gw_ipmu:"$backupDir"
+rsync -zav --update --delete-before ~/Documents/Life $gw_ipmu:"$backupDir"
 rsync -zav --update --delete-before ~/Documents/Certificates $gw_ipmu:"$backupDir"
 rsync -zav --update --delete-before ~/Documents/Research $gw_ipmu:"$backupDir"
 rsync -zav --update --delete-before ~/Documents/Wallpapers $gw_ipmu:"$backupDir"
 rsync -zav --update --delete-before ~/Documents/homepage $gw_ipmu:"$backupDir"
 rsync -zav --update --delete-before ~/Documents/Docs $gw_ipmu:"$backupDir"
+rsync -zav --update --delete-before ~/Tmp $gw_ipmu:"$backupDir"
