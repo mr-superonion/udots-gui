@@ -2,9 +2,9 @@ import os
 import socket
 import subprocess
 from datetime import datetime
+from libqtile import layout, bar, widget, hook
 from libqtile.config import Key, Screen, Group, Drag, Click
 from libqtile.command import lazy
-from libqtile import layout, bar, widget, hook
 
 mod     =   "mod1"
 win     =   "mod4"
@@ -441,7 +441,7 @@ mouse = [
 ]
 
 dgroups_key_binder = None
-dgroups_app_rules = []
+#dgroups_app_rules = []
 main = None
 follow_mouse_focus = False
 bring_front_click = False
@@ -449,45 +449,46 @@ cursor_warp = False
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 
-floating_layout = layout.Floating(float_rules=[
-    {"role": "EventDialog"},
-    {"role": "Msgcompose"},
-    {"role": "Preferences"},
-    {"role": "pop-up"},
-    {"role": "task_dialog"},
-    {"role": "viewer"},
-    {"role": "GtkFileChooserDialog"},
-    {"wname": "Module"},
-    {"wname": "Terminator Preferences"},
-    {"wname": "Search Dialog"},
-    {"wname": "Goto"},
-    {"wname": "IDLE Preferences"},
-    {"wname": "Sozi"},
-    {"wname": "Create new database"},
-    {"wname": "Preferences"},
-    {"wname": "File Transfer"},
-    {"wname": 'branchdialog'},
-    {"wname": 'pinentry'},
-    {"wname": 'confirm'},
-    {"wmclass": 'dialog'},
-    {"wmclass": 'download'},
-    {"wmclass": 'error'},
-    {"wmclass": 'file_progress'},
-    {"wmclass": 'notification'},
-    {"wmclass": 'splash'},
-    {"wmclass": 'toolbar'},
-    {"wmclass": 'confirmreset'},
-    {"wmclass": 'makebranch'},
-    {"wmclass": 'maketag'},
-    {"wmclass": "Gimp"},
-    {"wmclass": "zoom"},
-    {"wmclass": "skype"},
-    {"wmclass": "Display-im6.q16"},
-    {"wmclass": "Ds9.tcl"},
-    {"wmclass": "Toplevel"},
-    {"wmclass": "Nm-connection-editor"},
-    {'wmclass': 'ssh-askpass'},  # ssh-askpass
-],**layout_theme)
+# floating_layout = layout.Floating(
+#     float_rules=[
+#     {"role": "EventDialog"},
+#     {"role": "Msgcompose"},
+#     {"role": "Preferences"},
+#     {"role": "pop-up"},
+#     {"role": "task_dialog"},
+#     {"role": "viewer"},
+#     {"role": "GtkFileChooserDialog"},
+#     {"wname": "Module"},
+#     {"wname": "Terminator Preferences"},
+#     {"wname": "Search Dialog"},
+#     {"wname": "Goto"},
+#     {"wname": "IDLE Preferences"},
+#     {"wname": "Sozi"},
+#     {"wname": "Create new database"},
+#     {"wname": "Preferences"},
+#     {"wname": "File Transfer"},
+#     {"wname": 'branchdialog'},
+#     {"wname": 'pinentry'},
+#     {"wname": 'confirm'},
+#     {"wmclass": 'dialog'},
+#     {"wmclass": 'download'},
+#     {"wmclass": 'error'},
+#     {"wmclass": 'file_progress'},
+#     {"wmclass": 'notification'},
+#     {"wmclass": 'splash'},
+#     {"wmclass": 'toolbar'},
+#     {"wmclass": 'confirmreset'},
+#     {"wmclass": 'makebranch'},
+#     {"wmclass": 'maketag'},
+#     {"wmclass": "Gimp"},
+#     {"wmclass": "zoom"},
+#     {"wmclass": "skype"},
+#     {"wmclass": "Display-im6.q16"},
+#     {"wmclass": "Ds9.tcl"},
+#     {"wmclass": "Toplevel"},
+#     {"wmclass": "Nm-connection-editor"},
+#     {'wmclass': 'ssh-askpass'},  # ssh-askpass
+# ],**layout_theme)
 
 @hook.subscribe.client_new
 def set_floating(client):

@@ -7,4 +7,4 @@ else
     xrandr --output $dp1 --primary --mode $dpRes1 --output $dp2 --off
 fi
 
-feh --bg-fill "$HOME/Tmp/wallpaper.jpg"
+#feh --bg-fill "$HOME/Tmp/wallpaper.jpg"
