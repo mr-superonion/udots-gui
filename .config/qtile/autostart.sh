@@ -1,6 +1,6 @@
 #!/bin/sh
 
-
+thunar --daemon &
 [ "$(which picom 2>/dev/null)" ] && picom --experimental-backends &
 [ "$(which blueberry-tray 2>/dev/null)" ] && blueberry-tray &
 [ "$(which blueman-tray 2>/dev/null)" ] && blueman-applet &
