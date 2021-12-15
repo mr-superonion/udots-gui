@@ -15,7 +15,7 @@ fi
 export sysShell="usr/bin/zsh"
 export VISUAL="vim"
 export EDITOR="vim"
-export BROWSER="firefox"
+export BROWSER="brave"
 export TERM="xterm-256color"
 export FILEMANAGER="Thunar"
 export homeSys="$HOME/.local/"

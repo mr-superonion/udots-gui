@@ -7,9 +7,8 @@ Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-fugitive'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
-
-
 
 if exists('g:started_by_firenvim')
   set laststatus=0
