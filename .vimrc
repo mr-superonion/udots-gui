@@ -52,9 +52,18 @@ autocmd VimEnter * silent !echo -ne "\e[2 q"
 
 " Display
 " Line number
-set relativenumber
 set nu
+set relativenumber
+set signcolumn
+set colorcolumn=80
+
 set history=1000
+
+set exrc
+set hidden
+set noerrorbells
+set scrolloff=8
+
 " Syntax
 set showmatch
 set guioptions=T
@@ -62,7 +71,7 @@ syntax on
 set hlsearch
 
 " Automatically wrap text that extends beyond the screen length.
-set wrap
+set nowrap
 
 " File system
 " filetype plugin indent on
@@ -89,8 +98,8 @@ set splitbelow
 set tabstop=4
 set shiftwidth=4
 set expandtab
-" set autoindent
-set nosmartindent
+set autoindent
+" set nosmartindent
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 

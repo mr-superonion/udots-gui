@@ -1,34 +1,27 @@
+nnoremap <SPACE> <Nop>
+let mapleader=" "
+
 call plug#begin('~/.vim/plugged')
-Plug 'junegunn/vim-easy-align'
-Plug 'micha/vim-colors-solarized'
-Plug 'mr-superonion/vim-tmux-navigator'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'tpope/vim-commentary'
-Plug 'sheerun/vim-polyglot'
-Plug 'lervag/vimtex'
-Plug 'tpope/vim-fugitive'
-Plug 'arcticicestudio/nord-vim'
+    " display
+    Plug 'tpope/vim-commentary'
+    Plug 'junegunn/vim-easy-align'
+    Plug 'micha/vim-colors-solarized'
+    Plug 'mr-superonion/vim-tmux-navigator'
+    " latex
+    Plug 'lervag/vimtex'
+    " git
+    Plug 'tpope/vim-fugitive'
+    " files
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+    " autocomplete
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
-
-if exists('g:started_by_firenvim')
-  set laststatus=0
-else
-  set laststatus=2
-endif
-
 
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath=&runtimepath
 
-" Addons Control
-" deoplete
-let g:deoplete#enable_at_startup = 1
-
-
 "vimtex
-call deoplete#custom#var('omni', 'input_patterns', {
-      \ 'tex': g:vimtex#re#deoplete
-      \})
 let g:vimtex_compiler_latexmk = {
     \ 'options' : [
     \   '-pdf',
@@ -48,12 +41,24 @@ function UnmapCommentary()
   unmap gc
   nunmap gcc
 endfunction
+autocmd VimEnter * call UnmapCommentary()
 
 xmap <leader>c  <Plug>Commentary
-nmap <leader>c  <Plug>Commentary
 omap <leader>c  <Plug>Commentary
 nmap <leader>cc <Plug>CommentaryLine
 
-autocmd VimEnter * call UnmapCommentary()
+
+" telescope
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" Using Lua functions
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 source ~/.vimrc
