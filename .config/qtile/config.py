@@ -3,7 +3,7 @@ import socket
 import subprocess
 from datetime import datetime
 from libqtile import layout, bar, widget, hook
-from libqtile.config import Key, Screen, Group, Drag, Click
+from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.command import lazy
 
 mod     =   "mod1"
@@ -345,7 +345,7 @@ def init_screen1():
                     background = colors[1],
                     ),
                 widget.Countdown(
-                    date=datetime(2021,7,1),
+                    date=datetime(2022,4,1),
                     format='{D} Days',
                     update_interval=3600,
                     # background = colors[1],
@@ -449,46 +449,45 @@ cursor_warp = False
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 
-# floating_layout = layout.Floating(
-#     float_rules=[
-#     {"role": "EventDialog"},
-#     {"role": "Msgcompose"},
-#     {"role": "Preferences"},
-#     {"role": "pop-up"},
-#     {"role": "task_dialog"},
-#     {"role": "viewer"},
-#     {"role": "GtkFileChooserDialog"},
-#     {"wname": "Module"},
-#     {"wname": "Terminator Preferences"},
-#     {"wname": "Search Dialog"},
-#     {"wname": "Goto"},
-#     {"wname": "IDLE Preferences"},
-#     {"wname": "Sozi"},
-#     {"wname": "Create new database"},
-#     {"wname": "Preferences"},
-#     {"wname": "File Transfer"},
-#     {"wname": 'branchdialog'},
-#     {"wname": 'pinentry'},
-#     {"wname": 'confirm'},
-#     {"wmclass": 'dialog'},
-#     {"wmclass": 'download'},
-#     {"wmclass": 'error'},
-#     {"wmclass": 'file_progress'},
-#     {"wmclass": 'notification'},
-#     {"wmclass": 'splash'},
-#     {"wmclass": 'toolbar'},
-#     {"wmclass": 'confirmreset'},
-#     {"wmclass": 'makebranch'},
-#     {"wmclass": 'maketag'},
-#     {"wmclass": "Gimp"},
-#     {"wmclass": "zoom"},
-#     {"wmclass": "skype"},
-#     {"wmclass": "Display-im6.q16"},
-#     {"wmclass": "Ds9.tcl"},
-#     {"wmclass": "Toplevel"},
-#     {"wmclass": "Nm-connection-editor"},
-#     {'wmclass': 'ssh-askpass'},  # ssh-askpass
-# ],**layout_theme)
+floating_layout = layout.Floating(float_rules=[
+    *layout.Floating.default_float_rules,
+    Match(wm_class='confirmreset'),  # gitk
+    Match(wm_class='makebranch'),  # gitk
+    Match(wm_class='maketag'),  # gitk
+    Match(wm_class= 'dialog'),
+    Match(wm_class= 'download'),
+    Match(wm_class= 'error'),
+    Match(wm_class= 'file_progress'),
+    Match(wm_class= 'notification'),
+    Match(wm_class= 'splash'),
+    Match(wm_class= 'toolbar'),
+    Match(wm_class= 'confirmreset'),
+    Match(wm_class= 'makebranch'),
+    Match(wm_class= 'maketag'),
+    Match(wm_class= 'Gimp'),
+    Match(wm_class= 'zoom'),
+    Match(wm_class= 'skype'),
+    Match(wm_class= 'Display-im6.q16'),
+    # Match(wm_class= 'Ds9.tcl'),
+    Match(wm_class= 'Toplevel'),
+    Match(wm_class= 'Nm-connection-editor'),
+    Match(wm_class= 'ssh-askpass'),
+    Match(title='branchdialog'),  # gitk
+    Match(title='pinentry'),  # GPG key password entry
+    Match(wm_type= 'Module'),
+    Match(wm_type= 'Terminator Preferences'),
+    Match(wm_type= 'Search Dialog'),
+    Match(wm_type= 'Goto'),
+    Match(wm_type= 'IDLE Preferences'),
+    Match(wm_type= 'Sozi'),
+    Match(wm_type= 'Create new database'),
+    Match(wm_type= 'Preferences'),
+    Match(wm_type= 'File Transfer'),
+    Match(wm_type= 'branchdialog'),
+    Match(wm_type= 'pinentry'),
+    Match(wm_type= 'confirm'),
+    ],
+    **layout_theme)
 
 @hook.subscribe.client_new
 def set_floating(client):

@@ -2,8 +2,8 @@
 nnoremap s <Nop>
 nnoremap x <Nop>
 nnoremap X <Nop>
-nnoremap J <Nop>
-nnoremap K <Nop>
+nnoremap J <C-d>
+nnoremap K <C-u>
 inoremap <C-N> <Nop>
 inoremap <C-P> <Nop>
 
@@ -54,7 +54,6 @@ autocmd VimEnter * silent !echo -ne "\e[2 q"
 " Line number
 set nu
 set relativenumber
-set signcolumn
 set colorcolumn=80
 
 set history=1000
@@ -190,3 +189,4 @@ nnoremap <S-l> :tabnext<CR>
 nnoremap <S-h> :tabprevious<CR>
 
 " set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
+

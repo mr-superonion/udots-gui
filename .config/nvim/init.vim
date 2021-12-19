@@ -1,5 +1,6 @@
 nnoremap <SPACE> <Nop>
-let mapleader=" "
+let g:mapleader=" "
+let g:maplocalleader = ' '
 
 call plug#begin('~/.vim/plugged')
     " display
@@ -7,6 +8,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/vim-easy-align'
     Plug 'micha/vim-colors-solarized'
     Plug 'mr-superonion/vim-tmux-navigator'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
     " latex
     Plug 'lervag/vimtex'
     " git
@@ -20,6 +23,15 @@ call plug#end()
 
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath=&runtimepath
+
+" display
+" airline
+let g:airline_theme='molokai'
+"let g:airline_solarized_bg='dark'
+set cmdheight=1
+set noshowmode  " to get rid of thing like --INSERT--
+set noshowcmd  " to get rid of display of last command
+set shortmess+=F  " to get rid of the file name displayed in the command line bar
 
 "vimtex
 let g:vimtex_compiler_latexmk = {
@@ -60,5 +72,31 @@ nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+
+" autocomplete
+inoremap <silent><expr> <c-\> coc#refresh()
+" Give more space for displaying messages.
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 source ~/.vimrc
