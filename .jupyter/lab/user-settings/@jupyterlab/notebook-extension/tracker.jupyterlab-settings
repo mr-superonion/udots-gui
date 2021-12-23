@@ -34,6 +34,8 @@
         "wordWrapColumn": 80,
         "rulers": [],
         "codeFolding": false,
+        "lineWiseCopyCut": true,
+        "showTrailingSpace": false
     },
         
 "markdownCellConfig": {
@@ -51,5 +53,7 @@
         "wordWrapColumn": 80,
         "rulers": [],
         "codeFolding": false,
+        "lineWiseCopyCut": true,
+        "showTrailingSpace": false
     },
 }
