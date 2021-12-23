@@ -73,10 +73,7 @@ set hlsearch
 set nowrap
 
 " File system
-" filetype plugin indent on
-filetype plugin on
-filetype indent off
-filetype plugin indent off
+filetype plugin indent on
 
 " Color setup"
 " set background=dark

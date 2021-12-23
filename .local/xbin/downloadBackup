@@ -6,4 +6,3 @@ rsync -zav --delete-after --update $gw_ipmu:"$backupDir"/Life  "$HOME"/Documents
 rsync -zav --delete-after --update $gw_ipmu:"$backupDir"/Wallpapers  "$HOME"/Documents/
 rsync -zav --delete-after --update $gw_ipmu:"$backupDir"/Docs  "$HOME"/Documents/
 rsync -zav --delete-after --update $gw_ipmu:"$backupDir"/homepage  "$HOME"/Documents/
-rsync -zav --delete-after --update $gw_ipmu:"$backupDir"/Dropbox  "$HOME"/

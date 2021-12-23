@@ -1,6 +1,6 @@
 nnoremap <SPACE> <Nop>
 let g:mapleader=" "
-let g:maplocalleader = ' '
+let maplocalleader = " "
 
 call plug#begin('~/.vim/plugged')
     " display
