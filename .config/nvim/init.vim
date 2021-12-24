@@ -1,6 +1,4 @@
 nnoremap <SPACE> <Nop>
-let g:mapleader=" "
-let maplocalleader = " "
 
 call plug#begin('~/.vim/plugged')
     " display
@@ -74,7 +72,7 @@ nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 " autocomplete
-inoremap <silent><expr> <c-\> coc#refresh()
+inoremap <silent><expr> <c-i> coc#refresh()
 " Give more space for displaying messages.
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
