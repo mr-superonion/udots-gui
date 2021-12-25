@@ -9,14 +9,14 @@
 ## Build-essential
 
 ```shell
-sudo pacman -S base-devel neovim zsh xterm tmux
+sudo pacman -S base-devel neovim zsh xterm tmux ripgrep nodejs npm
 ```
 
-## Shell
+## zsh
 
+use antigen for plugin management
 ```shell
-wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-sh install.sh
+curl -L git.io/antigen > .antigen.zsh
 ```
 
 ## Dmenu
@@ -60,5 +60,3 @@ fi;
 config checkout
 config config status.showUntrackedFiles no
 ```
-
-

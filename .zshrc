@@ -1,11 +1,16 @@
 ## .zshrc
 ## . ~/.profile
+# Load Antigen
+source ~/.antigen.zsh
+# Load Antigen configurations
+antigen init ~/.antigenrc
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-source $ZSH/oh-my-zsh.sh
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# # Path to your oh-my-zsh installation.
+# export ZSH="$HOME/.oh-my-zsh"
+# source $ZSH/oh-my-zsh.sh
+# # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# ZSH_THEME="robbyrussell"
+# plugins=( git zsh-autosuggestions )
 
 #LD_LID
 export LD_LIBRARY_PATH="$homeSys/lib":$LD_LIBRARY_PATH
@@ -29,7 +34,6 @@ if [ -f ~/.zsh_aliases ]; then
     source ~/.zsh_aliases
 fi
 
-plugins=()
 if [[ $DISPLAY ]]; then
     bindkey -v
     export KEYTIMEOUT=1
