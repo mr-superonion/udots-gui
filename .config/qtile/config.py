@@ -1,7 +1,7 @@
 import os
 import subprocess
 from datetime import datetime
-from libqtile import layout, bar, widget, hook
+from libqtile import layout, bar, widget, hook, extension
 from libqtile.config import Drag, Group, Key, Match, Screen
 from libqtile.command import lazy
 
@@ -19,7 +19,7 @@ layout_theme={"border_width": 3,
             }
 
 widget_defaults = dict(
-    font='Ubuntu',
+    font='DejaVu Sans Mono',
     fontsize=17,
     padding=5,
 )
@@ -176,9 +176,14 @@ keys = [
     Key([mod, "control"], "f", lazy.spawn('exploreLocal')),
     Key([mod, "control"], "n", lazy.spawn('nm-connection-editor')),
     Key([mod, "control"], "Return",
-        lazy.spawn("dmenu_run -i -fn %s -p dmenu: "
-        %(widget_defaults['font']))
-        ),
+        lazy.run_extension(extension.DmenuRun(
+        dmenu_prompt=" ➜ ",
+        dmenu_font="Ubuntu",
+        background=colors[5],
+        selected_background=colors[3],
+        ))),
+    # lazy.spawn("dmenu_run -i -fn %s -p dmenu: "
+    # %('Ubuntu'))
     Key([mod], "p", lazy.spawn('snapShot')),
     Key([mod], "v", lazy.spawn('recordClipBoard')),
     Key([mod], "F4", lazy.window.kill()),
@@ -303,7 +308,7 @@ def init_screen1():
                     other_screen_border=colors[0],
                     disable_drag=True,
                     spacing =   0,
-                    padding_x=  8,
+                    padding_x=  6,
                     visible_groups=['a', 's', 'd', 'f'],
                     use_mouse_wheel=False,
                     **widget_defaults
@@ -340,18 +345,19 @@ def init_screen1():
                     foreground=colors[3],
                     background=colors[4],
                     max_chars=  12,
-                    format='CPU {load_percent}%;',
-                    spacing =   3,
-                    padding =   4,
+                    format='CPU:{load_percent}%;',
+                    spacing =   0,
+                    padding =   0,
                     ),
                 widget.Memory(
                     foreground=colors[3],
                     background=colors[4],
-                    max_chars=  8,
+                    max_chars=  12,
                     measure_mem='G',
                     measure_swap='G',
-                    spacing =   3,
-                    padding =   4,
+                    spacing =   1,
+                    padding_x = 4,
+                    format  =   'Mem:{MemUsed:.0f}{mm}/{MemTotal:.0f}{mm}',
                     ),
                 widget.Countdown(
                     background  = colors[5],
@@ -360,13 +366,13 @@ def init_screen1():
                     update_interval=3600,
                     # background = colors[1],
                     foreground = colors[0],
-                    spacing =   3,
-                    padding =   4,
+                    spacing =   1,
+                    padding_x = 4,
                     ),
                 widget.Clock(
                     background  = colors[5],
                     foreground  = colors[0],
-                    format="%a, %m-%d;  %H:%M",
+                    format="%a, %m-%d; %H:%M",
                     ),
             ],
             opacity=.95,
@@ -397,7 +403,7 @@ def init_screen2():
                     other_screen_border=colors[0],
                     disable_drag=True,
                     spacing =   0,
-                    padding_x=  8,
+                    padding_x=  6,
                     visible_groups=['q','w','e','r'],
                     use_mouse_wheel=False,
                     **widget_defaults
@@ -426,7 +432,7 @@ def init_screen2():
                 widget.Clock(
                     background  = colors[5],
                     foreground  = colors[0],
-                    format="%a, %m-%d  %H:%M",
+                    format="%a, %m-%d; %H:%M",
                     ),
             ],
             opacity=0.95,
