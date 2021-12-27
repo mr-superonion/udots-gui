@@ -1,9 +1,8 @@
 import os
-import socket
 import subprocess
 from datetime import datetime
 from libqtile import layout, bar, widget, hook
-from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from libqtile.config import Drag, Group, Key, Match, Screen
 from libqtile.command import lazy
 
 mod     =   "mod1"
@@ -11,10 +10,10 @@ win     =   "mod4"
 myTerm  =   "xterm"
 wmname  =   "LG3D"
 # colors  =   ["#6F9FE3","#222D32","#FFFFFF","#002b36"]
-colors  =   ["#6F9FE3","#222D32","#FFFFFF","#1f8780"]
+colors  =   ["#6F9FE3","#222D32","#FFFFFF","#1f8780","#222938","#223338","#434854"]
 
-layout_theme={"border_width": 2,
-            "margin": 2,
+layout_theme={"border_width": 3,
+            "margin": 0,
             "border_focus": colors[0],
             "border_normal":colors[1]
             }
@@ -286,13 +285,9 @@ def init_screen1():
     return Screen(
         top=bar.Bar(
             widgets=[
-                widget.TextBox(
-                    text=" ☵",
-                    foreground=colors[0],
-                    **widget_defaults
-                    ),
-                widget.CurrentLayout(
-                    **widget_defaults
+                widget.CurrentLayoutIcon(
+                    scale=0.75,
+                    foreground=colors[3],
                     ),
                 widget.Sep(
                     **widget_defaults
@@ -307,7 +302,8 @@ def init_screen1():
                     other_current_screen_border=colors[3],
                     other_screen_border=colors[0],
                     disable_drag=True,
-                    spacing =   4,
+                    spacing =   0,
+                    padding_x=  8,
                     visible_groups=['a', 's', 'd', 'f'],
                     use_mouse_wheel=False,
                     **widget_defaults
@@ -319,48 +315,61 @@ def init_screen1():
                        padding = 10,
                    ),
                 widget.TaskList(
-                    border  =   colors[3],
+                    border  =   colors[5],
                     max_title_width=150,
                     highlight_method='block',
-                    spacing =   8,
-                    margin  =   2,
+                    spacing =   0,
+                    margin  =   0,
+                    padding_x=  12,
                     fontsize=   14,
+                    txt_floating='[x]',
+                    icon_size=  0,
+                    rounded=False,
                     ),
-                # widget.WindowName(
-                #        padding = 0
-                #    ),
                 widget.Systray(
-                    background = colors[1],
+                    background  = colors[6],
                     **widget_defaults,
                     ),
                 widget.BatteryIcon(
-                    theme_path='/home/xiangchong/.config/qtile/battery-icons/',
+                    theme_path= '/home/xiangchong/.config/qtile/battery-icons/',
+                    background= colors[4],
                     spacing =   3,
                     padding =   4,
-                    background = colors[1],
-                    opacity=.1,
                     ),
-                widget.Sep(
-                    **widget_defaults,
-                    background = colors[1],
+                widget.CPU(
+                    foreground=colors[3],
+                    background=colors[4],
+                    max_chars=  12,
+                    format='CPU {load_percent}%;',
+                    spacing =   3,
+                    padding =   4,
+                    ),
+                widget.Memory(
+                    foreground=colors[3],
+                    background=colors[4],
+                    max_chars=  8,
+                    measure_mem='G',
+                    measure_swap='G',
+                    spacing =   3,
+                    padding =   4,
                     ),
                 widget.Countdown(
+                    background  = colors[5],
                     date=datetime(2022,4,1),
-                    format='{D} Days',
+                    format='{D} Days;',
                     update_interval=3600,
                     # background = colors[1],
                     foreground = colors[0],
-                    opacity =   .1,
                     spacing =   3,
                     padding =   4,
                     ),
                 widget.Clock(
-                    foreground = colors[0],
-                    format="%a, %m-%d  %H:%M",
-                    opacity=.1,
+                    background  = colors[5],
+                    foreground  = colors[0],
+                    format="%a, %m-%d;  %H:%M",
                     ),
             ],
-            opacity=.85,
+            opacity=.95,
             size=26,
             background='#12141a',
         )
@@ -370,13 +379,9 @@ def init_screen2():
     return Screen(
         top=bar.Bar(
             widgets=[
-                widget.TextBox(
-                    text=" ☵",
-                    foreground=colors[0],
-                    **widget_defaults
-                    ),
-                widget.CurrentLayout(
-                    **widget_defaults
+                widget.CurrentLayoutIcon(
+                    scale=0.75,
+                    foreground=colors[3],
                     ),
                 widget.Sep(
                     **widget_defaults
@@ -391,7 +396,8 @@ def init_screen2():
                     other_current_screen_border=colors[3],
                     other_screen_border=colors[0],
                     disable_drag=True,
-                    spacing =   4,
+                    spacing =   0,
+                    padding_x=  8,
                     visible_groups=['q','w','e','r'],
                     use_mouse_wheel=False,
                     **widget_defaults
@@ -406,19 +412,21 @@ def init_screen2():
                 #        padding = 0
                 #    ),
                 widget.TaskList(
-                    border=colors[3],
+                    border=colors[5],
                     max_title_width=150,
                     highlight_method='block',
-                    spacing =   8,
-                    margin  =   2,
+                    spacing =   0,
+                    margin  =   0,
+                    padding_x=  12,
                     fontsize=   14,
-                    ),
-                widget.Sep(
-                    **widget_defaults,
+                    txt_floating='[x]',
+                    icon_size=  0,
+                    rounded=False,
                     ),
                 widget.Clock(
-                    foreground = colors[0],
-                    format="%a, %m-%d  %H:%M"
+                    background  = colors[5],
+                    foreground  = colors[0],
+                    format="%a, %m-%d  %H:%M",
                     ),
             ],
             opacity=0.95,
