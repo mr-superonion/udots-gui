@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-
-# Make sure we have dmemu
-[ "$(which dmenu)" ] || exit
-hostname=$(echo | dmenu -i -p "Please Input Hostname" -fn Arial)
-
-rsync -av --update --delete-before -e 'ssh -p 2382'  "$hostname":/sdcard/Download/Paper/*-note.pdf ~/Documents/Research/Papers/ && echo "synchronized"

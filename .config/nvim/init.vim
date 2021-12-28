@@ -15,8 +15,10 @@ call plug#begin('~/.vim/plugged')
     " git
     Plug 'tpope/vim-fugitive'
     " files
+    Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
+    Plug 'nvim-telescope/telescope-fzy-native.nvim'
     " autocomplete
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()

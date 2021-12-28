@@ -345,7 +345,7 @@ def init_screen1():
                     foreground=colors[3],
                     background=colors[4],
                     max_chars=  12,
-                    format='CPU:{load_percent}%;',
+                    format='CPU:{load_percent:02.0f}%;',
                     spacing =   0,
                     padding =   0,
                     ),
@@ -357,7 +357,7 @@ def init_screen1():
                     measure_swap='G',
                     spacing =   1,
                     padding_x = 4,
-                    format  =   'Mem:{MemUsed:.0f}{mm}/{MemTotal:.0f}{mm}',
+                    format  =   'Mem:{MemUsed:02.0f}{mm}/{MemTotal:.0f}{mm}',
                     ),
                 widget.Countdown(
                     background  = colors[5],
