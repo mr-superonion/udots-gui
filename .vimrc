@@ -7,8 +7,10 @@ nnoremap K <C-u>
 inoremap <C-N> <Nop>
 inoremap <C-P> <Nop>
 
-" Substitute
+" Search and Substitute
 " Replace all is aliased to S.
+vnoremap <C-f> y:Telescope grep_string search=<C-R>=@"<CR><CR>
+nnoremap <C-f> :Telescope grep_string search=
 nnoremap S :%s///g<Left><Left>
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
@@ -28,8 +30,8 @@ set mouse=a
 vnoremap <C-C> y
 nnoremap <C-V> p
 
-"" Search down to the files
-"" and provide tab-completion for all file related tasks
+"" Menu
+"" Search files and provide tab-completion for all file related tasks
 set path+=**
 " display all matching files when tab complete
 set wildmenu

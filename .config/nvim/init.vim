@@ -18,7 +18,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
-    Plug 'nvim-telescope/telescope-fzy-native.nvim'
+    Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make'}
+    Plug 'fannheyward/telescope-coc.nvim'
     " autocomplete
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
@@ -61,7 +62,6 @@ xmap <leader>c  <Plug>Commentary
 omap <leader>c  <Plug>Commentary
 nmap <leader>cc <Plug>CommentaryLine
 
-
 " telescope
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -74,6 +74,8 @@ nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+
+lua require("xtele")
 
 " autocomplete
 inoremap <silent><expr> <C-\> coc#refresh()
