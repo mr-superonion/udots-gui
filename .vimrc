@@ -2,8 +2,8 @@
 nnoremap s <Nop>
 nnoremap x <Nop>
 nnoremap X <Nop>
-nnoremap J <C-d>
-nnoremap K <C-u>
+nnoremap J 10<c-e>
+nnoremap K 10<c-y>
 inoremap <C-N> <Nop>
 inoremap <C-P> <Nop>
 

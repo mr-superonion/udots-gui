@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'mr-superonion/vim-tmux-navigator'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+    Plug 'MattesGroeger/vim-bookmarks'
     " txt (latex/markdown)
     Plug 'lervag/vimtex'
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
