@@ -1,4 +1,5 @@
 local previewers = require("telescope.previewers")
+local actions = require("telescope.actions")
 
 local new_maker = function(filepath, bufnr, opts)
   opts = opts or {}
@@ -26,7 +27,26 @@ defaults={
         preview_cutoff = 10,
         preview_width  = 0.60,
 	},
+    cache_picker=   {
+        num_pickers =   10,
+        limit_entries=  100,
+    },
+
+    mappings = {
+        i = {
+            ["<C-x>"] = false,
+            ["<C-q>"] = actions.send_to_qflist,
+        },
+    },
 },
 }
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('coc')
+require("telescope").load_extension('file_browser')
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<space>ff",
+  "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>",
+  {noremap = true}
+)
