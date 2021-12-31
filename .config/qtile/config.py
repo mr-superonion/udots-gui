@@ -482,7 +482,10 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class= 'zoom'),
     Match(wm_class= 'skype'),
     Match(wm_class= 'Display-im6.q16'),
-    # Match(wm_class= 'Ds9.tcl'),
+    Match(wm_class= 'ds9.tcl'),
+    Match(wm_class= 'Matplotlib'),
+    Match(wm_class= 'cube'),
+    Match(wm_class= 'nres'),
     Match(wm_class= 'Toplevel'),
     Match(wm_class= 'Nm-connection-editor'),
     Match(wm_class= 'ssh-askpass'),
@@ -503,12 +506,12 @@ floating_layout = layout.Floating(float_rules=[
     ],
     **layout_theme)
 
-@hook.subscribe.client_new
-def set_floating(client):
-    floating_types = ["notification", "toolbar", "splash", "dialog"]
-    if (client.window.get_wm_type() in floating_types
-    or client.window.get_wm_transient_for()):
-        client.floating = True
+# @hook.subscribe.client_new
+# def set_floating(client):
+#     with open("fname", "a+") as file:
+#         file.write(client.window.get_wm_class()[1])
+#         file.write(client.window.get_wm_class()[1])
+#         file.write('\\')
 
 @hook.subscribe.client_name_updated
 def set_name(client):

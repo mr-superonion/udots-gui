@@ -17,15 +17,18 @@ end
 require('telescope').setup{
 defaults={
     prompt_prefix   =   " ➜ ",
+    sorting_strategy=   "ascending",
     buffer_previewer_maker = new_maker,
     file_ignore_patterns = {
-        ".jpeg",".fits",".png",".svg",".pdf",".dvi",".pickle",".jpg",".eps",".ps"
+        ".jpeg",".fits",".png",".svg",".pdf",".dvi",".pickle",
+        ".jpg",".eps",".ps","xdv"
     },
     layout_stratege="horizontal",
     layout_config = {
         horizontal = {height=100, width=200},
-        preview_cutoff = 10,
-        preview_width  = 0.60,
+        preview_cutoff =    10,
+        preview_width  =    0.60,
+        prompt_position=    "top",
 	},
     cache_picker=   {
         num_pickers =   10,
@@ -41,8 +44,8 @@ defaults={
 },
 }
 require('telescope').load_extension('fzf')
-require('telescope').load_extension('coc')
 require("telescope").load_extension('file_browser')
+require("telescope").load_extension('heading')
 
 vim.api.nvim_set_keymap(
   "n",

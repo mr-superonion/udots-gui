@@ -21,8 +21,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make'}
-    Plug 'fannheyward/telescope-coc.nvim'
     Plug 'nvim-telescope/telescope-file-browser.nvim'
+    Plug 'crispgm/telescope-heading.nvim'
     " autocomplete
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
@@ -55,7 +55,7 @@ let g:vimtex_view_method='zathura'
 " markdown preview
 let g:mkdp_refresh_slow = 1
 let g:mkdp_browser = 'brave'
-nmap <C-p> <Plug>MarkdownPreviewToggle
+nnoremap <leader>mv <cmd>MarkdownPreviewToggle<cr>
 let g:mkdp_preview_options = {
     \ 'mkit': {},
     \ 'katex': {},
@@ -88,6 +88,7 @@ lua require("xtele")
 nnoremap <leader>fr <cmd>Telescope resume<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fv <cmd>Telescope current_buffer_fuzzy_find<cr>
 " Using Lua functions
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
