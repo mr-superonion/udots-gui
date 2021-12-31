@@ -91,7 +91,19 @@ filetype plugin indent on
 " Color setup"
 " set background=dark
 " let g:solarized_termcolors=256"
-colorscheme solarized
+" colorscheme solarized
+if has('termguicolors')
+  set termguicolors
+endif
+set background=dark
+
+let g:gruvbox_material_background = 'hard'
+let g:gruvbox_material_enable_italic = 1
+let g:gruvbox_material_disable_italic_comment = 1
+colorscheme gruvbox-material
+let g:airline_theme= 'gruvbox_material'
+" let g:airline_theme='molokai'
+
 
 " Window Control
 nnoremap <C-w>" :wincmd =<CR>

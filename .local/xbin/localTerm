@@ -13,7 +13,7 @@ session=$(tmux ls -F '#{session_name}|#{?session_attached,attached,not attached}
 
 if [ "$session" = "" ]
 then
-    xterm -e "tmux"
+    alacritty -e "tmux"
 else
-    xterm -e "tmux attach -t "$session""
+    alacritty -e "tmux attach -t "$session""
 fi

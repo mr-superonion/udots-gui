@@ -7,9 +7,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-commentary'
     Plug 'junegunn/vim-easy-align'
     Plug 'micha/vim-colors-solarized'
-    Plug 'mr-superonion/vim-tmux-navigator'
+    Plug 'sainnhe/gruvbox-material'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+    Plug 'mr-superonion/vim-tmux-navigator'
     Plug 'MattesGroeger/vim-bookmarks'
     " txt (latex/markdown)
     Plug 'lervag/vimtex'
@@ -32,8 +33,6 @@ let &packpath=&runtimepath
 
 " display
 " airline
-let g:airline_theme='molokai'
-"let g:airline_solarized_bg='dark'
 set cmdheight=1
 set noshowmode  " to get rid of thing like --INSERT--
 set noshowcmd  " to get rid of display of last command
