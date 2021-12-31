@@ -5,13 +5,14 @@ let maplocalleader = " "
 call plug#begin('~/.vim/plugged')
     " display
     Plug 'tpope/vim-commentary'
-    Plug 'junegunn/vim-easy-align'
-    Plug 'micha/vim-colors-solarized'
+    " Plug 'junegunn/vim-easy-align'
+    " Plug 'micha/vim-colors-solarized'
     Plug 'sainnhe/gruvbox-material'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'mr-superonion/vim-tmux-navigator'
     Plug 'MattesGroeger/vim-bookmarks'
+    Plug 'preservim/tagbar'
     " txt (latex/markdown)
     Plug 'lervag/vimtex'
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
