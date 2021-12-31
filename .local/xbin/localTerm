@@ -15,5 +15,5 @@ if [ "$session" = "" ]
 then
     alacritty -e "tmux"
 else
-    alacritty -e "tmux attach -t "$session""
+    alacritty -e tmux attach -t "$session"
 fi
