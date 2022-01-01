@@ -12,7 +12,7 @@ inoremap <C-P> <Nop>
 vnoremap <C-f> y:Telescope grep_string search=<C-R>=@"<CR><CR>
 nnoremap <C-f> :Telescope grep_string search=
 nnoremap S :%s///g<Left><Left>
-vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+vnoremap // "zy/\V<C-R>=escape(@z,'/\')<CR><CR>
 
 " Move in command and input mode
 nnoremap { {zzzv
