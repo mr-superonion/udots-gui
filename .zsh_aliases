@@ -24,9 +24,6 @@ alias syslog='vim /var/log/syslog'
 # mm
 alias mmmemo='vim /home/xiangchong/superonionYoga/doc/mm.csv'
 
-# vim
-alias vim="vim -O"
-
 # Functions
 # kile
 function kile-open {

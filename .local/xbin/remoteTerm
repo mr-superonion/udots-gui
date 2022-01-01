@@ -13,4 +13,4 @@ chosen=$(grep -v "#" $homeSys/xshare/server.info | awk '{print $1}'| dmenu -g 1 
 c=$(grep "$chosen" $homeSys/xshare/server.info | awk '{print $2}')
 
 # Login
-alacritty -t "$chosen" -e ssh "$c"
+xterm -T "$chosen" -e "ssh "$c""

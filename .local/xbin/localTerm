@@ -17,7 +17,7 @@ then
         2>/dev/null | sort -n | tail -n 1 | cut -d '|' -f1)
     let nss=nss+1
     echo $nss
-    alacritty -t "Term$nss" -e tmux
+    xterm -T "Term$nss" -e "tmux"
 else
-    alacritty -t "Term$session" -e tmux attach -t "$session"
+    xterm -T "Term$session" -e "tmux attach -t "$session""
 fi

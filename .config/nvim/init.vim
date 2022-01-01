@@ -24,16 +24,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make'}
     Plug 'nvim-telescope/telescope-file-browser.nvim'
-    Plug 'crispgm/telescope-heading.nvim'
     " autocomplete
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
-let &packpath=&runtimepath
-
-" display
-" airline
+" display airline
 set cmdheight=1
 set noshowmode  " to get rid of thing like --INSERT--
 set noshowcmd  " to get rid of display of last command
@@ -123,9 +118,8 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 
-" Use K to show documentation in preview window.
+" show documentation in preview window.
 inoremap <silent> <C-\> <C-r>=CocActionAsync('showSignatureHelp')<CR>
-" inoremap <silent><expr> <C-\> coc#refresh()
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -136,6 +130,11 @@ function! s:show_documentation()
     execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Git fugitive
 nnoremap <leader>gl :diffget //3

@@ -2,63 +2,43 @@ Sxiv.foreground: #657b83
 Sxiv.background: #fdf6e3
 Sxiv.font: mono-10
 
-#define S_base03        #002b36
-#define S_base02        #073642
-#define S_base01        #586e75
-#define S_base00        #657b83
-#define S_base0         #839496
-#define S_base1         #93a1a1
-#define S_base2         #eee8d5
-#define S_base3         #fdf6e3
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Gruvbox Material Dark
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+xterm*background: #1d2021
+! medium
+! xterm*background: #282828
+! soft
+! xterm*background: #32302f
 
-xterm*background:            S_base03
-xterm*foreground:            S_base0
-xterm*fadeColor:             S_base03
-xterm*cursorColor:           S_base1
-xterm*pointerColorBackground:S_base01
-xterm*pointerColorForeground:S_base1
+*foreground: #d4be98
 
-#define S_yellow        #b58900
-#define S_orange        #cb4b16
-#define S_red           #dc322f
-#define S_magenta       #d33682
-#define S_violet        #6c71c4
-#define S_blue          #268bd2
-#define S_cyan          #2aa198
-#define S_green         #859900
+! Black,+ DarkGrey
+xterm*color0:  #32302f
+xterm*color8:  #32302f
+! DarkRed + Red
+xterm*color1:  #ea6962
+xterm*color9:  #ea6962
+! DarkGreen + Green
+xterm*color2:  #a9b665
+xterm*color10: #a9b665
+! DarkYellow + Yellow
+xterm*color3:  #e78a4e
+xterm*color11: #e78a4e
+! DarkBlue + Blue
+xterm*color4:  #7daea3
+xterm*color12: #7daea3
+! DarkMagenta + Magenta
+xterm*color5:  #d3869b
+xterm*color13: #d3869b
+! DarkCyan + Cyan
+xterm*color6:  #89b482
+xterm*color14: #89b482
+! LightGrey + White
+xterm*color7:  #d4be98
+xterm*color15: #d4be98
 
-!! black dark/light
-xterm*color0:                S_base02
-xterm*color8:                S_base03
-
-!! red dark/light
-xterm*color1:                S_red
-xterm*color9:                S_orange
-
-!! green dark/light
-xterm*color2:                S_green
-xterm*color10:               S_base01
-!! yellow dark/light
-xterm*color3:                S_yellow
-xterm*color11:               S_base00
-
-!! blue dark/light
-xterm*color4:                S_blue
-xterm*color12:               S_base0
-
-!! magenta dark/light
-xterm*color5:                S_magenta
-xterm*color13:               S_violet
-
-!! cyan dark/light
-xterm*color6:                S_cyan
-xterm*color14:               S_base1
-
-!! white dark/light
-xterm*color7:                S_base2
-xterm*color15:               S_base3
-
-XTerm*reverseVideo: False
+Xterm*reverseVideo: False
 
 
 xterm*transparent:  true
@@ -128,4 +108,5 @@ xterm*vt100*translations: #override \n\
     Ctrl <Key>L:        string(0x1b) string("[C")\n\
     Ctrl <Key> minus:   smaller-vt-font() \n\
     Ctrl <Key> plus:    larger-vt-font()
+XTerm.vt100.allowTitleOps: false
 

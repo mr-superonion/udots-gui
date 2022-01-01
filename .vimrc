@@ -56,7 +56,6 @@ nnoremap V v$
 nnoremap vv V
 
 set nocompatible              " be iMproved, required
-filetype off                  " required by Vundle
 
 " Cursor for insert mode
 let &t_SI = "\e[6 q"
@@ -79,7 +78,6 @@ set scrolloff=8
 " Syntax
 set showmatch
 set guioptions=T
-syntax on
 set hlsearch
 
 " Automatically wrap text that extends beyond the screen length.
@@ -89,9 +87,6 @@ set nowrap
 filetype plugin indent on
 
 " Color setup"
-" set background=dark
-" let g:solarized_termcolors=256"
-" colorscheme solarized
 if has('termguicolors')
   set termguicolors
 endif
@@ -103,7 +98,7 @@ let g:gruvbox_material_disable_italic_comment = 1
 colorscheme gruvbox-material
 let g:airline_theme= 'gruvbox_material'
 " let g:airline_theme='molokai'
-
+syntax on
 
 " Window Control
 nnoremap <C-w>" :wincmd =<CR>

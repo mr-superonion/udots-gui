@@ -45,7 +45,6 @@ defaults={
 }
 require('telescope').load_extension('fzf')
 require("telescope").load_extension('file_browser')
-require("telescope").load_extension('heading')
 
 vim.api.nvim_set_keymap(
   "n",
