@@ -10,13 +10,14 @@ export LD_LIBRARY_PATH="$homeSys/lib64":$LD_LIBRARY_PATH
 # Get the first idel session name
 session=$(tmux ls -F '#{session_name}|#{?session_attached,attached,not attached}' \
     2>/dev/null | grep 'not attached$' | tail -n 1 | cut -d '|' -f1)
-nss=$(tmux ls -F '#{session_name}|#{?session_attached,attached,not attached}' \
-    2>/dev/null | cut -d '|' -f1 | wc -l)
-let nss=nss+1
 
 if [ "$session" = "" ]
 then
+    nss=$(tmux ls -F '#{session_name}|#{?session_attached,attached,not attached}' \
+        2>/dev/null | sort -n | tail -n 1 | cut -d '|' -f1)
+    let nss=nss+1
+    echo $nss
     alacritty -t "Term$nss" -e tmux
 else
-    alacritty -t "Term$nss" -e tmux attach -t "$session"
+    alacritty -t "Term$session" -e tmux attach -t "$session"
 fi
