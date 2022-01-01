@@ -5,7 +5,7 @@
 [ "$(which dmenu)" ] || exit
 
 # Initialization
-[ "$(ssh-add -l 2>/dev/null)" ] || ssh-add /home/xiangchong/.ssh/id_rsa
+[ "$(ssh-add -l 2>/dev/null)" ] || ssh-add ~/.ssh/id_rsa
 
 # Which server to choose
 chosen=$(grep -v "#" $homeSys/xshare/server.info | awk '{print $1}'| dmenu -g 1 -i -p 'choose the ssh server' -l 20 -fn Arial)
@@ -13,5 +13,4 @@ chosen=$(grep -v "#" $homeSys/xshare/server.info | awk '{print $1}'| dmenu -g 1 
 c=$(grep "$chosen" $homeSys/xshare/server.info | awk '{print $2}')
 
 # Login
-xterm -e "ssh "$c""
-
+alacritty -t "$chosen" -e ssh "$c"
