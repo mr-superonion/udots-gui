@@ -94,9 +94,6 @@ nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 
 " COC
-inoremap <silent><expr> <C-\> coc#refresh()
-nmap <silent> gp <Plug>(coc-diagnostic-prev)
-nmap <silent> gn <Plug>(coc-diagnostic-next)
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
 set updatetime=300
@@ -107,6 +104,8 @@ set shortmess+=c
 set signcolumn=number
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gp <Plug>(coc-diagnostic-prev)
+nmap <silent> gn <Plug>(coc-diagnostic-next)
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -122,6 +121,21 @@ function! s:check_back_space() abort
 endfunction
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
+autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+
+" Use K to show documentation in preview window.
+inoremap <silent> <C-\> <C-r>=CocActionAsync('showSignatureHelp')<CR>
+" inoremap <silent><expr> <C-\> coc#refresh()
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
 
 " Git fugitive
 nnoremap <leader>gl :diffget //3
