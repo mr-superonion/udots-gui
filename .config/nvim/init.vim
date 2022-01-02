@@ -50,6 +50,7 @@ let g:vimtex_view_method='zathura'
 " markdown preview
 let g:mkdp_refresh_slow = 1
 let g:mkdp_browser = 'brave'
+let g:mkdp_markdown_css = expand('~/Documents/public_html/me/mystyle.css')
 nnoremap <leader>mv <cmd>MarkdownPreviewToggle<cr>
 let g:mkdp_preview_options = {
     \ 'mkit': {},

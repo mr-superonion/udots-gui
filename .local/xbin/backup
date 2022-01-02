@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 versionL=$(tail -1 ~/.backup_versions.txt)
 versionR=$(ssh $gw_ipmu "tail -1 $backupDir/.backup_versions.txt")
 
@@ -10,5 +12,5 @@ rsync -zav --update --delete-before ~/Documents/Life $gw_ipmu:"$backupDir"
 rsync -zav --update --delete-before ~/Documents/Certificates $gw_ipmu:"$backupDir"
 rsync -zav --update --delete-before ~/Documents/Research $gw_ipmu:"$backupDir"
 rsync -zav --update --delete-before ~/Documents/Wallpapers $gw_ipmu:"$backupDir"
-rsync -zav --update --delete-before ~/Documents/homepage $gw_ipmu:"$backupDir"
 rsync -zav --update --delete-before ~/Documents/Docs $gw_ipmu:"$backupDir"
+rsync -zav --update --delete-before ~/Documents/public_html $gw_ipmu:"$backupDir"

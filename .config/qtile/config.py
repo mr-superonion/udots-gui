@@ -10,7 +10,7 @@ win     =   "mod4"
 myTerm  =   "xterm"
 wmname  =   "LG3D"
 # colors  =   ["#6F9FE3","#222D32","#FFFFFF","#002b36"]
-colors  =   ["#6F9FE3","#222D32","#FFFFFF","#1f8780","#222938","#223338","#434854"]
+colors  =   ["#6F9FE3","#222D32","#FFFFFF","#1f8780","#181512","#1d272a","#1d2021"]
 
 layout_theme={"border_width": 3,
             "margin": 0,
@@ -339,7 +339,7 @@ def init_screen1():
                     theme_path= '/home/xiangchong/.config/qtile/battery-icons/',
                     background= colors[4],
                     spacing =   3,
-                    padding =   4,
+                    padding_x =   6,
                     ),
                 widget.CPU(
                     foreground=colors[3],
@@ -347,7 +347,7 @@ def init_screen1():
                     max_chars=  12,
                     format='CPU:{load_percent:02.0f}%;',
                     spacing =   0,
-                    padding =   0,
+                    padding_x =   6,
                     ),
                 widget.Memory(
                     foreground=colors[3],
@@ -356,21 +356,21 @@ def init_screen1():
                     measure_mem='G',
                     measure_swap='G',
                     spacing =   1,
-                    padding_x = 4,
+                    padding_x = 6,
                     format  =   'Mem:{MemUsed:02.0f}{mm}/{MemTotal:.0f}{mm}',
                     ),
                 widget.Countdown(
-                    background  = colors[5],
+                    background  = colors[6],
                     date=datetime(2022,4,1),
                     format='{D} Days;',
                     update_interval=3600,
                     # background = colors[1],
                     foreground = colors[0],
                     spacing =   1,
-                    padding_x = 4,
+                    padding_x = 6,
                     ),
                 widget.Clock(
-                    background  = colors[5],
+                    background  = colors[6],
                     foreground  = colors[0],
                     format="%a, %m-%d; %H:%M",
                     ),
@@ -430,7 +430,7 @@ def init_screen2():
                     rounded=False,
                     ),
                 widget.Clock(
-                    background  = colors[5],
+                    background  = colors[6],
                     foreground  = colors[0],
                     format="%a, %m-%d; %H:%M",
                     ),

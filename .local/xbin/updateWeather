@@ -1,7 +1,0 @@
-#!/usr/bin/env zsh
-
-convert $HOME/Documents/Wallpapers/Manjaro_Dark.png \( <( curl wttr.in/"$currentcity"_nq2.png ) -resize 1200x \) -geometry +40+300 -composite $HOME/Tmp/wallpaper.jpg
-
-updateCalendar.py
-convert -size 1500x600 xc:#002b36 -pointsize 50 -fill white -annotate +30+40 "@Tmp/calendar.txt" $HOME/Tmp/calendar.jpg
-convert $HOME/Tmp/wallpaper.jpg $HOME/Tmp/calendar.jpg -geometry +6000+3500 -composite $HOME/Tmp/wallpaper.jpg

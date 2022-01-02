@@ -1,4 +1,0 @@
-#!/usr/bin/env sh
-
-rsync -zav --force --update --delete-after $gfarm_ipmu:~/public_html/ ~/Documents/homepage/
-

@@ -1,5 +1,7 @@
 local previewers = require("telescope.previewers")
 local actions = require("telescope.actions")
+require('telescope').load_extension('fzf')
+local fb_actions = require "telescope".extensions.file_browser.actions
 
 local new_maker = function(filepath, bufnr, opts)
   opts = opts or {}
@@ -34,18 +36,20 @@ defaults={
         num_pickers =   10,
         limit_entries=  100,
     },
+},
 
-    mappings = {
-        i = {
-            ["<C-x>"] = false,
-            ["<C-q>"] = actions.send_to_qflist,
+extensions = {
+    file_browser = {
+        mappings = {
+            i = {
+                ["<C-a>"] = fb_actions.toggle_hidden,
+            },
         },
     },
 },
 }
-require('telescope').load_extension('fzf')
-require("telescope").load_extension('file_browser')
 
+require("telescope").load_extension('file_browser')
 vim.api.nvim_set_keymap(
   "n",
   "<space>ff",

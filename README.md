@@ -38,6 +38,9 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 pip3 install --user pynvim
 ```
 
+## GTK3 theme
+[gruvbox](https://github.com/3ximus/gruvbox-gtk.git)
+
 ## others
 [other useful packages](http://member.ipmu.jp/xiangchong.li/usefulpac)
 

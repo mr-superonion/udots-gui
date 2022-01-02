@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 rsync -zav --delete-after --update $gw_ipmu:"$backupDir"/.backup_versions.txt "$HOME"/
 rsync -zav --delete-after --update $gw_ipmu:"$backupDir"/Certificates "$HOME"/Documents/
 rsync -zav --delete-after --update $gw_ipmu:"$backupDir"/Research  "$HOME"/Documents/
@@ -5,4 +7,4 @@ rsync -zav --delete-after --update $gw_ipmu:"$backupDir"/Connections "$HOME"/Doc
 rsync -zav --delete-after --update $gw_ipmu:"$backupDir"/Life  "$HOME"/Documents/
 rsync -zav --delete-after --update $gw_ipmu:"$backupDir"/Wallpapers  "$HOME"/Documents/
 rsync -zav --delete-after --update $gw_ipmu:"$backupDir"/Docs  "$HOME"/Documents/
-rsync -zav --delete-after --update $gw_ipmu:"$backupDir"/homepage  "$HOME"/Documents/
+# rsync -zav --delete-after --update $gw_ipmu:"$backupDir"/public_html  "$HOME"/Documents/
