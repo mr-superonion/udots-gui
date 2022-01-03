@@ -6,5 +6,5 @@ versionR=$(ssh $gw_ipmu "tail -1 $backupDir/.backup_versions.txt")
 
 [ "$versionL" = "$versionR" ] || exit
 
-date >> localbfle
+date >> $localbfle
 rsync -zav --update --delete-before ~/Documents/* $gw_ipmu:"$backupDir"/
