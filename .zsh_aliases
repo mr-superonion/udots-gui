@@ -15,6 +15,10 @@ alias open='xdg-open &>/dev/null'
 alias ta="tmux attach -t"
 alias tl="tmux ls"
 
+#directory
+alias gt="cd ~/Documents/Research/Notes/TODO"
+alias gp="cd ~/Documents/Research/Papers"
+
 # ds9
 alias ds2='ds9 -lock frame IMAGE -lock scale yes'
 
@@ -65,6 +69,5 @@ alias cleanhistory="sed -i '/cd/d;/mv/d;/ls/d;/top/d;/;clear$/d;/exit/d;/boot/d;
 alias vim='TERM="" nvim'
 
 # sudo
-alias sudo='sudo '
 alias sudo='sudo -v; sudo '
 

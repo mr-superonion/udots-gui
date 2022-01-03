@@ -8,7 +8,7 @@
 chosen=$(echo "Current Window\nRectangle Region" | dmenu -i -p 'snapshot on?' -l 20 -fn Arial)
 [ "$chosen" != "" ] || exit
 case "$chosen" in
-	"Current Window") scrot -d 0.5 -q 60 -u -z '%Y-%m-%d-%H-%M-%S.png' -e 'mv $f ~/Tmp/Snapshots/';;
-	"Rectangle Region") scrot -d 0.5 -q 60 -l opacity=10 -s -f -z '%Y-%m-%d-%H-%M-%S.png' -e 'mv $f ~/Tmp/Snapshots/';;
+	"Current Window") scrot -d 0.5 -q 60 -u -z '%Y-%m-%d-%H-%M-%S.png' -e 'mv $f ~/Documents/Snapshots/';;
+	"Rectangle Region") scrot -d 0.5 -q 60 -l opacity=10 -s -f -z '%Y-%m-%d-%H-%M-%S.png' -e 'mv $f ~/Documents/Snapshots/';;
 	*) exit;;
 esac
