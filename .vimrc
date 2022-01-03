@@ -157,8 +157,8 @@ function! HomeDotClipboardPut()
 endfunction
 
 imap (( <Nop>
-imap [] <Nop>
-imap {} <Nop>
+imap [[ <Nop>
+imap {{ <Nop>
 inoremap (( ()<Esc>i
 inoremap [[ []<Esc>i
 inoremap {{ {}<Esc>i
