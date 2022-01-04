@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+rsync -zav --force --update --delete-after ~/Documents/public_html/* $gfarm_ipmu:~/public_html/
+# rsync -zav --force --update --delete-after ~/Documents/public_html/Life $gfarm_ipmu:~/public_html/
+# rsync -zav --force --update --delete-after ~/Documents/public_html/me $gfarm_ipmu:~/public_html/
+# rsync -zav --force --update --delete-after ~/Documents/public_html/Research $gfarm_ipmu:~/public_html/
+# rsync -zav --force --update --delete-after ~/Documents/public_html/sys $gfarm_ipmu:~/public_html/
+# rsync -zav --force --update --delete-after ~/Documents/public_html/tmp $gfarm_ipmu:~/public_html/
+
