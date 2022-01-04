@@ -1,10 +1,11 @@
 #!/usr/bin/env sh
-localbfle=~/Documents/.backup_versions.txt
+localbfile=~/Documents/.backup_versions.txt
 
-versionL=$(tail -1 "$localbfle")
+versionL=$(tail -1 $localbfile)
 versionR=$(ssh $gw_ipmu "tail -1 $backupDir/.backup_versions.txt")
 
 [ "$versionL" = "$versionR" ] || exit
 
-date >> $localbfle
+date >> $localbfile
 rsync -zav --update --delete-before ~/Documents/* $gw_ipmu:"$backupDir"/
+rsync -zav --update --delete-before $localbfile $gw_ipmu:"$backupDir"/
