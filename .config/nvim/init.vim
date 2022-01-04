@@ -47,6 +47,14 @@ let g:vimtex_compiler_latexmk = {
     \}
 let g:vimtex_view_general_viewer='zathura'
 let g:vimtex_view_method='zathura'
+hi link texMathZoneG texMathZoneEnv
+hi link texMathZoneGS texMathZoneEnvStarred
+hi link texMathZoneW texMathZone
+hi link texMathZoneX texMathZoneX
+hi link texMathZoneY texMathZoneXX
+hi link texMathZoneZ texMathZoneEnsured
+hi link texStatement texCmd
+
 " markdown preview
 let g:mkdp_refresh_slow = 1
 let g:mkdp_browser = 'brave'

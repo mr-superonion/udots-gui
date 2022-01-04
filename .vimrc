@@ -98,6 +98,7 @@ let g:gruvbox_material_disable_italic_comment = 1
 colorscheme gruvbox-material
 let g:airline_theme= 'gruvbox_material'
 " let g:airline_theme='molokai'
+
 syntax on
 
 " Window Control
