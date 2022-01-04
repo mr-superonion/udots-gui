@@ -1,3 +1,4 @@
 #!/usr/bin/env sh
 
-rsync -zav --delete-after --update $gw_ipmu:"$backupDir"/* "$HOME"/Documents/
+rsync -zav --delete-after --update $gw_ipmu:$backupDir/* "$HOME"/Documents/
+rsync -zav --delete-after --update $gw_ipmu:$backupDir/.backup_versions.txt "$HOME"/Documents/
