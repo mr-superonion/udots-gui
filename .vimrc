@@ -83,9 +83,6 @@ set hlsearch
 " Automatically wrap text that extends beyond the screen length.
 set nowrap
 
-" File system
-filetype plugin indent on
-
 " Color setup"
 if has('termguicolors')
   set termguicolors
@@ -111,11 +108,12 @@ set splitright
 set splitbelow
 
 " AutoIndent
+filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set autoindent
-" set nosmartindent
+set nosmartindent
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 
