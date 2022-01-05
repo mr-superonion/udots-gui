@@ -11,6 +11,11 @@
 ```shell
 sudo pacman -S base-devel neovim zsh xterm tmux ripgrep nodejs npm
 ```
+## tmux
+
+```shell
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
 
 ## zsh
 

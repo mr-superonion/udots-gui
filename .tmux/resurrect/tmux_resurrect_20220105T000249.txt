@@ -1,0 +1,11 @@
+pane	1	1	1	:*	1	:/home/xiangchong/Documents/Research/Notes/TODO/2022	1	zsh	:
+pane	1	2	0	:-	1	:/home/xiangchong/Documents/Research/Papers/Notes/2022	1	zsh	:
+pane	2	1	1	:*	1	:/home/xiangchong/.local/code/G3sim-HSC	1	zsh	:
+pane	2	2	0	:	1	:/home/xiangchong/.local/code/splinv	1	zsh	:
+pane	2	3	0	:-	1	:/home/xiangchong/.local/code/FPFS	1	zsh	:
+window	1	1	:Todo	1	:*	bfbd,135x35,0,0,0	off
+window	1	2	:papers	0	:-	bfc1,135x35,0,0,4	off
+window	2	1	:cosmicShear	1	:*	bfbe,135x35,0,0,1	off
+window	2	2	:massmap	0	:	bfbf,135x35,0,0,2	off
+window	2	3	:FPFS	0	:-	bfc0,135x35,0,0,3	off
+state	1	
