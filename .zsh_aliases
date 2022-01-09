@@ -4,37 +4,35 @@ alias ...='cd ../..'
 alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
-
 # merge Xresources
 alias xmerge='xrdb -merge ~/.Xresources'
-
 # xdg-open
 alias open='xdg-open &>/dev/null'
-
 # tmux
 alias ta="tmux attach -t"
 alias tl="tmux ls"
-
 #directory
 alias gt="cd ~/Documents/Research/Notes/TODO"
 alias gp="cd ~/Documents/Research/Papers"
 alias gc="cd $homeSys/code"
-
+alias gwt="cd ~/Tmp/Writtings"
 # ds9
 alias ds2='ds9 -lock frame IMAGE -lock scale yes'
-
 # systemlog
 alias syslog='vim /var/log/syslog'
-
 # mm
-alias mmmemo='vim /home/xiangchong/superonionYoga/doc/mm.csv'
+alias mmmemo='vim ~/Documents/Certificates/.mm.csv'
+# dotfiles config
+alias config='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias cleanhistory="sed -i '/cd/d;/mv/d;/ls/d;/top/d;/;clear$/d;/exit/d;/boot/d;/vim/d;/ipython/d;/rm/d;/mkdir/d;/displaySetup/d;/;sh/d;/^$/d;/echo/d;/;config/d;/;xrandr$/d;/git stat/d;/;update/d;/;locate/d;/;git commit/d;/;git add/d;/;sxiv/d;/;cp/d;/;ds9/d;/;git diff/d;/;scp/d;/;pacman/d;/;kill/d;/;.\//d;/;wget/d;/;zathura/d' $HOME/.zsh_history"
+alias checkhistory="config checkout -- ~/.zsh_history"
+
+# vim
+alias vim='TERM="" nvim'
+# sudo
+alias sudo='sudo -v; sudo '
 
 # Functions
-# kile
-function kile-open {
-    kile $(realpath $1)
-}
-
 # extract file
 function extract ()
 {
@@ -60,16 +58,3 @@ function extract ()
     echo "'$1' is not a valid file"
   fi
 }
-
-# dotfiles config
-alias config='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-
-alias cleanhistory="sed -i '/cd/d;/mv/d;/ls/d;/top/d;/;clear$/d;/exit/d;/boot/d;/vim/d;/ipython/d;/rm/d;/mkdir/d;/displaySetup/d;/;sh/d;/^$/d;/echo/d;/;config/d;/;xrandr$/d;/git stat/d;/;update/d;/;locate/d;/;git commit/d;/;git add/d;/;sxiv/d;/;cp/d;/;ds9/d;/;git diff/d;/;scp/d;/;pacman/d;/;kill/d;/;.\//d;/;wget/d;/;zathura/d' $HOME/.zsh_history"
-alias checkhistory="config checkout -- ~/.zsh_history"
-
-# vim
-alias vim='TERM="" nvim'
-
-# sudo
-alias sudo='sudo -v; sudo '
-
