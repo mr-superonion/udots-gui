@@ -74,11 +74,12 @@ set exrc
 set hidden
 set noerrorbells
 set scrolloff=8
+set sidescrolloff=10
 
 " Syntax
 set showmatch
 set guioptions=T
-set hlsearch
+set incsearch
 
 " Automatically wrap text that extends beyond the screen length.
 set nowrap
