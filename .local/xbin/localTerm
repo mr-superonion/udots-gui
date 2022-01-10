@@ -9,7 +9,7 @@ export LD_LIBRARY_PATH="$homeSys/lib64":$LD_LIBRARY_PATH
 
 # Get the first idel session name
 session=$(tmux ls -F '#{session_name}|#{?session_attached,attached,not attached}' \
-    2>/dev/null | grep 'not attached$' | tail -n 1 | cut -d '|' -f1)
+    2>/dev/null | grep -v publication | grep 'not attached$' | tail -n 1 | cut -d '|' -f1)
 
 if [ "$session" = "" ]
 then
