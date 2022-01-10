@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 
 source $HOME/.profile
 cachedir="${XDG_CACHE_HOME:-"$HOME/.cache"}"

@@ -1,14 +1,21 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env sh
 # choose the server to login
 
 # Make sure we have dmemu
 [ "$(which dmenu)" ] || exit
 
 # Chose option
-chosen=$(echo "Current Window\nRectangle Region" | dmenu -i -p 'snapshot on?' -l 20 -fn Arial)
+chosen=$(printf "Current Window\nRectangle Region" | dmenu -i -p 'snapshot on?' -l 20 -fn Arial)
 [ "$chosen" != "" ] || exit
+
 case "$chosen" in
-	"Current Window") scrot -d 0.5 -q 60 -u -z '%Y-%m-%d-%H-%M-%S.png' -e 'mv $f ~/Documents/Snapshots/';;
-	"Rectangle Region") scrot -d 0.5 -q 60 -l opacity=10 -s -f -z '%Y-%m-%d-%H-%M-%S.png' -e 'mv $f ~/Documents/Snapshots/';;
-	*) exit;;
+	"Current Window")
+        scrot -d 0.5 -q 60 -u -z '%Y-%m-%d-%H-%M-%S.png' -e 'mv $f ~/Documents/Snapshots/'
+        ;;
+	"Rectangle Region")
+        scrot -d 0.5 -q 60 -l opacity=10 -s -f -z '%Y-%m-%d-%H-%M-%S.png' -e 'mv $f ~/Documents/Snapshots/'
+        ;;
+	*)
+        exit
+        ;;
 esac

@@ -16,7 +16,6 @@ then
     nss=$(tmux ls -F '#{session_name}|#{?session_attached,attached,not attached}' \
         2>/dev/null | sort -n | tail -n 1 | cut -d '|' -f1)
     let nss=nss+1
-    echo $nss
     xterm -T "Term$nss" -e "tmux"
 else
     xterm -T "Term$session" -e "tmux attach -t "$session""
