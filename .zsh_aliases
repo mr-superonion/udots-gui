@@ -12,10 +12,10 @@ alias open='xdg-open &>/dev/null'
 alias ta="tmux attach -t"
 alias tl="tmux ls"
 #directory
-alias got="cd ~/Documents/Research/Notes/TODO"
-alias gop="cd ~/Documents/Research/Papers"
-alias goc="cd $homeSys/code"
-alias gow="cd ~/Tmp/Writtings"
+alias gtodo="cd ~/Documents/Research/Notes/TODO"
+alias gpaper="cd ~/Documents/Research/Papers"
+alias gcode="cd $homeSys/code"
+alias gwrit="cd ~/Tmp/Writtings"
 # ds9
 alias ds2='ds9 -lock frame IMAGE -lock scale yes'
 # systemlog
