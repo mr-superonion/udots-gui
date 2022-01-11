@@ -4,12 +4,13 @@ session=$(tmux ls -F '#{session_name}|#{?session_attached,attached,not attached}
     2>/dev/null | grep work | tail -n 1 | cut -d '|' -f1)
 if [ "$session" = "" ]
 then
-    tmux new-session -s work -c "$HOME/work/cosmicShear" -d
-    tmux split-window -v -p 33 -c "$HOME/work/cosmicShear"
+    tmux new-session -s work -n paper -c "$HOME/work/cosmicShear/notebooks/paper" -d
+    tmux split-window -t work.1 -v -p 26 -c "$HOME/work/cosmicShear/notebooks/paper" -d
+    tmux neww -t work -n html -c "$HOME/work/cosmicShear/notebooks/html" -d
     $FILEMANAGER ~/Documents/Research/Papers/Galaxy/cosmicShear/
     xterm -T "work" -e "tmux attach -t work"
 else
     xterm -T "$session" -e "tmux attach -t "$session""
 fi
 
-rsync -zav --update --delete-before --no-links $gw_ipmu:/work/xiangchong.li/work/cosmicShear "$HOME/work/"
+rsync -zav --update --no-links --delete-before $gw_ipmu:/work/xiangchong.li/work/cosmicShear "$HOME/work/"
