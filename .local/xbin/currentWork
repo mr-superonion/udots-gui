@@ -10,7 +10,12 @@ then
     $FILEMANAGER ~/Documents/Research/Papers/Galaxy/cosmicShear/
     xterm -T "work" -e "tmux attach -t work"
 else
-    xterm -T "$session" -e "tmux attach -t "$session""
+    ss2=$(tmux ls -F '#{session_name}|#{?session_attached,attached,not attached}' \
+        2>/dev/null | grep -v 'not attached' | grep work | tail -n 1 | cut -d '|' -f1)
+    if [ "$ss2" = "" ]
+    then
+        xterm -T "work" -e "tmux attach -t work"
+    fi
 fi
 
-rsync -zav --update --no-links --delete-before $gw_ipmu:/work/xiangchong.li/work/cosmicShear "$HOME/work/"
+rsync -zav --update --no-links $gw_ipmu:/work/xiangchong.li/work/cosmicShear "$HOME/work/"
