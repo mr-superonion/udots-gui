@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+session=$(tmux ls -F '#{session_name}|#{?session_attached,attached,not attached}' \
+    2>/dev/null | grep work | tail -n 1 | cut -d '|' -f1)
+if [ "$session" = "" ]
+then
+    tmux new-session -s work -c "$HOME/work/cosmicShear" -d
+    tmux split-window -v -p 33 -c "$HOME/work/cosmicShear"
+    $FILEMANAGER ~/Documents/Research/Papers/Galaxy/cosmicShear/
+    xterm -T "work" -e "tmux attach -t work"
+else
+    xterm -T "$session" -e "tmux attach -t "$session""
+fi
+
+rsync -zav --update --delete-before --no-links $gw_ipmu:/work/xiangchong.li/work/cosmicShear "$HOME/work/"
