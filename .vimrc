@@ -178,7 +178,7 @@ nnoremap <Bar><Bar> <Esc>/<+\h*+><Enter><S-N>"_ca>
 " autocmd BufWritePost citation.bib silent! execute "!bibtex ms.aux >/dev/null 2>&1" | redraw!
 
 " md
-autocmd BufWritePost *.md silent! execute "!pandoc -c http://gfarm.ipmu.jp/~xiangchong.li/me/mystyle.css -s % --mathjax -o '%:r'.html  >/dev/null 2>&1" | redraw!
+autocmd BufWritePost *.md silent! execute "!pandoc -c http://gfarm.ipmu.jp/~xiangchong.li/me/mystyle.css -s % --katex -o '%:r'.html  >/dev/null 2>&1" | redraw!
 
 " Spell check
 set spelllang=en

@@ -150,4 +150,10 @@ nnoremap <leader>gl :diffget //3
 nnoremap <leader>gh :diffget //2
 nnoremap <leader>gs :G<CR>
 
+" Tag bar
+nnoremap <silent> <F10> :TagbarToggle<CR>
+nnoremap ]] <cmd>TagbarJumpNext<cr>
+nnoremap [[ <cmd>TagbarJumpPrev<cr>
+nnoremap <leader>tt <cmd>TagbarToggle<cr>
+let g:tagbar_width = max([40, winwidth(0) / 4])
 source ~/.vimrc
