@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+rsync -zav --update --no-links $gw_ipmu:/work/xiangchong.li/work/cosmicShear "$HOME/work/"
+
+wname="Term-CS"
+session=$(tmux ls -F '#{session_name}|#{?session_attached,attached,not attached}' \
+    2>/dev/null | grep "$wname" | tail -n 1 | cut -d '|' -f1)
+if [ "$session" = "" ]
+then
+    tmux new-session -s "$wname" -n paper -c "$HOME/work/cosmicShear/notebooks/paper" -d
+    tmux split-window -t "$wname".1 -v -p 26 -c "$HOME/work/cosmicShear/notebooks/paper" -d
+    tmux neww -t "$wname" -n html -c "$HOME/work/cosmicShear/notebooks/html" -d
+    $FILEMANAGER ~/Documents/Research/Papers/Galaxy/cosmicShear/
+    xterm -T "$wname" -e "tmux attach -t $wname"
+else
+    ss2=$(tmux ls -F '#{session_name}|#{?session_attached,attached,not attached}' \
+        2>/dev/null | grep -v 'not attached' | grep "$wname" | tail -n 1 | cut -d '|' -f1)
+    if [ "$ss2" = "" ]
+    then
+        xterm -T "$wname" -e "tmux attach -t $wname"
+    fi
+fi
+
