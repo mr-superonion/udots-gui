@@ -18,7 +18,6 @@ p=$(echo "$info" | awk '{print $3}')
 # input is the $(which jupyter) on server
 
 port1="$p"
-port2=$(($RANDOM%63000+2001))
 client=$(ssh "$s" cat \$homeSys/cache/jupyterlab.info | awk '{print $1}')
 port3=$(ssh "$s" cat \$homeSys/cache/jupyterlab.info | awk '{print $2}')
 # kill existing connections
@@ -32,4 +31,4 @@ eval "$cmd"
 url="http://localhost:$port1"
 echo "URL that will open in your browser:"
 echo "$url"
-brave "$url"
+firefox "$url"
