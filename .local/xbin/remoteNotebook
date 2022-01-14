@@ -26,9 +26,7 @@ pids=$(lsof -i :"$port1" | awk '/IPv4/ && /LISTEN/ {print $2}')
 if [ pids ]; then
     kill $pids
 fi
-# indirect
-#cmd="ssh -f -L "$port1":localhost:$port2 $s ssh -L "$port2":localhost:"$port3" -N "$client""
-cmd="ssh -f -L "$port1":localhost:$port3 $s -N "$client""
+cmd="ssh -f -N -L "$port1":"$client":$port3 $s"
 echo "$cmd"
 eval "$cmd"
 url="http://localhost:$port1"
