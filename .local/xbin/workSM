@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
 rsync -zav --update --no-links $idark_ipmu:/lustre/work/xiangchong.li/work/FPFS_detect/notebooks "$HOME/work/FPFS_detect/"
+cp "$HOME"/work/FPFS_detect/notebooks/html/* "$HOME"/Documents/Research/Notes/TODO/2022/shear_estimate/
 
 wname="Term-SM"
 session=$(tmux ls -F '#{session_name}|#{?session_attached,attached,not attached}' \

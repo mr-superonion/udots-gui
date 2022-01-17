@@ -38,8 +38,8 @@ defaults={
     sorting_strategy=   "ascending",
     buffer_previewer_maker = new_maker,
     file_ignore_patterns = {
-        ".jpeg",".fits",".png",".svg",".pdf",".dvi",".pickle",
-        ".jpg",".eps",".ps",".xdv", ".git/"
+        ".jpeg$",".fits$",".png$",".svg$",".pdf$",".dvi$",".pickle$",
+        ".jpg$",".eps$",".ps$",".xdv", ".git/"
     },
     layout_stratege="horizontal",
     layout_config = {

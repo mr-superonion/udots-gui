@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+
 rsync -zav --update --no-links $gw_ipmu:/work/xiangchong.li/work/cosmicShear "$HOME/work/"
 
 wname="Term-CS"
