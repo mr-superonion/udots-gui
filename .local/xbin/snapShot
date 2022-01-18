@@ -8,12 +8,13 @@
 chosen=$(printf "Current Window\nRectangle Region" | dmenu -i -p 'snapshot on?' -l 20 -fn Arial)
 [ "$chosen" != "" ] || exit
 
+fname='%Y-%m-%d-%H-%M-%S.png'
 case "$chosen" in
 	"Current Window")
-        scrot -d 0.5 -q 60 -u -z '%Y-%m-%d-%H-%M-%S.png' -e 'mv $f ~/Documents/Snapshots/'
+        scrot -d 0.5 -q 60 -u -z "$fname" -e 'xclip -selection clipboard -t image/png -i $f && mv $f ~/Documents/Snapshots/'
         ;;
 	"Rectangle Region")
-        scrot -d 0.5 -q 60 -l opacity=10 -s -f -z '%Y-%m-%d-%H-%M-%S.png' -e 'mv $f ~/Documents/Snapshots/'
+        scrot -d 0.5 -q 60 -l opacity=10 -s -f -z "$fname" -e 'xclip -selection clipboard -t image/png -i $f && mv $f ~/Documents/Snapshots/'
         ;;
 	*)
         exit
