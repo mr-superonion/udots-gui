@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-rsync -zav --update --no-links $gw_ipmu:/work/xiangchong.li/work/cosmicShear "$HOME/work/"
+rsync -zav --update --no-links $gw_ipmu:/work/xiangchong.li/work/cosmicShear/notebooks "$HOME/work/cosmicShear/"
 
 wname="Term-CS"
 session=$(tmux ls -F '#{session_name}|#{?session_attached,attached,not attached}' \
