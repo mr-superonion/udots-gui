@@ -1,7 +1,6 @@
 " Unused keys
 nnoremap s <Nop>
-nnoremap x <Nop>
-nnoremap X <Nop>
+
 nnoremap J 10<c-e>
 nnoremap K 10<c-y>
 inoremap <C-N> <Nop>
@@ -125,6 +124,11 @@ set noswapfile
 set noundofile
 
 " Copy and paste
+" clipboard
+nnoremap x "_d
+xnoremap x "_d
+nnoremap xx "_dd
+nnoremap X "_D
 " " Vim's auto indentation feature does not work properly with text copied
 " from outside of Vim. Press the <F2> key to toggle paste mode on/off.
 nnoremap <F2> :set invpaste paste?<CR>
