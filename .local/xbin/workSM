@@ -1,7 +1,8 @@
 #!/usr/bin/env sh
 
-rsync -zav --update --no-links --delete-before $idark_ipmu:/lustre/work/xiangchong.li/work/FPFS_detect/notebooks/*.ipynb "$HOME/work/FPFS_detect/notebooks/"
-rsync -zav --update --no-links --delete-before $idark_ipmu:/lustre/work/xiangchong.li/work/FPFS_detect/notebooks/run "$HOME/work/FPFS_detect/notebooks/"
+rsync -zav --update --no-links --delete-before $idark_ipmu:/lustre/work/xiangchong.li/work/FPFS2/sdet_notebooks/*.ipynb "$HOME/work/FPFS_detect/notebooks/"
+rsync -zav --update --no-links --delete-before $idark_ipmu:/lustre/work/xiangchong.li/work/FPFS2/sdet_notebooks/run "$HOME/work/FPFS_detect/notebooks/"
+rsync -zav --update --no-links --delete-before $idark_ipmu:/lustre/work/xiangchong.li/work/FPFS2/sdet_notebooks/tests "$HOME/work/FPFS_detect/notebooks/"
 rsync -zav --update --no-links $idark_ipmu:/lustre/work/xiangchong.li/work/FPFS_detect/notebooks/html "$HOME/work/FPFS_detect/notebooks/"
 rsync -zav --update --no-links $idark_ipmu:/lustre/work/xiangchong.li/work/FPFS_detect/notebooks/paper "$HOME/work/FPFS_detect/notebooks/"
 cp "$HOME"/work/FPFS_detect/notebooks/html/* "$HOME"/Documents/Research/Notes/TODO/2022/shear_estimate/
