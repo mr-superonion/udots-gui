@@ -1,9 +1,13 @@
 #!/usr/bin/env sh
 
-git -C "$HOME/work/cosmicShear/" pull
-rsync -zav --update --no-links $gw_ipmu:/work/xiangchong.li/work/cosmicShear/notebooks "$HOME/work/cosmicShear/"
+git -C "$HOME/work/cosmicShear/notebooks/" pull
+rsync -zav --update --no-links --delete-before $gw_ipmu:/work/xiangchong.li/work/cosmicShear/notebooks/ipynb "$HOME/work/cosmicShear/notebooks/"
+rsync -zav --update --no-links --delete-before $gw_ipmu:/work/xiangchong.li/work/cosmicShear/notebooks/run "$HOME/work/cosmicShear/notebooks/"
+rsync -zav --update --no-links --delete-before $gw_ipmu:/work/xiangchong.li/work/cosmicShear/notebooks/hsc_2pcf "$HOME/work/cosmicShear/notebooks/"
+rsync -zav --update --no-links $gw_ipmu:/work/xiangchong.li/work/cosmicShear/notebooks/html "$HOME/work/cosmicShear/notebooks/"
+rsync -zav --update --no-links $gw_ipmu:/work/xiangchong.li/work/cosmicShear/notebooks/paper "$HOME/work/cosmicShear/notebooks/"
 
-wname="Term-CS"
+wname="Term-cs"
 session=$(tmux ls -F '#{session_name}|#{?session_attached,attached,not attached}' \
     2>/dev/null | grep "$wname" | tail -n 1 | cut -d '|' -f1)
 if [ "$session" = "" ]
