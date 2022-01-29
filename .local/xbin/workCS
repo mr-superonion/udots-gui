@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 
+git -C "$HOME/work/cosmicShear/" pull
 rsync -zav --update --no-links $gw_ipmu:/work/xiangchong.li/work/cosmicShear/notebooks "$HOME/work/cosmicShear/"
 
 wname="Term-CS"
