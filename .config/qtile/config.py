@@ -457,10 +457,10 @@ mouse = [
 dgroups_key_binder = None
 #dgroups_app_rules = []
 main = None
-follow_mouse_focus = True
+follow_mouse_focus = False
 bring_front_click = False
 cursor_warp = False
-auto_fullscreen = True
+auto_fullscreen = False
 focus_on_window_activation = "smart"
 
 floating_layout = layout.Floating(float_rules=[
