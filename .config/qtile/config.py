@@ -459,9 +459,11 @@ dgroups_key_binder = None
 main = None
 follow_mouse_focus = False
 bring_front_click = False
-cursor_warp = False
+cursor_warp = True
 auto_fullscreen = False
-focus_on_window_activation = "smart"
+focus_on_window_activation = "focus"
+
+
 
 floating_layout = layout.Floating(float_rules=[
     *layout.Floating.default_float_rules,
