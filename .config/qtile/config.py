@@ -461,7 +461,7 @@ follow_mouse_focus = False
 bring_front_click = False
 cursor_warp = True
 auto_fullscreen = False
-focus_on_window_activation = "focus"
+focus_on_window_activation = "smart"
 
 
 
