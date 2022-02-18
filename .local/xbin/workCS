@@ -2,7 +2,7 @@
 
 git -C "$HOME/work/cosmicShear/notebooks/" pull
 rsync -zav --update --no-links --delete-before $gw_ipmu:/work/xiangchong.li/work/cosmicShear/notebooks/ipynb "$HOME/work/cosmicShear/notebooks/"
-rsync -zav --update --no-links --delete-before $gw_ipmu:/work/xiangchong.li/work/cosmicShear/notebooks/run "$HOME/work/cosmicShear/notebooks/"
+rsync -zav --update --no-links --delete-before $gw_ipmu:/work/xiangchong.li/work/cosmicShear/notebooks/python "$HOME/work/cosmicShear/notebooks/"
 rsync -zav --update --no-links --delete-before $gw_ipmu:/work/xiangchong.li/work/cosmicShear/notebooks/hsc_2pcf "$HOME/work/cosmicShear/notebooks/"
 rsync -zav --update --no-links $gw_ipmu:/work/xiangchong.li/work/cosmicShear/notebooks/html "$HOME/work/cosmicShear/notebooks/"
 rsync -zav --update --no-links $gw_ipmu:/work/xiangchong.li/work/cosmicShear/notebooks/paper "$HOME/work/cosmicShear/notebooks/"
