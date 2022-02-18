@@ -1,11 +1,8 @@
 #!/usr/bin/env sh
 
-git -C "$HOME/work/cosmicShear/notebooks/" pull
-rsync -zav --update --no-links --delete-before $gw_ipmu:/work/xiangchong.li/work/cosmicShear/notebooks/ipynb "$HOME/work/cosmicShear/notebooks/"
-rsync -zav --update --no-links --delete-before $gw_ipmu:/work/xiangchong.li/work/cosmicShear/notebooks/python "$HOME/work/cosmicShear/notebooks/"
-rsync -zav --update --no-links --delete-before $gw_ipmu:/work/xiangchong.li/work/cosmicShear/notebooks/hsc_2pcf "$HOME/work/cosmicShear/notebooks/"
 rsync -zav --update --no-links $gw_ipmu:/work/xiangchong.li/work/cosmicShear/notebooks/html "$HOME/work/cosmicShear/notebooks/"
 rsync -zav --update --no-links $gw_ipmu:/work/xiangchong.li/work/cosmicShear/notebooks/paper "$HOME/work/cosmicShear/notebooks/"
+cp "$HOME"/work/cosmicShear/notebooks/html/* "$HOME"/Documents/Research/Notes/TODO/2022/cosmicShear/
 
 wname="Term-cs"
 session=$(tmux ls -F '#{session_name}|#{?session_attached,attached,not attached}' \
@@ -15,7 +12,6 @@ then
     tmux new-session -s "$wname" -n paper -c "$HOME/work/cosmicShear/notebooks/paper" -d
     tmux split-window -t "$wname".1 -v -p 26 -c "$HOME/work/cosmicShear/notebooks/paper" -d
     tmux neww -t "$wname" -n html -c "$HOME/work/cosmicShear/notebooks/html" -d
-    $FILEMANAGER ~/Documents/Research/Papers/Galaxy/cosmicShear/
     xterm -T "$wname" -e "tmux attach -t $wname"
 else
     ss2=$(tmux ls -F '#{session_name}|#{?session_attached,attached,not attached}' \
