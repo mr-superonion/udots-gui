@@ -31,4 +31,5 @@ eval "$cmd"
 url="http://localhost:$port1"
 echo "URL that will open in your browser:"
 echo "$url"
-brave "$url"
+rm -rf ~/.cache && firefox "$url"
+
