@@ -81,7 +81,10 @@ set guioptions=T
 set incsearch
 
 " Automatically wrap text that extends beyond the screen length.
-set nowrap
+" set nowrap
+set wrap
+set columns=80
+set tw=80
 
 " Color setup"
 if has('termguicolors')
@@ -172,6 +175,13 @@ inoremap "" ""<Esc>i
 
 nnoremap \\ <Esc>/<+\h*+><Enter>"_ca>
 nnoremap <Bar><Bar> <Esc>/<+\h*+><Enter><S-N>"_ca>
+
+nnoremap j gj
+nnoremap k gk
+
+nnoremap $ g$
+nnoremap 0 g0
+
 
 " Auto commands
 

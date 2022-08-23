@@ -25,11 +25,14 @@ pids=$(lsof -i :"$port1" | awk '/IPv4/ && /LISTEN/ {print $2}')
 if [ pids ]; then
     kill $pids
 fi
+
+rm -rf ~/.cache
+
 cmd="ssh -f -N -L "$port1":"$client":$port3 $s"
 echo "$cmd"
 eval "$cmd"
 url="http://localhost:$port1"
 echo "URL that will open in your browser:"
 echo "$url"
-rm -rf ~/.cache && firefox "$url"
 
+brave "$url"
