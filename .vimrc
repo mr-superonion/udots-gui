@@ -65,7 +65,6 @@ autocmd VimEnter * silent !echo -ne "\e[2 q"
 " Line number
 set nu
 set relativenumber
-set colorcolumn=80
 
 set history=1000
 
@@ -83,8 +82,9 @@ set incsearch
 " Automatically wrap text that extends beyond the screen length.
 " set nowrap
 set wrap
-set columns=80
-set tw=80
+" set columns=90
+set colorcolumn=80
+" set textwidth=80
 
 " Color setup"
 if has('termguicolors')
@@ -178,7 +178,6 @@ nnoremap <Bar><Bar> <Esc>/<+\h*+><Enter><S-N>"_ca>
 
 nnoremap j gj
 nnoremap k gk
-
 nnoremap $ g$
 nnoremap 0 g0
 
@@ -205,7 +204,6 @@ highlight SpellBad ctermfg=009 ctermbg=000 cterm=underline
 " autocmd BufEnter,BufRead,BufNewFile *.md setlocal spell
 " autocmd BufEnter,BufRead,BufNewFile *.tex setlocal spell
 " autocmd BufEnter,BufRead,BufNewFile *.md set filetype=markdown
-
 
 " All files
 " Automatically deletes all trailing whitespace on save.
