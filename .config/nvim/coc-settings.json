@@ -1,4 +1,6 @@
 {
+
     "python.analysis.stubPath": "/home/xiangchong/.local/cache/typings",
-    "python.analysis.useLibraryCodeForTypes": false,
+    "python.analysis.useLibraryCodeForTypes": false
+
 }
