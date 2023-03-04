@@ -87,7 +87,7 @@ nmap <leader>cc <Plug>CommentaryLine
 
 " telescope
 " lua setups
-lua require("xtele")
+lua require("tele")
 " Find files using Telescope command-line sugar.
 nnoremap <leader>fr <cmd>Telescope resume<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
