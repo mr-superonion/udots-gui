@@ -22,7 +22,7 @@ passwd=$(echo "$chosen" | awk '{print $3}')
 if [ "$server" == "IPMU" ]
 then
 expect -f - <<EOD
-    set timeout 3
+    set timeout 7
     spawn /opt/cisco/anyconnect/bin/vpn connect vpngw.ipmu.jp
     expect "Group*" {send -- "\r"}
     expect "Username*" {send -- "$usrname\r"}
