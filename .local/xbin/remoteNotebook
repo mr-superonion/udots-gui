@@ -18,8 +18,8 @@ p=$(echo "$info" | awk '{print $3}')
 # input is the $(which jupyter) on server
 
 port1="$p"
-client=$(ssh "$s" cat \$homeSys/cache/jupyterlab.info | awk '{print $1}')
-port3=$(ssh "$s" cat \$homeSys/cache/jupyterlab.info | awk '{print $2}')
+client=$(ssh "$s" cat \$HOME/.cache/jupyterlab.info | awk '{print $1}')
+port3=$(ssh "$s" cat \$HOME/.cache/jupyterlab.info | awk '{print $2}')
 # kill existing connections
 pids=$(lsof -i :"$port1" | awk '/IPv4/ && /LISTEN/ {print $2}')
 if [ pids ]; then

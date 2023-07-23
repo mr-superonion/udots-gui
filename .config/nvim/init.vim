@@ -35,18 +35,10 @@ set noshowcmd  " to get rid of display of last command
 set shortmess+=F  " to get rid of the file name displayed in the command line bar
 
 " vimtex
-let g:vimtex_compiler_latexmk = {
-    \ 'options' : [
-    \   '-pdf',
-    \   '-pdflatex="xelatex --shell-escape %O %S"',
-    \   '-verbose',
-    \   '-file-line-error',
-    \   '-synctex=1',
-    \   '-interaction=nonstopmode',
-    \ ]
-    \}
 let g:vimtex_view_general_viewer='zathura'
 let g:vimtex_view_method='zathura'
+let g:vimtex_compiler_method = 'latexrun'
+
 hi link texMathZoneG texMathZoneEnv
 hi link texMathZoneGS texMathZoneEnvStarred
 hi link texMathZoneW texMathZone
