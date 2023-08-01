@@ -4,12 +4,10 @@ let maplocalleader = " "
 
 call plug#begin('~/.vim/plugged')
     " display
-    Plug 'tpope/vim-commentary'
-    " Plug 'junegunn/vim-easy-align'
-    " Plug 'micha/vim-colors-solarized'
     Plug 'sainnhe/gruvbox-material'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+    Plug 'tpope/vim-commentary'
     Plug 'mr-superonion/vim-tmux-navigator'
     Plug 'MattesGroeger/vim-bookmarks'
     Plug 'preservim/tagbar'
@@ -27,6 +25,19 @@ call plug#begin('~/.vim/plugged')
     " autocomplete
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
+
+" Color setup"
+set background=dark
+set colorcolumn=80
+
+let g:gruvbox_material_background = 'hard'
+let g:gruvbox_material_enable_italic = 1
+let g:gruvbox_material_disable_italic_comment = 1
+let g:airline_theme= 'gruvbox_material'
+colorscheme gruvbox-material
+" let g:airline_theme='molokai'
+set t_Co=256
+syntax on
 
 " display airline
 set cmdheight=1

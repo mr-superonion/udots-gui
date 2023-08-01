@@ -76,30 +76,12 @@ set sidescrolloff=10
 
 " Syntax
 set showmatch
-set guioptions=T
 set incsearch
 
 " Automatically wrap text that extends beyond the screen length.
 " set nowrap
 set wrap
-" set columns=90
-set colorcolumn=80
-" set textwidth=80
-
-" Color setup"
-if has('termguicolors')
-  set termguicolors
-endif
-set background=dark
-
-let g:gruvbox_material_background = 'hard'
-let g:gruvbox_material_enable_italic = 1
-let g:gruvbox_material_disable_italic_comment = 1
-colorscheme gruvbox-material
-let g:airline_theme= 'gruvbox_material'
-" let g:airline_theme='molokai'
-
-syntax on
+set linebreak
 
 " Window Control
 nnoremap <C-w>" :wincmd =<CR>
@@ -138,7 +120,7 @@ nnoremap <F2> :set invpaste paste?<CR>
 imap <F2> <C-O>:set invpaste paste?<CR>
 set pastetoggle=<F2>
 set clipboard=unnamedplus
-let @*=@+
+" let @*=@+
 
 ""<++>
 " Visual mode yank selected area to tmux paste buffer (clipboard)

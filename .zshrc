@@ -20,6 +20,7 @@ RPROMPT=\$vcs_info_msg_0_
 export PROMPT='%F{blue}[%c]%(?.%F{yellow} ➜ .%F{red} x )%f'
 
 export RANGER_LOAD_DEFAULT_RC="False"
+export EDITOR="nvim"
 
 #LD_LID
 export LD_LIBRARY_PATH="$homeSys/lib":$LD_LIBRARY_PATH
