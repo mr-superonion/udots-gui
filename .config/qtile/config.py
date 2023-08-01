@@ -23,7 +23,7 @@ colors = [
     "#FFFFFF",
     "#8FBCBB",
     "#181512",
-    "#1D272A",
+    "#565b5c",
     "#B48EAD",
     "#D08770",
 ]
@@ -31,8 +31,8 @@ colors = [
 layout_theme = {
     "border_width": 3,
     "margin": 0,
-    "border_focus": colors[0],
-    "border_normal": colors[1],
+    "border_focus": colors[1],
+    "border_normal": colors[4],
 }
 
 config_defaults = dict(
@@ -224,7 +224,7 @@ keys = [
     Key([mod, "control"], "q", lazy.spawn("leavePC")),
 ]
 
-groups = [Group(i) for i in "asdfgbqwert"]
+groups = [Group(i, label=i.capitalize()) for i in "asdfgbqwert"]
 
 
 def go_to_group(gn):
@@ -346,14 +346,9 @@ def init_screen1():
     return Screen(
         top=bar.Bar(
             widgets=[
-                widget.CurrentLayoutIcon(
-                    scale=0.75,
-                    foreground=colors[3],
-                ),
-                widget.Sep(**config_defaults),
                 widget.GroupBox(
                     active=colors[2],
-                    inactive=colors[4],
+                    inactive=colors[5],
                     urgent_alert_method="block",
                     highlight_method="block",
                     this_current_screen_border=colors[3],
@@ -366,16 +361,17 @@ def init_screen1():
                     visible_groups=["a", "s", "d", "f", "g"],
                     use_mouse_wheel=False,
                     **config_defaults,
+                    toggle=False,
                 ),
                 widget.Sep(**config_defaults),
                 widget.TaskList(
                     border=colors[0],
                     max_title_width=150,
-                    highlight_method="block",
+                    highlight_method="line",
                     spacing=0,
                     margin=0,
                     padding_x=25,
-                    padding_y=5,
+                    padding_y=2,
                     fontsize=14,
                     txt_floating="[x]",
                     icon_size=0,
@@ -401,14 +397,9 @@ def init_screen2():
     return Screen(
         top=bar.Bar(
             widgets=[
-                widget.CurrentLayoutIcon(
-                    scale=0.75,
-                    foreground=colors[3],
-                ),
-                widget.Sep(**config_defaults),
                 widget.GroupBox(
                     active=colors[2],
-                    inactive=colors[4],
+                    inactive=colors[5],
                     urgent_alert_method="block",
                     highlight_method="block",
                     this_current_screen_border=colors[3],
@@ -426,11 +417,11 @@ def init_screen2():
                 widget.TaskList(
                     border=colors[0],
                     max_title_width=150,
-                    highlight_method="block",
+                    highlight_method="line",
                     spacing=0,
                     margin=0,
                     padding_x=25,
-                    padding_y=5,
+                    padding_y=2,
                     fontsize=14,
                     txt_floating="[x]",
                     icon_size=0,
