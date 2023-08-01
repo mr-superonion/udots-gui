@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env sh
 
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
