@@ -305,6 +305,7 @@ widget_right = [
         font="Source Code Pro Bold",
         fontsize=13,
         format="{CHAR} {percent:2.0%} {hour:d}:{min:02d}",
+        padding_y=1,
     ),
     widget.Sep(linewidth=1, padding=10, foreground=colors[4], background=colors[4]),
     widget.CPU(
@@ -312,6 +313,7 @@ widget_right = [
         background=colors[7],
         font="Source Code Pro Bold",
         fontsize=13,
+        padding_y=1,
     ),
     widget.Sep(linewidth=1, padding=10, foreground=colors[4], background=colors[4]),
     widget.Memory(
@@ -321,6 +323,7 @@ widget_right = [
         fontsize=13,
         measure_mem="G",
         measure_swap="G",
+        padding_y=1,
         format="MEM {MemUsed:02.0f}{mm}/{MemTotal:.0f}{mm}",
     ),
     widget.Sep(linewidth=1, padding=10, foreground=colors[4], background=colors[4]),
@@ -329,6 +332,7 @@ widget_right = [
         background=colors[0],
         font="Source Code Pro Bold",
         fontsize=14,
+        padding_y=1,
         format="%H:%M",
     ),
     widget.Sep(linewidth=1, padding=10, foreground=colors[4], background=colors[4]),
@@ -336,6 +340,7 @@ widget_right = [
         foreground=colors[4],
         background=colors[6],
         fontsize=14,
+        padding_y=1,
         font="Source Code Pro Bold",
         format="%m/%d/%y",
     ),
@@ -358,12 +363,13 @@ def init_screen1():
                     disable_drag=True,
                     spacing=0,
                     padding_x=6,
+                    padding_y=2,
                     visible_groups=["a", "s", "d", "f", "g"],
                     use_mouse_wheel=False,
                     **config_defaults,
                     toggle=False,
                 ),
-                widget.Sep(**config_defaults),
+                widget.Sep(padding= 10, size_percent=100),
                 widget.TaskList(
                     border=colors[0],
                     max_title_width=150,
@@ -387,7 +393,7 @@ def init_screen1():
             ]
             + widget_right,
             opacity=0.95,
-            size=26,
+            size=25,
             background=colors[4],
         )
     )
@@ -409,11 +415,12 @@ def init_screen2():
                     disable_drag=True,
                     spacing=0,
                     padding_x=6,
+                    padding_y=2,
                     visible_groups=["q", "w", "e", "r", "t"],
                     use_mouse_wheel=False,
                     **config_defaults,
                 ),
-                widget.Sep(**config_defaults),
+                widget.Sep(padding= 10, size_percent=100),
                 widget.TaskList(
                     border=colors[0],
                     max_title_width=150,
@@ -430,7 +437,7 @@ def init_screen2():
             ]
             + widget_right,
             opacity=0.95,
-            size=26,
+            size=25,
             background=colors[4],
         )
     )
