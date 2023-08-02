@@ -22,22 +22,22 @@ colors = [
     "#222D32",
     "#FFFFFF",
     "#8FBCBB",
-    "#181512",
+    "#000000",
     "#565b5c",
     "#B48EAD",
     "#D08770",
 ]
 
 layout_theme = {
-    "border_width": 3,
+    "border_width": 2,
     "margin": 0,
-    "border_focus": colors[1],
+    "border_focus": colors[0],
     "border_normal": colors[4],
 }
 
 config_defaults = dict(
-    font="DejaVu Sans Mono",
-    fontsize=17,
+    font="Source Code Pro Bold",
+    fontsize=14,
     padding=5,
 )
 
@@ -303,7 +303,7 @@ widget_right = [
         foreground=colors[4],
         background=colors[6],
         font="Source Code Pro Bold",
-        fontsize=13,
+        fontsize=14,
         format="{CHAR} {percent:2.0%} {hour:d}:{min:02d}",
         padding_y=1,
     ),
@@ -312,7 +312,7 @@ widget_right = [
         foreground=colors[4],
         background=colors[7],
         font="Source Code Pro Bold",
-        fontsize=13,
+        fontsize=14,
         padding_y=1,
         format="CPU {freq_current:.1f}GHz {load_percent:.1f}%"
     ),
@@ -321,7 +321,7 @@ widget_right = [
         foreground=colors[4],
         background=colors[3],
         font="Source Code Pro Bold",
-        fontsize=13,
+        fontsize=14,
         measure_mem="G",
         measure_swap="G",
         padding_y=1,
@@ -334,7 +334,7 @@ widget_right = [
         font="Source Code Pro Bold",
         fontsize=14,
         padding_y=1,
-        format="%H:%M",
+        format="⏲ %H:%M",
     ),
     widget.Sep(linewidth=1, padding=10, foreground=colors[4], background=colors[4]),
     widget.Clock(
@@ -343,7 +343,7 @@ widget_right = [
         fontsize=14,
         padding_y=1,
         font="Source Code Pro Bold",
-        format="%m/%d/%y",
+        format="🗓 %m/%d/%y",
     ),
     widget.Sep(
         linewidth=1, padding=10, foreground=colors[4], background=colors[4]
@@ -390,7 +390,7 @@ def init_screen1():
                     padding_x=25,
                     padding_y=2,
                     fontsize=14,
-                    txt_floating="[x]",
+                    txt_floating="✈  ",
                     icon_size=0,
                     rounded=True,
                 ),
@@ -434,7 +434,7 @@ def init_screen2():
                     padding_x=25,
                     padding_y=2,
                     fontsize=14,
-                    txt_floating="[x]",
+                    txt_floating="✈  ",
                     icon_size=0,
                     rounded=True,
                 ),

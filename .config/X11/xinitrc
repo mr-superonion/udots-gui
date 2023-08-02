@@ -6,7 +6,7 @@
 eval $(ssh-agent)
 
 [ "$(which fcitx 2>/dev/null)" ] && fcitx -d & # input method
-# [ "$(which blueman-tray 2>/dev/null)" ] && blueman-applet & # bluetooth
+[ "$(which blueman-tray 2>/dev/null)" ] && blueman-applet & # bluetooth
 [ "$(which nm-applet 2>/dev/null)" ] && nm-applet & # network
 [ "$(which volumeicon 2>/dev/null)" ] && volumeicon & # network
 # [ "$(which pasystray 2>/dev/null)" ] && pasystray & # volum control

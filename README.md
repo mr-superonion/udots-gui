@@ -9,7 +9,9 @@
 ## Fonts
 
 ```shell
-sudo pacman -S terminus-font
+sudo pacman -S terminus-font # TTY
+sudo pacman -S adobe-source-code-pro-fonts # source code font
+sudo pacman -S nerd-fonts # for emoji
 ```
 
 ## Build-essential
