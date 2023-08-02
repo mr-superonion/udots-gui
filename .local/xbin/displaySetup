@@ -1,6 +1,4 @@
 #!/usr/bin/env sh
-export DISPLAY=:0
-
 feh --bg-fill "$HOME/.config/bg.png"
 
 if ! xrandr |grep "disconnected" |grep -q $dp2; then

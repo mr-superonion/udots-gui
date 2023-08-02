@@ -6,6 +6,12 @@
 
 # prerequisite
 
+## Fonts
+
+```shell
+sudo pacman -S terminus-font
+```
+
 ## Build-essential
 
 ```shell

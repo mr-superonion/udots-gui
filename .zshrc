@@ -18,7 +18,7 @@ export IMAGE="sxiv"
 export OPENER="xdg-open"
 export PAGER="less"
 export WM="qtile"
-export FILEMANAGER="Thunar"
+export FILEMANAGER="pcmanfm"
 
 export sysShell="usr/bin/zsh"
 export docDir="$HOME/Documents/"
