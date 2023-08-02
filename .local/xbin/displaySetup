@@ -1,10 +1,11 @@
 #!/usr/bin/env sh
 export DISPLAY=:0
 
+feh --bg-fill "$HOME/.config/bg.png"
+
 if ! xrandr |grep "disconnected" |grep -q $dp2; then
     xrandr --output $dp1 --primary --mode $dpRes1 --output $dp2 --auto --right-of $dp1
 else
     xrandr --output $dp1 --primary --mode $dpRes1 --output $dp2 --off
 fi
 
-#feh --bg-fill "$HOME/Tmp/wallpaper.jpg"
