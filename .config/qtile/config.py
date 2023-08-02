@@ -314,6 +314,7 @@ widget_right = [
         font="Source Code Pro Bold",
         fontsize=13,
         padding_y=1,
+        format="CPU {freq_current:.1f}GHz {load_percent:.1f}%"
     ),
     widget.Sep(linewidth=1, padding=10, foreground=colors[4], background=colors[4]),
     widget.Memory(
@@ -324,7 +325,7 @@ widget_right = [
         measure_mem="G",
         measure_swap="G",
         padding_y=1,
-        format="MEM {MemUsed:02.0f}{mm}/{MemTotal:.0f}{mm}",
+        format="MEM {MemUsed:02.0f}{mm}/{MemTotal:02.0f}{mm}",
     ),
     widget.Sep(linewidth=1, padding=10, foreground=colors[4], background=colors[4]),
     widget.Clock(
@@ -344,7 +345,17 @@ widget_right = [
         font="Source Code Pro Bold",
         format="%m/%d/%y",
     ),
+    widget.Sep(
+        linewidth=1, padding=10, foreground=colors[4], background=colors[4]
+    ),
 ]
+
+widget_tray = [
+    widget.Systray(
+        background=colors[4],
+    ),
+    widget.Sep(linewidth=1, padding=10, foreground=colors[4], background=colors[4]),
+    ]
 
 
 def init_screen1():
@@ -383,15 +394,8 @@ def init_screen1():
                     icon_size=0,
                     rounded=True,
                 ),
-                widget.Systray(
-                    background=colors[4],
-                    **config_defaults,
-                ),
-                widget.Sep(
-                    linewidth=1, padding=10, foreground=colors[4], background=colors[4]
-                ),
             ]
-            + widget_right,
+            + widget_right + widget_tray,
             opacity=0.95,
             size=25,
             background=colors[4],
