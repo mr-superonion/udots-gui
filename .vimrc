@@ -204,3 +204,8 @@ nnoremap <S-h> :tabprevious<CR>
 
 " set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
 
+if exists('+termguicolors')
+    set termguicolors
+endif
+
+

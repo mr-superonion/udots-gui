@@ -4,9 +4,6 @@
 # Make sure we have dmemu
 [ "$(which dmenu)" ] || exit
 
-# Initialization
-[ "$(ssh-add -l 2>/dev/null)" ] || ssh-add ~/.ssh/id_rsa
-
 # Which server to choose
 chosen=$(grep -v "#" $homeSys/xshare/server.info | awk '{print $1}'| dmenu -g 1 -i -p 'choose the ssh server' -l 20 -fn Arial)
 [ "$chosen" != "" ] || exit

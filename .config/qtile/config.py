@@ -7,14 +7,13 @@ from libqtile.command import lazy
 
 
 if qtile.core.name == "x11":
-    term = "urxvt"
+    term = "xterm"
 elif qtile.core.name == "wayland":
     term = "foot"
 
 
 mod = "mod1"
 win = "mod4"
-myTerm = "xterm"
 wmname = "LG3D"
 # colors  =   ["#6F9FE3","#222D32","#FFFFFF","#002b36"]
 colors = [
@@ -30,7 +29,7 @@ colors = [
 
 layout_theme = {
     "border_width": 2,
-    "margin": 0,
+    "margin": 2,
     "border_focus": colors[0],
     "border_normal": colors[4],
 }
@@ -205,14 +204,28 @@ keys = [
             extension.DmenuRun(
                 dmenu_prompt=" ➜ ",
                 dmenu_font="Ubuntu",
-                background=colors[5],
-                selected_background=colors[3],
+                background=colors[1],
+                selected_background=colors[5],
+            )
+        ),
+    ),
+    Key(
+        [mod, "control"],
+        "L",
+        lazy.run_extension(
+            extension.WindowList(
+                dmenu_prompt="Window: ",
+                dmenu_font="Ubuntu",
+                background=colors[1],
+                selected_background=colors[5],
+                item_format="{group}: {window}",
+                dmenu_ignorecase=True,
+                # dmenu_lines=100,
             )
         ),
     ),
     Key([mod], "p", lazy.spawn("snapShot")),
     Key([mod], "v", lazy.spawn("recordClipBoard")),
-    Key([mod], "F4", lazy.window.kill()),
     # Brightness control
     Key([mod], "k", lazy.spawn("xbacklight -inc 8")),
     Key([mod], "j", lazy.spawn("xbacklight -dec 8")),
@@ -314,18 +327,18 @@ widget_right = [
         font="Source Code Pro Bold",
         fontsize=14,
         padding_y=1,
-        format="CPU {freq_current:.1f}GHz {load_percent:.1f}%"
+        format="⚙️ {freq_current:.1f}GHz {load_percent:.1f}%"
     ),
     widget.Sep(linewidth=1, padding=10, foreground=colors[4], background=colors[4]),
     widget.Memory(
         foreground=colors[4],
         background=colors[3],
         font="Source Code Pro Bold",
-        fontsize=14,
         measure_mem="G",
         measure_swap="G",
+        fontsize=14,
         padding_y=1,
-        format="MEM {MemUsed:02.0f}{mm}/{MemTotal:02.0f}{mm}",
+        format="💾 {MemUsed:02.0f}{mm}/{MemTotal:02.0f}{mm}",
     ),
     widget.Sep(linewidth=1, padding=10, foreground=colors[4], background=colors[4]),
     widget.Clock(
@@ -355,7 +368,10 @@ widget_tray = [
         background=colors[4],
     ),
     widget.Sep(linewidth=1, padding=10, foreground=colors[4], background=colors[4]),
-    ]
+]
+
+# widget_tray = [
+# ]
 
 
 def init_screen1():
@@ -374,7 +390,7 @@ def init_screen1():
                     disable_drag=True,
                     spacing=0,
                     padding_x=6,
-                    padding_y=2,
+                    padding_y=5,
                     visible_groups=["a", "s", "d", "f", "g"],
                     use_mouse_wheel=False,
                     **config_defaults,
@@ -388,7 +404,7 @@ def init_screen1():
                     spacing=0,
                     margin=0,
                     padding_x=25,
-                    padding_y=2,
+                    padding_y=3,
                     fontsize=14,
                     txt_floating="✈  ",
                     icon_size=0,
@@ -492,7 +508,7 @@ floating_layout = layout.Floating(
         Match(wm_class="makebranch"),
         Match(wm_class="maketag"),
         Match(wm_class="Gimp"),
-        Match(wm_class="zoom"),
+        # Match(wm_class="zoom"),
         Match(wm_class="skype"),
         Match(wm_class="Display-im6.q16"),
         Match(wm_class="ds9.tcl"),
@@ -504,6 +520,7 @@ floating_layout = layout.Floating(
         Match(wm_class="ssh-askpass"),
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
+        Match(title="dialog"),  # GPG key password entry
         Match(wm_type="Module"),
         Match(wm_type="Terminator Preferences"),
         Match(wm_type="Search Dialog"),
@@ -528,11 +545,14 @@ floating_layout = layout.Floating(
 #         file.write('\\')
 
 
-@hook.subscribe.client_name_updated
-def set_name(client):
-    client.name = client.name.split(" ")[-1]
-    client.name = client.name.split("/")[-1]
-    client.name = client.name.split(".")[0]
+# @hook.subscribe.client_name_updated
+# def set_name(client):
+#     # client.name = client.name.split(" ")[-1]
+#     cnlist = client.name.split("/")
+#     name = ""
+#     for cc in cnlist[:-1]:
+#         name = cc[0] + "/" + name
+#     client.name = name + cnlist[-1].split(".")[0]
 
 
 @hook.subscribe.client_focus
