@@ -312,14 +312,9 @@ layouts = [
 ]
 
 widget_right = [
-    widget.Battery(
-        foreground=colors[4],
-        background=colors[6],
-        font="Source Code Pro Bold",
-        fontsize=14,
-        format="{CHAR} {percent:2.0%} {hour:d}:{min:02d}",
-        padding_y=1,
-    ),
+    widget.BatteryIcon(
+            theme_path="~/.config/qtile/icons/battery_icons_vert"
+            ),
     widget.Sep(linewidth=1, padding=10, foreground=colors[4], background=colors[4]),
     widget.CPU(
         foreground=colors[4],

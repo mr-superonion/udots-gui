@@ -20,7 +20,6 @@ choices=(
 )
 
 open_command='xdg-open'
-open_manager_command=$FILEMANAGER
 
 write_selection_to_history_file() {
     sed -i "\:${selected_path}:d" "$history_file"
@@ -32,7 +31,7 @@ while : ; do
     prompt="$(basename $selected_path)"
     dmenu_result="$(printf '%s\n' "${choices[@]}" | dmenu -i -p "$prompt" -l 10)" || exit 1
     if [ "$dmenu_result" = '<open file manager here>' ]; then
-        $open_manager_command "$selected_path"
+        $open_command "$selected_path"
         write_selection_to_history_file
         exit 0
     fi
