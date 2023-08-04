@@ -26,7 +26,7 @@ alias mmmemo='vim ~/Documents/Certificates/.mm.csv'
 # dotfiles config
 alias config='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias cleanhistory="sed -i '/cd/d;/mv/d;/ls/d;/top/d;/;clear$/d;/exit/d;/boot/d;/vim/d;/ipython/d;/rm/d;/mkdir/d;/displaySetup/d;/;sh/d;/^$/d;/echo/d;/;config/d;/;xrandr$/d;/git stat/d;/;update/d;/;locate/d;/;git commit/d;/;git add/d;/;sxiv/d;/;cp/d;/;ds9/d;/;git diff/d;/;scp/d;/;pacman/d;/;kill/d;/;.\//d;/;wget/d;/;zathura/d' $HOME/.zsh_history"
-alias checkhistory="config checkout -- ~/.zsh_history"
+alias checkhistory="config checkout -- $XDG_DATA_HOME/zsh_history"
 
 alias ls="ls --color=auto"
 
