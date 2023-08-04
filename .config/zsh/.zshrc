@@ -60,6 +60,7 @@ autoload -Uz compinit
 compinit
 compdef vim='nvim'
 compdef config='git'
+compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
 setopt complete_aliases
 
 ## vim-like

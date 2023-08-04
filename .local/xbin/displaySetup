@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-feh --bg-fill "$HOME/.config/bg.png"
+feh --no-fehbg --bg-fill "$HOME/.config/bg.png"
 
 if ! xrandr |grep "disconnected" |grep -q $dp2; then
     xrandr --output $dp1 --primary --mode $dpRes1 --output $dp2 --auto --right-of $dp1

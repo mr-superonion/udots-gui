@@ -3,6 +3,8 @@
 # ~/.xinitrc
 #
 
+ERRFILE="$XDG_CACHE_HOME"/X11/xsession-errors
+
 [ "$(which fcitx 2 > /dev/null)" ] && fcitx -d & # input method
 [ "$(which blueman-tray 2 > /dev/null)" ] && blueman-applet & # bluetooth
 [ "$(which nm-applet 2 > /dev/null)" ] && nm-applet & # network

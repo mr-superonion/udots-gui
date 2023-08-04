@@ -3,7 +3,28 @@ if [ -d "/opt/cisco/anyconnect/bin/" ] ; then
     export PATH="/opt/cisco/anyconnect/bin/:$PATH"
 fi
 
-# SSH
+# XDG setup
+export XDG_CONFIG_HOME="$HOME/.config/"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtk
+export MYPY_CACHE_DIR="$XDG_CACHE_HOME"/mypy
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+export PYTHONSTARTUP="$XDG_CONFIG_HOME"/python/pythonrc
+export TEXMFVAR="$XDG_CACHE_HOME"/texlive/texmf-var
+export IPYTHONDIR="$XDG_CONFIG_HOME"/ipython
+export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
+export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
+export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
+export SSB_HOME="$XDG_DATA_HOME"/zoom
+export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
+
+export ZDOTDIR="$HOME"/.config/zsh
+export HISTFILE="$XDG_DATA_HOME"/zsh_history
 
 # SSH agent
 if [[ ! -f "$XDG_RUNTIME_DIR/ssh-agent.env" ]]; then
@@ -18,9 +39,6 @@ export SSH_ASKPASS=/usr/lib/ssh/x11-ssh-askpass
 export homeSys="$HOME/.local/"
 export PATH="$homeSys/bin":$PATH
 export PATH="$homeSys/xbin":$PATH
-
-# User setup
-export XDG_CONFIG_HOME="$HOME/.config/"
 
 # LIB
 export LIBRARY_PATH="$homeSys/lib":$LIBRARY_PATH

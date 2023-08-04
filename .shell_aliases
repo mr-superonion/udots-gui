@@ -61,3 +61,5 @@ function extract ()
     echo "'$1' is not a valid file"
   fi
 }
+
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget_history"
