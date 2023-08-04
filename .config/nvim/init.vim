@@ -169,4 +169,4 @@ nnoremap ]] <cmd>TagbarJumpNext<cr>
 nnoremap [[ <cmd>TagbarJumpPrev<cr>
 nnoremap <leader>tt <cmd>TagbarToggle<cr>
 let g:tagbar_width = max([40, winwidth(0) / 4])
-source ~/.vimrc
+source ~/.config/nvim/vimrc

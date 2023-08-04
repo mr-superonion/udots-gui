@@ -1,0 +1,14 @@
+## vim-like
+bindkey -v
+export KEYTIMEOUT=1
+
+# Better searching in command mode
+bindkey -M vicmd '?' history-incremental-search-backward
+bindkey -M vicmd '/' history-incremental-search-forward
+
+# Beginning search with arrow keys
+bindkey "^[OA" up-line-or-search
+bindkey "^[OB" down-line-or-search
+bindkey -M vicmd "k" up-line-or-search
+bindkey -M vicmd "j" down-line-or-search
+bindkey "^?" backward-delete-char

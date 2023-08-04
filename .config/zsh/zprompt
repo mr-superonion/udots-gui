@@ -1,0 +1,20 @@
+
+# prompt
+if [ "$TERM" = "linux" ]; then
+    PROMPT='%2~ > '
+else
+    ## prompt
+    autoload -Uz vcs_info
+    zstyle ':vcs_info:*' enable git
+    # Enable checking for (un)staged changes, enabling use of %u and %c
+    zstyle ':vcs_info:*' check-for-changes true
+    # Set custom strings for an unstaged vcs repo changes (*) and staged changes (+)
+    zstyle ':vcs_info:*' unstagedstr '*'
+    zstyle ':vcs_info:*' stagedstr '+'
+    zstyle ':vcs_info:git:*' formats '%F{yellow}(%b%u)'
+    precmd_vcs_info() { vcs_info }
+    precmd_functions+=( precmd_vcs_info )
+    setopt prompt_subst
+    RPROMPT=\$vcs_info_msg_0_
+    export PROMPT='%F{blue}[%c]%(?.%F{yellow} ➜ .%F{red} x )%f'
+fi

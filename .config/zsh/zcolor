@@ -1,0 +1,47 @@
+if [ "$TERM" = "linux" ]; then
+    echo -en "\e]P0262626" #black
+    echo -en "\e]P8393939" #darkgrey
+    echo -en "\e]P1EE5396" #darkred
+    echo -en "\e]P9EE5396" #red
+    echo -en "\e]P242BE64" #darkgreen
+    echo -en "\e]PA42BE64" #green
+    echo -en "\e]P3FFE97B" #brown
+    echo -en "\e]PBFFE97B" #yellow
+    echo -en "\e]P433B1FF" #darkblue
+    echo -en "\e]PC33B1FF" #blue
+    echo -en "\e]P5FF7EB6" #darkmagenta
+    echo -en "\e]PDFF7EB6" #magenta
+    echo -en "\e]P63DDBD9" #darkcyan
+    echo -en "\e]PE3DDBD9" #cyan
+    echo -en "\e]P7DDE1E6" #lightgrey
+    echo -en "\e]PFFFFFFF" #white
+    clear #for background artifacting
+else
+    # Change cursor shape for different vi modes.
+    function zle-keymap-select {
+      if [[ ${KEYMAP} == vicmd ]] ||
+         [[ $1 = 'block' ]]; then
+        echo -ne '\e[1 q'
+
+      elif [[ ${KEYMAP} == main ]] ||
+           [[ ${KEYMAP} == viins ]] ||
+           [[ ${KEYMAP} = '' ]] ||
+           [[ $1 = 'beam' ]]; then
+        echo -ne '\e[5 q'
+      fi
+    }
+    zle -N zle-keymap-select
+
+    # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set
+    # elsewhere)
+    zle-line-init() {
+        zle -K viins
+        echo -ne "\e[5 q"
+    }
+    zle -N zle-line-init
+
+    # Use beam shape cursor on startup.
+    echo -ne '\e[5 q'
+    # Use beam shape cursor for each new prompt.
+    preexec() { echo -ne '\e[5 q' ;}
+fi
