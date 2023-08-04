@@ -1,7 +1,7 @@
 
 # prompt
 if [ "$TERM" = "linux" ]; then
-    PROMPT='%2~ > '
+    PROMPT='[%2~] > '
 else
     ## prompt
     autoload -Uz vcs_info

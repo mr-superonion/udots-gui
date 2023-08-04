@@ -10,7 +10,7 @@ if [ -d "$shareDir" ]; then
 fi
 
 # Default Software
-export TERM="xterm"
+# export TERM="xterm"
 export EDITOR="nvim"
 export READER="zathura"
 export BROWSER="brave"
