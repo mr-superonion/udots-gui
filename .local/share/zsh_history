@@ -54,7 +54,6 @@
 : 1603195568:0;sudo pacman -Rsu linux414-nvidia\*
 : 1603195631:5;sudo pacman -Rsu linux414-nvidia-340xx
 : 1603195940:8;sudo pacman -R xf86-video-intel
-: 1603196314:5;sudo nvidia-xconfig
 : 1603198304:0;mkinitcpio -p linux
 : 1603198313:1;sudo mkinitcpio -p linux
 : 1603198320:23;sudo mkinitcpio -P
@@ -300,7 +299,6 @@
 : 1605948347:0;pactl set-sink-volume $audiosink -5%
 : 1605950706:0;pandoc -c http://member.ipmu.jp/xiangchong.li/mystyle.css -s usefulpac.md --mathjax  -o usefulpac.html
 : 1605952480:0;pandoc -c mystyle.css -s usefulpac.md --mathjax  -o usefulpac.html
-: 1605953652:0;history
 : 1605953681:12;sudo pacman -S tmux
 : 1605963659:0;conda install -c conda-forge nodejs>=10.0.0
 : 1605963664:25;conda install -c conda-forge nodejs=10.0.0
@@ -515,13 +513,10 @@
 : 1610590214:1;pip install google-api-python-client
 : 1610691668:0;SUDO pacman -S picom
 : 1610691879:0;sudo shutdown now
-: 1610691961:0;lightdm
-: 1610692024:0;sudo lightdm
 : 1610692090:0;sudo pacman -Rs lightdm
 : 1610692094:0;sudo pacman -Rsu lightdm
 : 1610692127:0;sudo pacman -R lightdm
 : 1610692214:15;xinit
-: 1610692269:8;sudo pacman -S lightdm
 : 1610692303:2;sudo pacman -R picom
 : 1610692513:7;sudo pacman -S picom
 : 1610692551:0;mhwd -h
@@ -602,7 +597,6 @@
 : 1613910335:0;xinput reattach 31 3
 : 1613910353:0;xinput reattach 21 3
 : 1613961155:5;ssh $master_ipmu
-: 1614038549:0;xinput list
 : 1614133250:4;sudo pacmna -S scrot
 : 1614133258:3;sudo pacman -S scrot
 : 1614309158:0;xinput float 17
@@ -1720,7 +1714,6 @@ npm config set registry http://registry.npmjs.org/
 : 1678674853:0;grep -r 'png'
 : 1678682541:0;convert psfsys_stargal.svg psfsys_stargal.pdf
 : 1679107457:0;git staus
-: 1679108207:8;downloadBackup 
 : 1679192790:0;grep -r 'binary' ./
 : 1679316153:0;fvpnCo
 : 1679434707:0;gits tatus
@@ -1746,12 +1739,10 @@ npm config set registry http://registry.npmjs.org/
 : 1680023253:0;grep -r 'follwo'
 : 1680023895:0;grep -r '>>'
 : 1680023900:0;grep -r '>>>>'
-: 1680063974:0;clar
 : 1680137153:3;xelatex main.tex
 : 1680490165:0;pdflatex --version
 : 1680489287:4;latex --shell-escape main.tex
-: 1680489424:0;git checkout -- xlmacros.sty 
-: 1680745774:9;vpnConnect 
+: 1680489424:0;git checkout -- xlmacros.sty
 : 1680831149:0;ps -aux | grep slack
 : 1680831154:0;ps -aux | grep zoom
 : 1681010026:12;mamba install -c conda-forge astropy
@@ -1766,12 +1757,11 @@ npm config set registry http://registry.npmjs.org/
 : 1681788605:17;mamba update --all -c conda-forge
 : 1681788631:0;which ds9
 : 1682015848:0;ds0
-: 1682892730:0;brave index.html
 : 1683510110:11;ssh -f -N -L 9002:idark:12324 xiangchong.li@idark.ipmu.jp
 : 1683510125:0;ssh -f -N -L 9002:12324 xiangchong.li@idark.ipmu.jp
 : 1683510149:130;ssh -f -L 9002:localhost:12324 xiangchong.li@idark.ipmu.jp -N idark
-: 1683510285:0;ssh -f -L -N 9002:localhost:12324 xiangchong.li@idark.ipmu.jp 
-: 1683511427:2;ssh -N -f -L 9002:localhost:12324 xiangchong.li@idark.ipmu.jp 
+: 1683510285:0;ssh -f -L -N 9002:localhost:12324 xiangchong.li@idark.ipmu.jp
+: 1683511427:2;ssh -N -f -L 9002:localhost:12324 xiangchong.li@idark.ipmu.jp
 : 1683640597:1342;/opt/cisco/anyconnect/bin/vpnui
 : 1683876940:4;sudo shutdown 50
 : 1684064009:0;vpnCo
@@ -1805,34 +1795,33 @@ npm config set registry http://registry.npmjs.org/
 : 1689847792:1;sudo hwclock --systohc
 : 1689847796:0;timedatectl
 : 1689860430:0;ssh-keygen -L -f ~/.ssh/nersc-cert.pub | grep Valid
-: 1689869415:2;homepagePush
 : 1689868301:8;downloadBackup
 : 1689869696:0;ext
 : 1689957596:2;du -h
-: 1690036421:0;ssh xiangchl@login01.perlmutter-p1.nersc.gov 
-: 1690036424:0;ssh xiangchl@login01.perlmutter.nersc.gov 
-: 1690036962:11;ssh xiangchl@perlmutter.nersc.gov 
-: 1690036976:0;ssh xiangchl@perlmutter01.nersc.gov 
-: 1690036988:0;ssh xiangchl@pe01.perlmutter.nersc.gov 
-: 1690036991:0;ssh xiangchl@p01.perlmutter.nersc.gov 
-: 1690036995:0;ssh xiangchl@p11.perlmutter.nersc.gov 
-: 1690037009:0;ssh xiangchl@perlmutter-p2.nersc.gov 
-: 1690037012:40;ssh xiangchl@perlmutter-p1.nersc.gov 
-: 1690037062:0;ssh xiangchl@x3116c0s5b0n0.perlmutter-p1.nersc.gov 
-: 1690037065:0;ssh xiangchl@x3116c0s5b0n0.perlmutter.nersc.gov 
-: 1690037115:0;ssh xiangchl@login12.perlmutter.nersc.gov 
-: 1690037119:0;ssh xiangchl@login-12.perlmutter.nersc.gov 
-: 1690037122:0;ssh xiangchl@login_12.perlmutter.nersc.gov 
-: 1690037144:18;ssh xiangchl@nxcloud01.nersc.gov 
-: 1690037165:0;ssh xiangchl@nxcloud02.nersc.gov 
-: 1690037175:0;ssh xiangchl@x3116c0s5b0n0.perlmutter-p3.nersc.gov 
-: 1690037180:0;ssh xiangchl@perlmutter-p3.nersc.gov 
-: 1690037190:0;ssh xiangchl@perlmutter-login1.nersc.gov 
-: 1690037192:0;ssh xiangchl@perlmutter-login11.nersc.gov 
-: 1690037200:5;ssh xiangchl@login012.perlmutter.nersc.gov 
-: 1690037218:0;ssh xiangchl@perlmutter012.nersc.gov 
-: 1690037227:0;ssh xiangchl@perlmutter-login012.nersc.gov 
-: 1690037230:0;ssh xiangchl@perlmutter-l012.nersc.gov 
+: 1690036421:0;ssh xiangchl@login01.perlmutter-p1.nersc.gov
+: 1690036424:0;ssh xiangchl@login01.perlmutter.nersc.gov
+: 1690036962:11;ssh xiangchl@perlmutter.nersc.gov
+: 1690036976:0;ssh xiangchl@perlmutter01.nersc.gov
+: 1690036988:0;ssh xiangchl@pe01.perlmutter.nersc.gov
+: 1690036991:0;ssh xiangchl@p01.perlmutter.nersc.gov
+: 1690036995:0;ssh xiangchl@p11.perlmutter.nersc.gov
+: 1690037009:0;ssh xiangchl@perlmutter-p2.nersc.gov
+: 1690037012:40;ssh xiangchl@perlmutter-p1.nersc.gov
+: 1690037062:0;ssh xiangchl@x3116c0s5b0n0.perlmutter-p1.nersc.gov
+: 1690037065:0;ssh xiangchl@x3116c0s5b0n0.perlmutter.nersc.gov
+: 1690037115:0;ssh xiangchl@login12.perlmutter.nersc.gov
+: 1690037119:0;ssh xiangchl@login-12.perlmutter.nersc.gov
+: 1690037122:0;ssh xiangchl@login_12.perlmutter.nersc.gov
+: 1690037144:18;ssh xiangchl@nxcloud01.nersc.gov
+: 1690037165:0;ssh xiangchl@nxcloud02.nersc.gov
+: 1690037175:0;ssh xiangchl@x3116c0s5b0n0.perlmutter-p3.nersc.gov
+: 1690037180:0;ssh xiangchl@perlmutter-p3.nersc.gov
+: 1690037190:0;ssh xiangchl@perlmutter-login1.nersc.gov
+: 1690037192:0;ssh xiangchl@perlmutter-login11.nersc.gov
+: 1690037200:5;ssh xiangchl@login012.perlmutter.nersc.gov
+: 1690037218:0;ssh xiangchl@perlmutter012.nersc.gov
+: 1690037227:0;ssh xiangchl@perlmutter-login012.nersc.gov
+: 1690037230:0;ssh xiangchl@perlmutter-l012.nersc.gov
 : 1690038147:0;which remoteNotebook
 : 1690038173:7;remoteNotebook
 : 1690036310:0;ssh xiangchl@login1.perlmutter-p1.nersc.gov
@@ -1859,11 +1848,9 @@ npm config set registry http://registry.npmjs.org/
 : 1690281187:0;sudo shutdown 40
 : 1690478149:1;/opt/cisco/anyconnect/bin/vpn disconnect
 : 1690646828:4;sudo timedatectl set-timezone US/Eastern
-: 1690840165:8;vpnConnect
 : 1690864741:10;git pull
 : 1690864955:1;pdflatex main.tex
 : 1690864981:3;git push
-: 1690870985:12;backup
 : 1690918044:2816;mmmemo
 : 1690905325:0;source ~/.zshrc
 : 1690905357:0;which EDITOR
@@ -1872,7 +1859,6 @@ npm config set registry http://registry.npmjs.org/
 : 1690907426:0;sudoedit -h
 : 1690928747:0;:w
 : 1690931307:796;python
-: 1690928858:0;source $homeSys/xshare/setups/setupCosmosis.zsh
 : 1690929980:1;black config.py
 : 1690923843:32;yay -S qtile-extras-git
 : 1690930325:279;sudo pacman -Syuu
@@ -1881,7 +1867,6 @@ npm config set registry http://registry.npmjs.org/
 : 1690943429:0;which qtile
 : 1690945366:4;pasystray
 : 1690896506:0;ld
-: 1690946060:1;tmux
 : 1690946141:0;fcxit
 : 1690945954:0;startx .xinitrc
 : 1690948097:5;sudo pacman -Rn lightdm
@@ -1889,7 +1874,7 @@ npm config set registry http://registry.npmjs.org/
 : 1690948124:0;sudo pacman -Rn lightdm lightdm-gtk-greeter
 : 1690949785:0;sudo pacman -Rn sddm
 : 1690949788:0;sudo pacman -Rn gdm
-: 1690949800:0;sudo pacman -Rn lightdm lightdm-gtk-greeter  lightdm-gtk-greeter-settings 
+: 1690949800:0;sudo pacman -Rn lightdm lightdm-gtk-greeter  lightdm-gtk-greeter-settings
 : 1690949898:0;sudo pacman -Qtdq\
 : 1690950611:0;man emulate
 : 1690950614:0;emulate
@@ -1899,7 +1884,7 @@ npm config set registry http://registry.npmjs.org/
 : 1690951776:0;zsh -o SOURCE_TRACE
 : 1690955345:0;startx
 : 1690952598:0;sudo pacman -Rn gdm kdm xdm
-: 1690952671:0;sudo pacman -Rs xfce4 
+: 1690952671:0;sudo pacman -Rs xfce4
 : 1690952764:1;sudo pacman -Rs xfce4 xfce4-goodies\
 : 1690952776:11;catfish
 : 1690952799:0;sudo pacman -Rs xfce4 xfce4-goodies catfish thunarx-python\
@@ -1944,13 +1929,11 @@ npm config set registry http://registry.npmjs.org/
 : 1690959835:0;fcitx
 : 1690959869:2;fcitx-autostart
 : 1690963105:31;sudo pacman -Rnsc manjaro-xfce-settings
-: 1690963237:0;df -h
 : 1690963361:97;yay -S zoom
 : 1690961158:4;sudo cpupower frequency-info
-: 1690961178:0;sudo cpupower 
+: 1690961178:0;sudo cpupower
 : 1690961188:0;sudo cpupower powercap-info
 : 1690961194:1;sudo cpupower monitor
-: 1690963630:0;cleanhistory 
 : 1690962733:0;printenv
 : 1690962075:0;pavuacontrol
 : 1690962082:39;pavucontrol
@@ -1960,7 +1943,7 @@ npm config set registry http://registry.npmjs.org/
 : 1690986313:65;sudo pacman -Rnsc gnome
 : 1690986464:0;sudo pacman -Rnsc unity
 : 1690986531:3;sudo pacman -Rn gnome-keyring gnome-icon-theme gnome-icon-theme-symbolic gnome-themes-extra
-: 1690986565:0;sudo pacman -Rn gnome-bluetooth 
+: 1690986565:0;sudo pacman -Rn gnome-bluetooth
 : 1690986620:2;sudo pacman -S blueman
 : 1690986634:2;sudo pacman -Rn blueberry gnome-bluetooth
 : 1690999725:309;pcmanfm ~/.local/share/icons/hicolor/32x32/apps/
@@ -1999,8 +1982,6 @@ sudo pacman -S blueman
 : 1691002989:0;which unzip
 : 1691002995:0;which extract
 : 1691002999:1;extract 01-Tela.tar.xz
-: 1691005322:9;gnome-help
-: 1691005375:0;bluetooth
 : 1691005380:0;blueberry-tray
 : 1691005387:0;blueberry-tray -h
 : 1691005390:0;blueberry -h
@@ -2020,11 +2001,11 @@ sudo pacman -S blueman
 : 1691017144:4;sudo pacman -S gdk-pixbuf2
 : 1691017319:2;sudo pacman -S gdk-pixbuf-xlib
 : 1691017607:5;sudo pacman -Sc
-: 1691018096:0;sudo pacman -Rn gdk-pixbuf-xlib gdk-pixbuf2 
-: 1691018133:0;sudo pacman -Rn gdk-pixbuf-xlib gdk-pixbuf 
-: 1691018136:1;sudo pacman -Rn gdk-pixbuf-xlib 
+: 1691018096:0;sudo pacman -Rn gdk-pixbuf-xlib gdk-pixbuf2
+: 1691018133:0;sudo pacman -Rn gdk-pixbuf-xlib gdk-pixbuf
+: 1691018136:1;sudo pacman -Rn gdk-pixbuf-xlib
 : 1691018959:0;sudo pacman -S librsvg python-rsvg
-: 1691018964:2;sudo pacman -S librsvg 
+: 1691018964:2;sudo pacman -S librsvg
 : 1691018982:0;usr/bin/gdk-pixbuf-query-loaders --update-cache
 : 1691018991:0;gdk-pixbuf-query-loaders --update-cache
 : 1691018996:0;sudo gdk-pixbuf-query-loaders --update-cache
@@ -2045,17 +2026,15 @@ sudo pacman -S blueman
 : 1691038138:0;GTK_USE_PORTAL=1 gio open https://google.com
 : 1691037758:0;xdg-open
 : 1691037875:0;xdg-settings get default-web-browser
-: 1691036429:0;snap interface home
 : 1691036566:0;snap interface home slack
-: 1691036570:0;snap interface home 
-: 1691036880:0;snap interface 
+: 1691036570:0;snap interface home
+: 1691036880:0;snap interface
 : 1691037006:0;snap connect slack:home :home
 : 1691037012:0;sudo snap connect slack:home :home
 : 1691037018:0;snap connections
 : 1691038063:0;snap connections gnome-3-34-1804
 : 1691038194:0;xdg-mime query default x-scheme-handler/https
 : 1691038366:0;snap slack
-: 1691038373:0;snap  
 : 1691038392:0;snap start slack
 : 1691038396:0;sudo snap start slack
 : 1691039045:0;ln -s /var/lib/snapd/snap /snap
@@ -2065,17 +2044,15 @@ sudo pacman -S blueman
 : 1691039289:2;yay -S snapd
 : 1691039559:0;snap install slack
 : 1691039563:83;sudo snap install slack
-: 1691039830:0;dmesg
-: 1691039897:0;sudo dmesg
 : 1691039930:0;snap debug sandbox-features
 : 1691039979:47;/snap/slack/82/usr/lib/slack/slack
 : 1691040163:0;which slack
 : 1691040202:0;/snap/slack/current/bin/electron-launch
-: 1691040276:0;alias slack=/snap/slack/current/usr/bin/slack 
+: 1691040276:0;alias slack=/snap/slack/current/usr/bin/slack
 : 1691041574:0;ping google.com
 : 1691041579:0;ping https://google.com
-: 1691040519:0;slack=/snap/slack/current/usr/bin/slack 
-: 1691040524:5;/snap/slack/current/usr/bin/slack 
+: 1691040519:0;slack=/snap/slack/current/usr/bin/slack
+: 1691040524:5;/snap/slack/current/usr/bin/slack
 : 1691040545:4;/snap/slack/current/usr/bin/X11/slack
 : 1691040751:0;ln -s /usr/bin/xdg-open ./
 : 1691041154:0;ll /usr/bin/xdg-open
@@ -2102,14 +2079,14 @@ sudo pacman -S blueman
 : 1691046322:0;sudo snap remove all
 : 1691046330:0;sudo snap remove slack gnome-*
 : 1691046336:23;sudo snap remove slack gnome-3-34-1804 gnome-42-2204
-: 1691046575:112;sudo snap install --classic slack 
+: 1691046575:112;sudo snap install --classic slack
 : 1691046735:0;snap connections slack
 : 1691046745:0;snap connect slack:removable-media :removable-media
 : 1691046749:1;sudo snap connect slack:removable-media :removable-media
 : 1691046888:0;snap infor slack
 : 1691046891:0;snap info slack
 : 1691046899:1;snap info slack --verbose
-: 1691046954:0;snap set 
+: 1691046954:0;snap set
 : 1691046961:0;snap set -h
 : 1691046993:0;snap
 : 1691047375:0;snap remove slack
@@ -2146,7 +2123,7 @@ sudo pacman -S blueman
 : 1691075135:0;eval $(ssh-agent)
 : 1691076618:4;ssh-add $HOME/.ssh/id_rsa
 : 1691077252:4;yad --password --title="sudo password prompt" --timeout=10
-: 1691077261:4;yad --password --title="sudo password prompt" 
+: 1691077261:4;yad --password --title="sudo password prompt"
 : 1691077273:0;yad -h
 : 1691077367:0;yad -h --text-info
 : 1691077369:6;yad --text-info
@@ -2154,7 +2131,7 @@ sudo pacman -S blueman
 : 1691077417:2;yad --calendar
 : 1691077423:3;yad --text-info Calendar --calendar
 : 1691077430:3;yad --text-info "Calendar" --calendar
-: 1691077454:1;yad --text-info --calendar text 
+: 1691077454:1;yad --text-info --calendar text
 : 1691077459:2;yad --text-info --calendar text "sdfs"
 : 1691077471:1;yad --text-info --calendar text --html
 : 1691077475:1;yad --text-info --calendar --html
@@ -2168,21 +2145,20 @@ sudo pacman -S blueman
 : 1691077556:0;yad -help
 : 1691077583:4;yad --entry
 : 1691077600:5;yad --print 'dsf' --entry
-: 1691077611:0;yad --print 'dsf' 
+: 1691077611:0;yad --print 'dsf'
 : 1691077625:2;yad --print --entry
 : 1691077647:6;yad --print "Input Password" --entry
 : 1691077712:5;yad --entry --entry-text="giveme a number" --hide-text
 : 1691077771:46;yad --text="Please Input Password" --entry --hide-text
-: 1691078238:2;sudo pacman -S polkit 
+: 1691078238:2;sudo pacman -S polkit
 : 1691077118:0;askpass
-: 1691074887:0;which recordClipBoard 
 : 1691079017:1;sudo pacman -S cpu-x
 : 1691079023:0;sudo pacman -S cpux
 : 1691079199:71;yay -S cpu-x
 : 1691079348:46;yay -S polkit-dumb-agent\
 : 1691079408:0;polkit-dump-agent
 : 1691079415:3;polkit-dumb-agent
-: 1691079422:0;polkit-dumb-agent & 
+: 1691079422:0;polkit-dumb-agent &
 : 1691076502:0;if ! pgrep -u "$USER" ssh-agent > /dev/null; then\
     ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"\
 fi\
@@ -2194,9 +2170,8 @@ fi\
 : 1691078158:10;sudo pacman -Rns yad
 : 1691075077:0;eval `ssh-agent -s`
 : 1691075080:21;ssh-add ~/.ssh/id_rsa
-: 1691079786:0;startx ~/.config/X11/xinitrc
 : 1691080043:0;lear
-: 1691080705:14;sudo pacman -S lxqt-openssh-askpass 
+: 1691080705:14;sudo pacman -S lxqt-openssh-askpass
 : 1691080783:0;which recordClipBoard
 : 1691080868:0;ssh-askpas
 : 1691080890:0;sssh-askpass
@@ -2211,11 +2186,212 @@ fi\
 : 1691084517:0;ssh-add -l
 : 1691083076:0;sudo pacman -y yad
 : 1691083079:3;sudo pacman -S yad
-: 1691083102:0;yad --entry --entry-text=$gw_ipmu a number" --hide-text
 : 1691083110:3;yad --entry --entry-text="$gw_ipmu a number" --hide-text
-: 1691083139:1;yad --text="$server" 
+: 1691083139:1;yad --text="$server"
 : 1691083505:6;recordClipBoard
 : 1691084466:2;ssh $vera_psc
-: 1691085728:0;cleanhistory
 : 1691085012:0;ssh-add -l | more
 : 1691085020:6;ssh-add -l && sleep 6
+: 1691175648:0;displaySetup
+: 1691175987:0;hwinfo | grep -i -B 3 -A 3 monitor
+: 1691176301:0;nvidia-settings -v\
+: 1691176352:0;$ lspci -k | grep -A 2 -E "(VGA|3D)"\
+: 1691176361:0;lspci -k | grep -A 2 -E "(VGA|3D)"\
+: 1691176692:0;xrandr
+: 1691176762:0;xrandr --listproviders\
+: 1691176802:0;lspci
+: 1691177782:0;xrandr --listproviders\
+: 1691177901:0;xrandr --setprovideroutputsource modesetting NVIDIA-0\
+xrandr --auto
+: 1691178027:0;vim ~/.zsh_history
+: 1691178102:0;lspci | grep VGA
+: 1691178171:0;dmesg
+: 1691178178:0;sduo dmesg
+: 1691178351:0;sudo pacman -S lightdm
+: 1691178461:0;vim .zshenv
+: 1691178504:0;vim /home/xiangchong/.config/zsh/.zprofile
+: 1691178538:0;top
+: 1691178656:0;ls $XDG_STATE_HOME/zsh
+: 1691178679:0;lightdm
+: 1691178686:0;lightdm --test-mode
+: 1691178691:0;sudo lightdm
+: 1691178780:0;ls .cache/X11/
+: 1691178802:0;ls $XDG_DATA_DIRS
+: 1691178807:0;ls $XDG_DATA_HOME
+: 1691178940:0;vim /var/log/Xorg.2.log
+: 1691178985:0;ls /var/log/lightdm
+: 1691179063:0;sudo pacman -S lightdm-gtk-greeter
+: 1691179235:0;sudo ls /var/log/lightdm
+: 1691179418:0;vim /etc/lightdm/users.conf
+: 1691179434:0;vim /etc/lightdm/lightdm.conf
+: 1691179541:0;cd $XDG_CONFIG_HOME/X11/
+: 1691179625:0;vim /etc/lightdm/Xsession
+: 1691179666:0;vim ~/.xinputrc
+: 1691179788:0;vim xinitrc
+: 1691180209:0;vim ../qtile/autostart.sh
+: 1691180220:0;vim $homeSys/xbin/displaySetup
+: 1691180361:0;vim ../X11/xinitrc
+: 1691180381:0;vim ~/.zshrc
+: 1691180388:0;vim ../zsh/.zshrc
+: 1691180409:0;vim ../zsh/zcolor
+: 1691180418:0;vim ../zsh/zhistory
+: 1691180437:0;vim ../zsh/.zprofile
+: 1691181432:0;vim .local/xbin/displaySetup
+: 1691181469:0;cd .local/xbin/
+: 1691181474:0;sh ./displaySetup
+: 1691181479:0;sh
+: 1691181973:0;vim ~/.zshenv
+: 1691182512:0;locate xsession-error
+: 1691182524:0;vim ~/.xsession-errors.old
+: 1691182559:0;vim ~/.xprofile
+: 1691182598:0;ls $XDG_CONFIG_HOME/X11
+: 1691182603:0;ls -l $XDG_CONFIG_HOME/X11
+: 1691182869:0;mv $XDG_CONFIG_HOME/X11/xinitrc ~/.xinitrc
+: 1691182923:0;vim .xinitrc
+: 1691183123:0;mv .xinitrc ~/.config/X11/xinitrc
+: 1691183148:0;ln -s ~/.config/X11/xinitrc ~/.xsession
+: 1691183155:0;vim NVIDIA-Linux-x86_64-535.86.05.run
+: 1691183166:0;sh ./NVIDIA-Linux-x86_64-535.86.05.run
+: 1691183250:0;vim .xsession
+: 1691183501:0;vim /usr/share/xsessions/qtile.desktop
+: 1691183818:0;cd ~/
+: 1691183826:0;rm .xsession*
+: 1691183891:0;vim ~/.xsession-errors
+: 1691184084:0;sudo vim /var/log/lightdm/lightdm.log
+: 1691184101:0;sudoedit /usr/share/xsessions/qtile.desktop
+: 1691184262:0;rm .xsession-errors*
+: 1691184267:0;cd ~/.config
+: 1691184296:0;vim X11/xinitrc
+: 1691184306:0;vim zsh/.zprofile
+: 1691184576:0;sudo pacman -R lightdm lightdm-gtk-greeter
+: 1691184734:0;vim .xsession-errors
+: 1691184738:0;rm .xsession-errors
+: 1691184799:0;vim /var/log/Xorg.0.log
+: 1691185006:0;vim ~/.config/zsh/.zprofile
+: 1691185159:0;rm .Xauthority
+: 1691185166:0;vim .xprofile
+: 1691185171:0;rm .xprofile
+: 1691185174:0;startx ~/.config/X11/xinitrc
+: 1691185225:0;config status
+: 1691185243:0;config diff .config/X11/xinitrc
+: 1691185271:0;vim ~/.config/X11/xinitrc
+: 1691185301:0;exec startx ~/.config/X11/xinitrc
+: 1691185362:0;./NVIDIA-Linux-x86_64-535.86.05.run
+: 1691185472:0;Xorg -h
+: 1691185522:0;sudo service qtile stop
+: 1691185610:0;qtile cmd-obj -o cmd -f shutdown
+: 1691185621:0;sudo sh ./NVIDIA-Linux-x86_64-535.86.05.run
+: 1691185771:0;nvidia-xconfig
+: 1691185776:0;sudo nvidia-xconfig
+: 1691185997:0;mhwd --list\
+: 1691186068:0;optimus-manager
+: 1691186083:0;udev
+: 1691186120:0;sudo dmesg
+: 1691186733:0;vim $XDG_DATA_HOME/zsh_history
+: 1691186794:0;ls pci
+: 1691186807:0;lspci | wc -l
+: 1691186843:0;xmodmap
+: 1691186853:0;xinput
+: 1691186855:0;xinput list
+: 1691186894:0;xinput list | wc -l
+: 1691187172:0;rmmod nvidia_uvm
+: 1691187232:0;vim /etc/modprobe.d/blacklist-nouveau.conf\
+
+: 1691187239:0;sudoedit /etc/modprobe.d/blacklist-nouveau.conf\
+
+: 1691187266:0;vim /etc/udev/rules.d/00-remove-nvidia.rules\
+
+: 1691187295:0;sudoedit /etc/udev/rules.d/00-remove-nvidia.rules\
+
+: 1691187310:0;lpci
+: 1691187319:0;lspci } grep N
+: 1691187322:0;lspci - grep N
+: 1691187381:0;lspci
+: 1691187385:0;lspci | grep N
+: 1691187842:0;vim /usr/share/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf
+: 1691187862:0;sudoedit /etc/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf
+: 1691187980:0;xrandr --setprovideroutputsource modesetting NVIDIA-0\
+
+: 1691187985:0;xrandr --setprovideroutputsource modesetting
+: 1691188019:0;xrandr --listproviders
+: 1691188169:0;lspci -k | grep -A 2 -E "(VGA|3D)"
+: 1691188802:0;sudo mv /etc/modprobe.d/blacklist-nouveau.conf\
+ ./etc
+: 1691188837:0;sudo mv /etc/udev/rules.d/00-remove-nvidia.rules ./etc
+: 1691188942:0;xrandr --listmonitors
+: 1691189027:0;sudo reboot
+: 1691189351:0;vim etc/rules.d/00-remove-nvidia.rules
+: 1691189363:0;vim etc/00-remove-nvidia.rules
+: 1691189380:0;cd etc
+: 1691189386:0;mkdir no_nv
+: 1691189391:0;mv blacklist-nouveau.conf no_nv
+: 1691189394:0;mv 00-remove-nvidia.rules no_nv
+: 1691189396:0;cd no_nv
+: 1691189489:0;vim
+: 1691189538:0;vim README
+: 1691189828:0;sudo mv etc/no_nv/00-remove-nvidia.rules /etc/udev/rules.d/00-remove-nvidia.rules 
+: 1691189890:0;sudo mv ./etc/no_nv/blacklist-nouveau.conf /etc/modprobe.d/blacklist-nouveau.conf 
+: 1691189902:0;cleanhistory
+: 1691189904:0;history
+: 1691189910:0;reboot
+: 1691190050:0;df -h
+: 1691190323:0;which mmmemo
+: 1691190395:0;vim -O /home/xiangchong/.local//xshare/default.zsh /home/xiangchong/.local//xshare/server.zsh 
+: 1691190552:0;cd /home/xiangchong/.local//xshare/
+: 1691190560:0;rm youtube.info
+: 1691190575:0;rm server.info.old
+: 1691190651:0;diff id_rsa ~/.ssh/id_rsa
+: 1691190708:0;rm ~/Documents/public_html/rho_requirements.csv
+: 1691190718:0;ls ~/Documents/public_html/sys
+: 1691190725:0;ls ~/Documents/public_html/me
+: 1691190731:0;ls ~/Documents/public_html/Life
+: 1691190734:0;ls ~/Documents/public_html/Life/Hiking
+: 1691190738:0;clar
+: 1691190824:0;vpnConnect
+: 1691190831:0;scp $gw_ipmu:/home/xiangchong.li/.ssh/id_rsa.pub ./
+: 1691190950:0;ssh-keygen -y -e -f ~/.ssh/id_rsa
+: 1691190962:0;ssh-keygen -y -e -f ~/.ssh/id_rsa > aa.txt
+: 1691190971:0;diff aa.txt id_rsa.pub
+: 1691191019:0;vim -O aa.txt id_rsa.pub
+: 1691191083:0;rm id_rsa.pub
+: 1691191091:0;mv aa.txt id_rsa.pub
+: 1691191124:0;scp $gw_ipmu:/home/xiangchong.li/.ssh/id_rsa2 ./
+: 1691191136:0;diff id_rsa2 .ssh/id_rsa
+: 1691191143:0;rm id_rsa2
+: 1691191164:0;mv id_rsa.pub Documents/public_html/me
+: 1691191169:0;cd Documents/public_html/me
+: 1691191299:0;source $homeSys/xshare/setups/setupCosmosis.zsh
+: 1691191455:0;brave index.html
+: 1691191514:0;aexit
+: 1691191520:0;vim index.html
+: 1691191529:0;homepagePush
+: 1691191534:0;backup
+: 1691192872:0;xrandr
+: 1691192900:0;tmux
+: 1691193000:0;cd Presentations
+: 1691193003:0;vim index.md
+: 1691193173:0;ls bookmarks
+: 1691193703:0;cd ..
+: 1691193718:0;mv xshare ~/Documents/share
+: 1691193729:0;cd ~/.config/zsh
+: 1691193734:0;vim .zshrc
+: 1691193765:0;cd ~/Documents
+: 1691193773:0;mv share Share
+: 1691193814:0;cd $homeSys
+: 1691193821:0;clear
+: 1691193824:0;cd xbin
+: 1691193837:0;rm remoteSync
+: 1691193843:0;vim -O remote*
+: 1691193916:0;ls
+: 1691193941:0;exit
+: 1691193946:0;clear
+: 1691193946:0;ls
+: 1691193958:0;config status
+: 1691193973:0;cleanhistory
+: 1691193984:0;config config add -u
+: 1691194016:0;mv xshare to backup dir
+: 1691194018:0;config push
+: 1691194035:0;config commit -m "mv xshare to backup dir'
+: 1691194037:0;config commit -m "mv xshare to backup dir"
+: 1691194041:0;config add 
+: 1691194046:0;config add -u

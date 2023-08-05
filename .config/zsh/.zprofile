@@ -1,3 +1,6 @@
+# language
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Start X11
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
@@ -14,11 +17,8 @@ compinit
 compdef vim='nvim'
 compdef config='git'
 compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
-setopt complete_aliases
 
-# language
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+setopt complete_aliases
 
 source "$XDG_CONFIG_HOME"/zsh/zvi
 source "$XDG_CONFIG_HOME"/zsh/zprompt

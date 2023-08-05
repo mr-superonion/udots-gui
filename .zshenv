@@ -1,4 +1,4 @@
-# set PATH so it includes user's private bin if it exists
+# Set PATH so it includes user's private bin if it exists
 if [ -d "/opt/cisco/anyconnect/bin/" ] ; then
     export PATH="/opt/cisco/anyconnect/bin/:$PATH"
 fi
@@ -16,15 +16,12 @@ export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export PYTHONSTARTUP="$XDG_CONFIG_HOME"/python/pythonrc
 export TEXMFVAR="$XDG_CACHE_HOME"/texlive/texmf-var
 export IPYTHONDIR="$XDG_CONFIG_HOME"/ipython
-export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
+export LESSHISTFILE="$XDG_CACHE_HOME/less/history"
 export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
 export SSB_HOME="$XDG_DATA_HOME"/zoom
-export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
-
 export ZDOTDIR="$HOME"/.config/zsh
-export HISTFILE="$XDG_DATA_HOME"/zsh_history
 
 # SSH agent
 if [[ ! -f "$XDG_RUNTIME_DIR/ssh-agent.env" ]]; then

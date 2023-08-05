@@ -1,6 +1,6 @@
 ## .zshrc
 
-shareDir="$homeSys/xshare/"
+shareDir="$HOME/Documents/Share/"
 if [ -d "$shareDir" ]; then
     for script in $shareDir/*sh; do
         if [ -x "$script" -a ! -d "$script" ]; then
