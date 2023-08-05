@@ -3,7 +3,6 @@
 : 1603096070:4;sudo lightdm restart
 : 1603096080:0;sudo lightdm -h
 : 1603098323:0;make clean install
-: 1603105384:0;source server.zsh
 : 1603150795:2;sudo pacman -S feh
 : 1603153566:125;sudo pacman -S texlive-langjapanese texlive-most
 : 1603165456:2;mousepad
@@ -11,12 +10,10 @@
 : 1603168869:8;sudo pacman -S boost-libs
 : 1603168883:1;sudo pacman -S libxml2
 : 1603168889:2;sudo pacman -S openssh
-: 1603168912:11;sudo pacman -S boost
 : 1603168927:7;sudo pacman -S make
 : 1603168940:7;sudo pacman -S tk
 : 1603169543:17;yay torque
 : 1603169603:8;yay -S torque
-: 1603170021:0;tar xf torque.tar.gz
 : 1603170104:1;makepkg
 : 1603179448:0;sudo pacman -S blueberry-tray
 : 1603179660:0;exec startx
@@ -1334,7 +1331,6 @@ versionR=$(ssh $gw_ipmu "tail -1 $backupDir/.backup_versions.txt")\
 : 1648043324:0;brave psf_test.html
 : 1648056025:56;yay netextender
 : 1648056130:0;chmod -v u+s /usr/sbin/pppd
-: 1648056158:1;sudo locate startct
 : 1648056168:0;netextender
 : 1648056173:0;NetworkManager
 : 1648056218:51;yay connect-tunnel
@@ -1605,8 +1601,6 @@ versionR=$(ssh $gw_ipmu "tail -1 $backupDir/.backup_versions.txt")\
 : 1666048411:0;npm -l
 : 1666048595:13;npm install -g bibtex-tidy
 : 1666048656:22;npm install --verbos -g bibtex-tidy
-: 1666048717:0;npm config set registry http://registry.npmjs.org/\
-npm config set registry http://registry.npmjs.org/
 : 1666048886:24;sudo npm install -g npm@latest
 : 1666048914:17;npm install -g npm@latest
 : 1666048945:1;npm cache clear
@@ -2195,14 +2189,9 @@ fi\
 : 1691175648:0;displaySetup
 : 1691175987:0;hwinfo | grep -i -B 3 -A 3 monitor
 : 1691176301:0;nvidia-settings -v\
-: 1691176352:0;$ lspci -k | grep -A 2 -E "(VGA|3D)"\
-: 1691176361:0;lspci -k | grep -A 2 -E "(VGA|3D)"\
 : 1691176692:0;xrandr
 : 1691176762:0;xrandr --listproviders\
-: 1691176802:0;lspci
 : 1691177782:0;xrandr --listproviders\
-: 1691177901:0;xrandr --setprovideroutputsource modesetting NVIDIA-0\
-xrandr --auto
 : 1691178027:0;vim ~/.zsh_history
 : 1691178102:0;lspci | grep VGA
 : 1691178171:0;dmesg
@@ -2211,20 +2200,13 @@ xrandr --auto
 : 1691178461:0;vim .zshenv
 : 1691178504:0;vim /home/xiangchong/.config/zsh/.zprofile
 : 1691178538:0;top
-: 1691178656:0;ls $XDG_STATE_HOME/zsh
 : 1691178679:0;lightdm
 : 1691178686:0;lightdm --test-mode
 : 1691178691:0;sudo lightdm
-: 1691178780:0;ls .cache/X11/
-: 1691178802:0;ls $XDG_DATA_DIRS
-: 1691178807:0;ls $XDG_DATA_HOME
 : 1691178940:0;vim /var/log/Xorg.2.log
-: 1691178985:0;ls /var/log/lightdm
 : 1691179063:0;sudo pacman -S lightdm-gtk-greeter
-: 1691179235:0;sudo ls /var/log/lightdm
 : 1691179418:0;vim /etc/lightdm/users.conf
 : 1691179434:0;vim /etc/lightdm/lightdm.conf
-: 1691179541:0;cd $XDG_CONFIG_HOME/X11/
 : 1691179625:0;vim /etc/lightdm/Xsession
 : 1691179666:0;vim ~/.xinputrc
 : 1691179788:0;vim xinitrc
@@ -2237,15 +2219,11 @@ xrandr --auto
 : 1691180418:0;vim ../zsh/zhistory
 : 1691180437:0;vim ../zsh/.zprofile
 : 1691181432:0;vim .local/xbin/displaySetup
-: 1691181469:0;cd .local/xbin/
 : 1691181474:0;sh ./displaySetup
 : 1691181479:0;sh
 : 1691181973:0;vim ~/.zshenv
-: 1691182512:0;locate xsession-error
 : 1691182524:0;vim ~/.xsession-errors.old
 : 1691182559:0;vim ~/.xprofile
-: 1691182598:0;ls $XDG_CONFIG_HOME/X11
-: 1691182603:0;ls -l $XDG_CONFIG_HOME/X11
 : 1691182869:0;mv $XDG_CONFIG_HOME/X11/xinitrc ~/.xinitrc
 : 1691182923:0;vim .xinitrc
 : 1691183123:0;mv .xinitrc ~/.config/X11/xinitrc
@@ -2254,13 +2232,11 @@ xrandr --auto
 : 1691183166:0;sh ./NVIDIA-Linux-x86_64-535.86.05.run
 : 1691183250:0;vim .xsession
 : 1691183501:0;vim /usr/share/xsessions/qtile.desktop
-: 1691183818:0;cd ~/
 : 1691183826:0;rm .xsession*
 : 1691183891:0;vim ~/.xsession-errors
 : 1691184084:0;sudo vim /var/log/lightdm/lightdm.log
 : 1691184101:0;sudoedit /usr/share/xsessions/qtile.desktop
 : 1691184262:0;rm .xsession-errors*
-: 1691184267:0;cd ~/.config
 : 1691184296:0;vim X11/xinitrc
 : 1691184306:0;vim zsh/.zprofile
 : 1691184576:0;sudo pacman -R lightdm lightdm-gtk-greeter
@@ -2272,8 +2248,6 @@ xrandr --auto
 : 1691185166:0;vim .xprofile
 : 1691185171:0;rm .xprofile
 : 1691185174:0;startx ~/.config/X11/xinitrc
-: 1691185225:0;config status
-: 1691185243:0;config diff .config/X11/xinitrc
 : 1691185271:0;vim ~/.config/X11/xinitrc
 : 1691185301:0;exec startx ~/.config/X11/xinitrc
 : 1691185362:0;./NVIDIA-Linux-x86_64-535.86.05.run
@@ -2287,7 +2261,6 @@ xrandr --auto
 : 1691186068:0;optimus-manager
 : 1691186083:0;udev
 : 1691186120:0;sudo dmesg
-: 1691186733:0;vim $XDG_DATA_HOME/zsh_history
 : 1691186794:0;ls pci
 : 1691186807:0;lspci | wc -l
 : 1691186843:0;xmodmap
@@ -2296,58 +2269,36 @@ xrandr --auto
 : 1691186894:0;xinput list | wc -l
 : 1691187172:0;rmmod nvidia_uvm
 : 1691187232:0;vim /etc/modprobe.d/blacklist-nouveau.conf\
-
 : 1691187239:0;sudoedit /etc/modprobe.d/blacklist-nouveau.conf\
-
 : 1691187266:0;vim /etc/udev/rules.d/00-remove-nvidia.rules\
-
 : 1691187295:0;sudoedit /etc/udev/rules.d/00-remove-nvidia.rules\
-
 : 1691187310:0;lpci
-: 1691187319:0;lspci } grep N
-: 1691187322:0;lspci - grep N
-: 1691187381:0;lspci
-: 1691187385:0;lspci | grep N
 : 1691187842:0;vim /usr/share/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf
 : 1691187862:0;sudoedit /etc/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf
 : 1691187980:0;xrandr --setprovideroutputsource modesetting NVIDIA-0\
-
 : 1691187985:0;xrandr --setprovideroutputsource modesetting
 : 1691188019:0;xrandr --listproviders
 : 1691188169:0;lspci -k | grep -A 2 -E "(VGA|3D)"
-: 1691188802:0;sudo mv /etc/modprobe.d/blacklist-nouveau.conf\
- ./etc
 : 1691188837:0;sudo mv /etc/udev/rules.d/00-remove-nvidia.rules ./etc
 : 1691188942:0;xrandr --listmonitors
 : 1691189027:0;sudo reboot
 : 1691189351:0;vim etc/rules.d/00-remove-nvidia.rules
 : 1691189363:0;vim etc/00-remove-nvidia.rules
-: 1691189380:0;cd etc
 : 1691189386:0;mkdir no_nv
 : 1691189391:0;mv blacklist-nouveau.conf no_nv
 : 1691189394:0;mv 00-remove-nvidia.rules no_nv
-: 1691189396:0;cd no_nv
-: 1691189489:0;vim
 : 1691189538:0;vim README
-: 1691189828:0;sudo mv etc/no_nv/00-remove-nvidia.rules /etc/udev/rules.d/00-remove-nvidia.rules 
-: 1691189890:0;sudo mv ./etc/no_nv/blacklist-nouveau.conf /etc/modprobe.d/blacklist-nouveau.conf 
-: 1691189902:0;cleanhistory
+: 1691189828:0;sudo mv etc/no_nv/00-remove-nvidia.rules /etc/udev/rules.d/00-remove-nvidia.rules
+: 1691189890:0;sudo mv ./etc/no_nv/blacklist-nouveau.conf /etc/modprobe.d/blacklist-nouveau.conf
 : 1691189904:0;history
 : 1691189910:0;reboot
 : 1691190050:0;df -h
 : 1691190323:0;which mmmemo
-: 1691190395:0;vim -O /home/xiangchong/.local//xshare/default.zsh /home/xiangchong/.local//xshare/server.zsh 
-: 1691190552:0;cd /home/xiangchong/.local//xshare/
+: 1691190395:0;vim -O /home/xiangchong/.local//xshare/default.zsh /home/xiangchong/.local//xshare/server.zsh
 : 1691190560:0;rm youtube.info
 : 1691190575:0;rm server.info.old
 : 1691190651:0;diff id_rsa ~/.ssh/id_rsa
 : 1691190708:0;rm ~/Documents/public_html/rho_requirements.csv
-: 1691190718:0;ls ~/Documents/public_html/sys
-: 1691190725:0;ls ~/Documents/public_html/me
-: 1691190731:0;ls ~/Documents/public_html/Life
-: 1691190734:0;ls ~/Documents/public_html/Life/Hiking
-: 1691190738:0;clar
-: 1691190824:0;vpnConnect
 : 1691190831:0;scp $gw_ipmu:/home/xiangchong.li/.ssh/id_rsa.pub ./
 : 1691190950:0;ssh-keygen -y -e -f ~/.ssh/id_rsa
 : 1691190962:0;ssh-keygen -y -e -f ~/.ssh/id_rsa > aa.txt
@@ -2359,79 +2310,50 @@ xrandr --auto
 : 1691191136:0;diff id_rsa2 .ssh/id_rsa
 : 1691191143:0;rm id_rsa2
 : 1691191164:0;mv id_rsa.pub Documents/public_html/me
-: 1691191169:0;cd Documents/public_html/me
 : 1691191299:0;source $homeSys/xshare/setups/setupCosmosis.zsh
 : 1691191455:0;brave index.html
 : 1691191514:0;aexit
 : 1691191520:0;vim index.html
 : 1691191529:0;homepagePush
-: 1691191534:0;backup
 : 1691192872:0;xrandr
 : 1691192900:0;tmux
-: 1691193000:0;cd Presentations
 : 1691193003:0;vim index.md
-: 1691193173:0;ls bookmarks
-: 1691193703:0;cd ..
 : 1691193718:0;mv xshare ~/Documents/share
-: 1691193729:0;cd ~/.config/zsh
 : 1691193734:0;vim .zshrc
-: 1691193765:0;cd ~/Documents
 : 1691193773:0;mv share Share
-: 1691193814:0;cd $homeSys
-: 1691193821:0;clear
-: 1691193824:0;cd xbin
 : 1691193837:0;rm remoteSync
 : 1691193843:0;vim -O remote*
-: 1691193916:0;ls
-: 1691193941:0;exit
-: 1691193946:0;clear
-: 1691193946:0;ls
-: 1691193958:0;config status
-: 1691193973:0;cleanhistory
-: 1691193984:0;config config add -u
 : 1691194016:0;mv xshare to backup dir
-: 1691194018:0;config push
-: 1691194035:0;config commit -m "mv xshare to backup dir'
-: 1691194037:0;config commit -m "mv xshare to backup dir"
-: 1691194041:0;config add 
-: 1691194046:0;config add -u
-: 1691194049:0;config commit -m "mv xshare to backup dir"
-: 1691194051:0;config push
-: 1691194054:0;clear
-: 1691194055:0;ls
-: 1691194059:0;clear
-: 1691194059:0;ls
-: 1691194073:0;vim
-: 1691194422:0;ls
 : 1691194423:0;clear
-: 1691194423:0;ls
 : 1691194425:0;rm NVIDIA-Linux-x86_64-535.86.05.run
-: 1691194426:0;ls
-: 1691194430:0;backup
-: 1691194453:0;vpnConnect
-: 1691194458:0;ls
-: 1691194466:0;cd $homeSys
-: 1691194466:0;ls
-: 1691194467:0;cd xbin
-: 1691194468:0;ls
 : 1691194471:0;vim vpnConnect
 : 1691194505:0;vpnCOn
 : 1691194509:0;vpnConnect
-: 1691194512:0;ls
-: 1691194517:0;vim backup
-: 1691194553:0;backup
-: 1691194570:0;vim backup
-: 1691194574:0;backup
 : 1691194588:0;vim backup
 : 1691194593:0;backup
-: 1691194611:0;ls
 : 1691194618:0;vim netTogg
-: 1691194623:0;ls
-: 1691194638:0;vim workCS
-: 1691194644:0;vim
 : 1691194708:0;vim workCS
 : 1691194755:0;vim ytdl
 : 1691194767:0;rm ytdl
-: 1691194769:0;ls
-: 1691194770:0;config status
-: 1691194780:0;config add -u
+: 1691197727:0;vim /etc/X11/mhwd.d/nvidia.conf
+: 1691197737:0;vim /etc/X11/xorg.conf
+: 1691197841:0;vim /etc/lightdm/lightdm.conf.pacnew
+: 1691197862:0;vim /etc/X11/xinit/xinitrc
+: 1691198194:0;vim .config/BraveSoftware/Brave-Browser/
+: 1691198219:0;locate bookmark ./ | grep Brave
+: 1691198262:0;vim Default/Bookmarks
+: 1691198684:0;fzf
+: 1691198977:0;vim $XDG_DATA_HOME/zsh_history
+: 1691200481:0;vim
+: 1691201454:0;mv install.md install_artix.md
+: 1691201454:0;ls
+: 1691201466:0;config add install_artix.md
+: 1691201472:0;config add -A
+: 1691201485:0;cleanhistory
+: 1691201562:0;confg add -u
+: 1691201577:0;config add -u
+: 1691201580:0;config status
+: 1691201588:0;exit
+: 1691201595:0;config add -u
+: 1691201596:0;config status
+: 1691201601:0;config add -u
