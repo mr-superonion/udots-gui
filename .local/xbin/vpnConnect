@@ -10,10 +10,10 @@
 # [ "$(tmux ls 2>/dev/null | grep background )" ] || tmux new-session -d -s background
 
 # Which server to choose
-server=$(grep -v "#" $homeSys/xshare/vpn.info | awk '{print $1}' | dmenu -i -p 'choose the vpn server' -l 20 -fn Arial)
+server=$(grep -v "#" $HOME/Documents/Share/vpn.info | awk '{print $1}' | dmenu -i -p 'choose the vpn server' -l 20 -fn Arial)
 [ "$server" != "" ] || exit
 
-chosen=$(grep "$server" $homeSys/xshare/vpn.info)
+chosen=$(grep "$server" $HOME/Documents/Share/vpn.info)
 server=$(echo "$chosen" | awk '{print $1}')
 usrname=$(echo "$chosen" | awk '{print $2}')
 passwd=$(echo "$chosen" | awk '{print $3}')

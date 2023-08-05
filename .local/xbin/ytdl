@@ -1,2 +1,0 @@
-#!/usr/bin/env sh
-youtube-dl --dateafter now-2days -a $homeSys/xshare/youtube.info

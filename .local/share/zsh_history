@@ -2395,3 +2395,43 @@ xrandr --auto
 : 1691194037:0;config commit -m "mv xshare to backup dir"
 : 1691194041:0;config add 
 : 1691194046:0;config add -u
+: 1691194049:0;config commit -m "mv xshare to backup dir"
+: 1691194051:0;config push
+: 1691194054:0;clear
+: 1691194055:0;ls
+: 1691194059:0;clear
+: 1691194059:0;ls
+: 1691194073:0;vim
+: 1691194422:0;ls
+: 1691194423:0;clear
+: 1691194423:0;ls
+: 1691194425:0;rm NVIDIA-Linux-x86_64-535.86.05.run
+: 1691194426:0;ls
+: 1691194430:0;backup
+: 1691194453:0;vpnConnect
+: 1691194458:0;ls
+: 1691194466:0;cd $homeSys
+: 1691194466:0;ls
+: 1691194467:0;cd xbin
+: 1691194468:0;ls
+: 1691194471:0;vim vpnConnect
+: 1691194505:0;vpnCOn
+: 1691194509:0;vpnConnect
+: 1691194512:0;ls
+: 1691194517:0;vim backup
+: 1691194553:0;backup
+: 1691194570:0;vim backup
+: 1691194574:0;backup
+: 1691194588:0;vim backup
+: 1691194593:0;backup
+: 1691194611:0;ls
+: 1691194618:0;vim netTogg
+: 1691194623:0;ls
+: 1691194638:0;vim workCS
+: 1691194644:0;vim
+: 1691194708:0;vim workCS
+: 1691194755:0;vim ytdl
+: 1691194767:0;rm ytdl
+: 1691194769:0;ls
+: 1691194770:0;config status
+: 1691194780:0;config add -u

@@ -1,14 +1,14 @@
 #!/usr/bin/env sh
 
 # Which bookmark to choose
-bm=$(ls $homeSys/xshare/bookmarks | dmenu -i -p 'choose the bookmark' -l 20 -fn Arial)
+bm=$(ls $HOME/Documents/Share/bookmarks | dmenu -i -p 'choose the bookmark' -l 20 -fn Arial)
 [ "$bm" != "" ] || exit
 
 # Which concept to choose
-chosen=$(grep -v "#" $homeSys/xshare/bookmarks/$bm | awk '{print $1}'| dmenu -i -p 'choose the concept' -l 20 -fn Arial)
+chosen=$(grep -v "#" $HOME/Documents/Share/bookmarks/$bm | awk '{print $1}'| dmenu -i -p 'choose the concept' -l 20 -fn Arial)
 [ "$chosen" != "" ] || exit
 
-info=$(grep "$chosen" $homeSys/xshare/bookmarks/$bm)
+info=$(grep "$chosen" $HOME/Documents/Share/bookmarks/$bm)
 pdf=$(echo "$info" | awk '{print $2}')
 page=$(echo "$info" | awk '{print $3}')
 
