@@ -1,3 +1,7 @@
+# language
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 # Set PATH so it includes user's private bin if it exists
 if [ -d "/opt/cisco/anyconnect/bin/" ] ; then
     export PATH="/opt/cisco/anyconnect/bin/:$PATH"

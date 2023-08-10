@@ -1,13 +1,24 @@
 ## .zshrc
 
-shareDir="$HOME/Documents/Share/"
-if [ -d "$shareDir" ]; then
-    for script in $shareDir/*sh; do
-        if [ -x "$script" -a ! -d "$script" ]; then
-            . "$script"
-        fi
-    done
-fi
+## autocomplete
+# matches case insensitive for lowercase
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+# pasting with tabs doesn't perform completion
+zstyle ':completion:*' insert-tab pending
+autoload -Uz compinit
+compinit
+compdef vim='nvim'
+compdef config='git'
+compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
+
+setopt complete_aliases
+
+source "$XDG_CONFIG_HOME"/zsh/zvi
+source "$XDG_CONFIG_HOME"/zsh/zprompt
+source "$XDG_CONFIG_HOME"/zsh/zcolor
+source "$XDG_CONFIG_HOME"/zsh/zls
+source "$XDG_CONFIG_HOME"/zsh/zhistory
+source "$XDG_CONFIG_HOME"/zsh/zalias
 
 # Default Software
 # export TERM="xterm"
@@ -18,12 +29,8 @@ export IMAGE="sxiv"
 export OPENER="xdg-open"
 export PAGER="less"
 export WM="qtile"
-export FILEMANAGER="pcmanfm"
+export FILEMANAGER="thunar"
 
 export sysShell="usr/bin/zsh"
 export docDir="$HOME/Documents/"
 export paperDir="$docDir/Research/Papers/"
-
-# Alias
-source ~/.shell_aliases
-

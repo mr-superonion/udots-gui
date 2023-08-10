@@ -22,9 +22,10 @@ colors = [
     "#FFFFFF",
     "#8FBCBB",
     "#000000",
-    "#565b5c",
+    "#8d8f8f",
     "#B48EAD",
     "#D08770",
+    "#faf296",
 ]
 
 layout_theme = {
@@ -52,9 +53,9 @@ def iAdjust_float(client, screen, rmin=1.0 / 5, rmax=1.0 / 1.5):
 
     ratio = 0.618
     if client.height / client.width < ratio:
-        client.height = client.width * ratio
+        client.height = int(client.width * ratio)
     elif client.width / client.height < ratio:
-        client.width = client.height * ratio
+        client.width = int(client.height * ratio)
     x = int(center_x - client.width / 2)
     y = int(center_y - client.height / 2)
     client.x = int(round(x))
@@ -374,18 +375,18 @@ def init_screen1():
         top=bar.Bar(
             widgets=[
                 widget.GroupBox(
-                    active=colors[2],
-                    inactive=colors[5],
+                    active=colors[8],
+                    inactive=colors[2],
                     urgent_alert_method="block",
                     highlight_method="block",
                     this_current_screen_border=colors[3],
-                    this_screen_border=colors[1],
+                    this_screen_border=colors[6],
                     other_current_screen_border=colors[3],
-                    other_screen_border=colors[1],
+                    other_screen_border=colors[6],
                     disable_drag=True,
-                    spacing=0,
+                    spacing=2,
                     padding_x=6,
-                    padding_y=5,
+                    padding_y=6,
                     visible_groups=["a", "s", "d", "f", "g"],
                     use_mouse_wheel=False,
                     **config_defaults,
@@ -419,18 +420,18 @@ def init_screen2():
         top=bar.Bar(
             widgets=[
                 widget.GroupBox(
-                    active=colors[2],
-                    inactive=colors[5],
+                    active=colors[8],
+                    inactive=colors[2],
                     urgent_alert_method="block",
                     highlight_method="block",
                     this_current_screen_border=colors[3],
-                    this_screen_border=colors[1],
+                    this_screen_border=colors[6],
                     other_current_screen_border=colors[3],
-                    other_screen_border=colors[1],
+                    other_screen_border=colors[6],
                     disable_drag=True,
-                    spacing=0,
+                    spacing=2,
                     padding_x=6,
-                    padding_y=2,
+                    padding_y=6,
                     visible_groups=["q", "w", "e", "r", "t"],
                     use_mouse_wheel=False,
                     **config_defaults,

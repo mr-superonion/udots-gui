@@ -321,7 +321,10 @@ reboot
 
 ## Post installation configuration
 
-Once shutdown is complete, remove your installation media. If all went well, you should boot into your new system. Log in as your root to complete the post-installation configuration. See Archlinux's general recommendations for system management directions and post-installation tutorials.
+Once shutdown is complete, remove your installation media. If all went well,
+you should boot into your new system. Log in as your root to complete the
+post-installation configuration. See Archlinux's general recommendations for
+system management directions and post-installation tutorials.
 
 ### GUI:
 

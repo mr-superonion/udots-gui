@@ -30,7 +30,6 @@ expect -f - <<EOD
     expect "accept*" {send -- "y\r"}
     expect "Connected"
 EOD
-    [ $atIPMU -eq 0 ] && export atIPMU=1 && echo "export atIPMU=1" | tee -a ~/.tempVar
 elif [ "$server" == "PAU" ]
 then
     startct -m console remote.princeton.edu

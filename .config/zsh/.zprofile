@@ -1,27 +1,15 @@
-# language
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+# # Start X11
 
-# Start X11
+shareDir="$HOME/Documents/Share/"
+if [ -d "$shareDir" ]; then
+    for script in $shareDir/*sh; do
+        source "$script"
+    done
+fi
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  exec startx ~/.config/X11/xinitrc
+    export XDG_SESSION_CLASS="user"
+    export XDG_SESSION_DESKTOP="qtile"
+    export XDG_SESSION_TYPE="x11"
+    exec startx ~/.config/X11/.xinitrc
 fi
 
-## autocomplete
-# matches case insensitive for lowercase
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-# pasting with tabs doesn't perform completion
-zstyle ':completion:*' insert-tab pending
-autoload -Uz compinit
-compinit
-compdef vim='nvim'
-compdef config='git'
-compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
-
-setopt complete_aliases
-
-source "$XDG_CONFIG_HOME"/zsh/zvi
-source "$XDG_CONFIG_HOME"/zsh/zprompt
-source "$XDG_CONFIG_HOME"/zsh/zcolor
-source "$XDG_CONFIG_HOME"/zsh/zls
-source "$XDG_CONFIG_HOME"/zsh/zhistory

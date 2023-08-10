@@ -13,7 +13,7 @@ sudo pacman -S lxappearance
 ## latex
 
 ```shell
-sudo pacman -S texlive-langjapanese texlive-most texlive-lang biber
+sudo pacman -S texlive-most texlive-lang biber
 sudo pacman -S pandoc
 ```
 
@@ -52,6 +52,11 @@ sudo pacman -S adobe-source-han-sans-otc-fonts
 sudo pacman -S noto-fonts-emoji
 yay -S ttf-twemoji-color
 
+```
+
+## Python
+``shell
+sudo pacman -S python-psutil, python-pynvim
 ```
 
 ## GPU
