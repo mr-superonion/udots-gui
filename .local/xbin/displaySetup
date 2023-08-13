@@ -2,7 +2,12 @@
 
 export DISPLAY=:0
 if ! xrandr | grep "disconnected" | grep -q $dp2; then
-    xrandr --output $dp1 --primary --mode $dpRes1 --output $dp2 --auto --right-of $dp1
+    if [ -z "$dpRes2" ]
+    then
+        xrandr --output $dp1 --primary --mode $dpRes1 --output $dp2 --auto --right-of $dp1
+    else
+        xrandr --output $dp1 --primary --mode $dpRes1 --output $dp2 --mode $dpRes2 --right-of $dp1
+    fi
 else
     xrandr --output $dp1 --primary --mode $dpRes1 --output $dp2 --off
 fi

@@ -48,7 +48,7 @@ set shortmess+=F  " to get rid of the file name displayed in the command line ba
 " vimtex
 let g:vimtex_view_general_viewer='zathura'
 let g:vimtex_view_method='zathura'
-let g:vimtex_compiler_method = 'latexrun'
+" let g:vimtex_compiler_method = 'latexrun'
 
 hi link texMathZoneG texMathZoneEnv
 hi link texMathZoneGS texMathZoneEnvStarred

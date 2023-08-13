@@ -1,139 +1,4 @@
-exec qtile start -b wayland
-vim winit
-chmod +x winit
-pasystray
-blueman-tray
-blueman-manager
-fcitx
-sudo pacman -S xlr-rand
-sudo pacman -S xlr-randr
-yay -S wlr-randr
-wlr-randr
-wlr-randr -h
-vim /etc/X11/xorg.conf.d
-locate /etc/X11/xorg.conf.d
-locate xorg.conf
-vim /boot/loader/loader.conf
-lsblk
-iblk
-blkid
-vim /etc/mkinitcpio.conf
-pacman -S read-edid
-sudo pacman -S read-edid
-ls /sys/class/drm/card0-eDP-1
-ls /sys/class/drm/card0-eDP-1/modes
-vim /sys/class/drm/card0-eDP-1/modes
-ls /usr/lib/firmware/
-ls sudo
-vim sudo
-rm sudo
-xrandr --verbose
-read-edid
-modprobe
-sudoedit /etc/modprobe.d/kernal_mode_settings.conf
-cd /etc/modprobe.d
-sudo mv kernal_mode_settings.conf kernel_mode_settings.conf
-modprobe i915
-modprobe intel
-sudo modprobe intel
-sudo modprobe i915
-sudo modprobe nvidia
-vim /etc/X11/xorg.conf.nvidia-xconfig-original
-systemctl list-jobs | grep Xor
-systemctl list-jobs
-systemctl list-unit
-systemctl list-units
-systemctl list-units | grep Xorg
-systemctl list-units | grep xorg
-udo Xorg -configure
-vim /root/xorg.conf.new
-vim /root/xorg.configure.new
-sudo ls  /root/
-sudo cp /root/xorg.conf.new /etc/X11/xorg.conf
-sudo ls -l /etc/X11/xorg.conf
-sudo ls -l /etc/X11/
-sudo Xorg -config
-startx ~/.config/X11/xinitrc
-rm a.log
-vim /etc/modprobe.d/kernel_mode_settings.conf
-cvt 800x600
-sudo edit /etc/X11/xorg.conf
-cd /etc/X11/
-sudo mv xorg.conf xorg.conf.d/40_screen.conf
-sudo vim xorg.conf
-sudo mv 40_screen.conf ~/
-topo
-kill -9 1091
-vim ~/40_screen.conf
-mv 40_screen.conf 10-monitor.conf
-sudo cp ~/xorg.conf.new xorg.conf
-cd xorg.conf.d
-sudo cp ~/10-monitor.conf ./
-sudo vim -O /etc/modprobe.d/kernel_mode_settings.conf /boot/loader/entries/arch.conf
-sudo vim 10-monitor.conf
-kill -9 2561
-sudoedit 10-monitor.conf
-startx brave-bin
-exec startx brave-bin
-sudo pacman -S mesa-amber
-sudoedit /etc/X11/xorg.conf.d/10-monitor.conf
-sudoedit -O xorg.conf xorg.conf.d/10-monitor.conf
-sudo mv xorg.conf.d/10-monitor.conf ~/
-sudo mv xorg.conf xorg.conf.bkup
-sudo mv ~/xorg.conf.new xorg.conf
-sudoedit
-xrandr --newmode "800x600"   38.25  800 832 912 1024  600 603 607 624 -hsync +vsync
-pacman -Qs nvidia\
-
-sudo mv xorg.conf xorg.conf.bkup0
-sudoedit pacman -Qs nvidia\
-
-cvt 800 600
-gtf 800 600
-gtf 800 600 60
-cvt 800 600 60
-sudo pacman -S cvt12
-yay -S cvt12
-cvt 800 600 60 -r
-xrandr --newmode "800x600R"   35.50  800 848 880 960  600 603 607 618 +hsync -vsync
-xrandr --addmode eDP1 "800x600"
-xrandr --output eDP1 --primary --mode 800x600  --verbose
-xrandr --addmode eDP1 "800x600R"
-xrandr --output eDP1 --primary --mode 800x600R  --verbose
-sudo pacman -Syu\
-
-xrandr --output eDP1 --primary --mode 800x600R --rate 59.84  --verbose
-pacman -Syu\
-
-cvt 800 600 120 -r
-xrandr --newmode "800x600-5"  73.00  800 848 880 960  600 603 607 636 +hsync -vsync
-xrandr --addmode eDP1 "800x600-5"
-xrandr --output eDP1 --primary --mode 800x600-5  --verbose
-cvt 1280 720 180 -r
-xrandr --newmode "1280x720R"  203.25  1280 1328 1360 1440  720 723 728 785 +hsync -vsync
-xrandr --output eDP1 --primary --mode 1280x720R  --verbose
-cvt 1920 1080 144 -r
-cvt 1920 1080 180 -r
-cvt 1920 1080 120 -r
-xrandr --newmode "1920x1080R"  285.25  1920 1968 2000 2080  1080 1083 1088 1144 +hsync -vsync
-xrandr --addmode eDP1 "1920x1080R"
-sudo vim /etc/udev/rules.d/00-remove-nvidia.rules
-xrandr --listactivemonitors\
-
-sudo rm /etc/udev/rules.d/00-remove-nvidia.rules
-sudo pacman -Rns nvidia nvidia-setting
-sudo rmmode
-sudo rmmod nividia
-sudo modprobe
-sudo pacman -Rns nvidia nvidia-utils
-ls /etc/modprobe.d/
-ls /usr/lib/modprobe.d/
-picom -b --unredir-if-possible --backend xr_glx_hybrid --vsync --use-damage --glx-no-stencil
-sudo pacman -Ss nvidia | grep install
-xrandr --output eDP1 --primary --mode "1920x1080R"  --verbose
-Xorg --configure
 sudo Xorg --configure
-X -configure
 sudo xrandr --output eDP1 --primary --mode "1280x720"  --verbose
 sudo get-edid -h
 sudo pacman -S nvidia-open
@@ -143,7 +8,6 @@ sudo pacman -S nvidia nvidim-dkms
 sudo pacman -S nvidia nvidia-dkms
 sudo pacman -S nvidia-open-dkms
 sudo pacman -S nvidia-dkms nvidia
-navidia
 source /usr/share/bash-completion/completions/dkms
 sudo pacman -S complete
 dkms status
@@ -156,30 +20,21 @@ sudo pacman -S nvidia-settings
 sudoedit /etc/X11/xorg.conf.nvidia-xconfig-original
 sudoedit /etc/X11/xorg.conf.bkup
 sudoedit /etc/X11/xorg.conf.backup
-vim /etc/X11/xorg.conf
-vim /usr/lib/Xorg.wrap
 rm /tmp/.X0-lock
 sudo rm /tmp/.X0-lock
 sudoedit xorg.conf.new
-sudo vim xorg.conf.new
 sudo cp xorg.conf.new /etc/X11/xorg.conf00
 sudoedit xorg.conf00
-vim 10-monitor.conf
 sudo mv xorg.conf00 xorg.conf
-rm xorg.conf
 nvidia-cuda-mps-control
 nvidia-modprobe
 nvidia-settings -q CurrentMetaMode
 nvidia-settings -q -a
 nvidia-settings -q
 nvidia-settings --load-config-only\
-
 rm 10-monitor.conf
 sudo rm 10-monitor.conf
-vim /etc/modprobe.d/blacklist-nouveau.conf
 sudo rm /etc/X11/xorg.conf.*
-vim -O xorg.conf xorg.conf.new
-sudo vim -O xorg.conf xorg.conf.new
 sudo cp xorg.conf /etc/X11
 sudo mv xorg.conf.new /etc/X11/xorg.conf
 cp $XDG_DATA_HOME/xorg/Xorg.0.log ./
@@ -205,25 +60,19 @@ xrandr --newmode "1280x720R" 63.75  1280 1328 1360 1440  720 723 728 741 +hsync 
 xrandr --addmode eDP1 "1280x720R"
 xrandr --output eDP1 --primary --mode "1280x720R"  --verbose
 get-edid 2>/dev/null | parse-edid 2>/dev/null | grep Size \
-
 sudo rm /aa.txt
-sudo vim /root/xorg.conf.new
 rm a.conf
 sudo rm xorg.conf
 sudo rmmod nvidia nvidia_uvm nvidia_modset
 sudo rmmod nvidia n
 vim /etc/modprobe.d/
-nvidia-settings -q all
 nvidia-xconfig --query-gpu-info
 get-edid | parse-edid\
-
 sudo get-edid | parse-edid\
-
 man intel
 nouveau
 acpid
 sudo systemctl start acpid.service
-r
 nvidia-persistenced
 sudo systemctl enable nvidia-persistenced
 sudo systemctl start nvidia-persistenced
@@ -233,17 +82,14 @@ sudo systemctl enable nvidia-powerd
 sudo pacman -S arandr
 pacman -S thunar
 sudo pacman -S thunar
-vim aa.txt
 sudo pacman -Rns nvidia-utils
 sudo pacman -S nvidia-utils
 sudo cp /usr/share/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf /etc/X11/xorg.conf/
 sudo cp /usr/share/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf /etc/X11/xorg.conf.d
 sudoedit /etc/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf
 vim /usr/share/X11/xorg.conf.d/10-quirks.conf
-cvt 1280 720 60
 cvt 1280 720 40
 xrandr --newmode "1280x720L" 47.25  1280 1320 1440 1600  720 723 728 740 -hsync +vsync\
-
 xrandr --addmode eDP1 "1280x720L"
 sudo pacman -S lib-mesa
 sudo shutdown 60
@@ -318,12 +164,9 @@ prime-run vulkaninfo
 xrandr --setprovideroutputsource 1 0
 xrandr --output eDP1 --primary --mode "1280x720L"  --verbose
 xrandr --setprovideroutputsource NVIDIA-G0 modesetting\
-
 ls  /sys/class/drm/card1-HDMI-1-0/
 ls /boot/initramfs-linux.img
 loginctl show-session -p Type $(loginctl session-status | head -1 | cut -d' ' -f1)\
-
-i2c
 sudoedit /etc/modprobe.d/blacklist-nouveau.conf
 sudoedit /etc/modprobe.d/kernel_mode_settings.conf
 sudoedit /etc/modprobe.d/nvidia.conf
@@ -331,10 +174,8 @@ sudoedit /etc/modprobe.d/blacklist-i2c_nividia_gpu.conf
 modprobe i2c
 sudo modprobe i2c
 modprobe i2c-dev\
-
 parse-edid
 grep IPS TPLCD.INF  | grep 12.5 | grep 1920x1080\
-
 /sys/class/drm/*/edid
 sudo ls /sys/class/drm/*/edid
 vim ls /sys/class/drm/card0-DP-1/edid
@@ -342,11 +183,9 @@ vim /sys/class/drm/card0-DP-1/edid
 get-edid
 sudo get-edid > a.aa
 vim a.aa
-thunar
 get-edid | parse-edid
 vim .config/X11/xinitrc
 vim $XDG_SESSION_TYPE
-vim ~/.zshenv
 sudo pacman -Ss qtile
 lightdm
 sudo lightdm
@@ -420,7 +259,6 @@ bootctl update
 sudo bootctl update
 sudo get-edid
 sudo modprobe i2c-dev\
-
 sudo get-edid | parse-edid
 sudo pacman -S edid-decode automake dos2unix
 yay -S edid-decode-git
@@ -443,10 +281,6 @@ git checkout edid.S
 make
 ls 1024x576.bin
 ls 1024x576.bin/
-cd /usr/share
-sudo mkdir edid
-cd edid
-pwd
 cp *.bin /usr/share/edid/
 sudo cp *.bin /usr/share/edid/
 sudoedit /boot/loader/loader.conf
@@ -468,7 +302,6 @@ ls -l /sys/class/drm/card0-eDP1/ediD
 ls -l /sys/class/drm/card0-eDP-1/ediD
 ls -l /sys/class/drm/card1-eDP-1
 sudoedit /etc/modprobe.d/blacklist.conf\
-cd /etc/modprobe.d/\
 sudoedit blacklist.conf
 rm blacklist-*
 sudo rm blacklist-*
@@ -570,9 +403,6 @@ xrandr -q1 --help
 xrandr --q1 --help
 xrandr --q1
 xrandr --q12
-printenv | grep SESSION\
-    glxinfo -B\
-    glxinfo32 -B
 xrandr --listmonitors
 xrandr --screen 0 --output eDP-1 --mode "1280x1024" --primary --verbose
 xrandr --screen 0 --output eDP-1 --auto
@@ -586,7 +416,6 @@ ls /sys/class/drm/card1-eDP-1/edid
 ls -l /sys/class/drm/card1-eDP-1/
 parse-edid /sys/class/drm/card1-eDP-1/edid
 ls edid.S
-cd /sys/class/drm/card1-eDP-1/
 sudo chmod +w edid
 sudo mv ./edid edie.bkup
 sudo mv ./edid ~/edie.bkup
@@ -596,8 +425,6 @@ sudo chown edid
 sudo chown xiangchong edid
 sudo chown xiangchong:xiangchong edid
 mkdir edid
-cd card1-eDP-1
-mkdir a
 sudo mkdir a
 ls sys/kernel/debug/dri/0/H
 ls sys/kernel/debug/dri/0/
@@ -605,9 +432,6 @@ ls sys/kernel/
 ls /sys/kernel/debug/dri/0/
 sudo ls /sys/kernel/debug/dri/0/
 sudo ls /sys/kernel/debug/dri/0/crtc-0
-cd /sys/kernel/debug/dri/0/ctrc-0/edid_override
-cd /sys/kernel/debug/dri/0/ctrc-0/
-sudo cd /sys/kernel/debug/dri/0/ctrc-0/
 sudo cat /lib/firmware/edid/1280x720.bin /sys/kernel/debug/dri/0/ctrc-0/edid_override
 sudo ls -l /sys/kernel/debug/dri/0/ctrc-0
 ls /sys/class/drm/
@@ -654,7 +478,6 @@ xrandr --screen 0 --output eDP-1 --mode  1280x1024 --dpi 60 --primary
 ls xorg.conf
 sudo mv xorg.conf xorg.conf.bk
 sudoedit xorg.conf
-cd /etc/X11
 mv xorg.conf.bk xorg.conf
 sudo mv xorg.conf.bk xorg.conf
 sudo systemctl restart lightdm.service
@@ -684,7 +507,6 @@ xrandr --output eDP1 --mode  1280x720 --primary -
 sudoedit /etc/initcpio/install/edid
 sudoedit /etc/mkinitcpio.conf
 sudo mkinitcpio -p linux
-sudoedit /etc/X11/xorg.conf
 sudo pacman -S vulkan-intel
 xrandr --screen 0 --output eDP1 --mode  1280x720
 xrandr --newmode "1280x720" 74.50  1280 1344 1472 1664  720 723 728 748 -hsync +vsync
@@ -699,7 +521,6 @@ git checkout main
 git checkout master
 gi tstatus
 git stash
-git status
 sudo edid-decode -X Packages/edid-generator/2880x1800.bin
 locate monitors.xml
 sudo pacman -Ss arch-boost
@@ -718,7 +539,6 @@ xbacklight
 sudo pacman -Sy xback
 sudo pacman -Ss xback
 sudo pacman -S xorg-xbacklight
-cd Downloads
 sh ./anyconnect-linux64-4.10.06090-core-vpn-webdeploy-k9.sh
 sudo mkdir -r /opt/cisco/anyconnect
 suod sh ./anyconnect-linux64-4.10.06090-core-vpn-webdeploy-k9.sh
@@ -736,12 +556,10 @@ xlsfonts | grep fontname
 ls /usr/local/share/fonts/
 clearf
 xrandr -q
-arandr
 lspci
 lshw
 c Share
 rm *index.html*
-vim default.zsh
 qstatx
 sudo pacman -S nm-applet
 sudo pacman -S network-manager-applet
@@ -749,22 +567,10 @@ yay -R asusctl
 nm-applet
 bg
 vpNCo
-cd Documents
 rm MN-22-4741-MJ_Proof_hi.pdf
-cd Books
-cd Physics
-rm -rf 'è§ƒ¤èƒ¬ƒ£çƒ°ƒ¦è®ºåƒ²ƒ¬çƒ®°ä»£ç²ƒ²å­ƒ°çƒ©©çƒ°ƒ¦å­¦å¯¼è®º ç¬¬2åƒ­· èƒ«±è¯­çƒ©ƒ¨' 'è§ƒ¤èƒ¬ƒ£çƒ°ƒ¦è®ºåƒ²ƒ¬çƒ®°ä»£ç²ƒ²å­ƒ°çƒ©©çƒ°ƒ¦å­¦å¯¼è®º èƒ«±æƒ¶ƒ§çƒ©ƒ¨ ç¬¬ä¸€åƒ­·.rar'
-rm -rf 'è§ƒ¤èƒ¬ƒ£çƒ°ƒ¦è®ºåƒ²ƒ¬çƒ®°ä»£ç²ƒ²å­ƒ°çƒ©©çƒ°ƒ¦å­¦å¯¼è®º ç¬¬2åƒ­· èƒ«±è¯­çƒ©ƒ¨.rar' 'è§ƒ¤èƒ¬ƒ£çƒ°ƒ¦è®ºåƒ²ƒ¬çƒ®°ä»£ç²ƒ²å­ƒ°çƒ©©çƒ°ƒ¦å­¦å¯¼è®º èƒ«±æƒ¶ƒ§çƒ©ƒ¨ ç¬¬ä¸€åƒ­·'
-rm -rf '[å¤©ä½ƒ³çƒ©©çƒ°ƒ¦ã€å®ƒ§å®ƒ¹å­¦åƒ¯ƒªçƒ©©çƒ°ƒ¦å­¦çƒ´µå­ƒ°ä¹¦åƒ°ƒ¨è¾ƒ±].Mathematical.Physics.of.Quantum.Mechanics,.Asch,.Springer.2006.pdf'
-cd CS
-mv 1435-\[æƒµ°å€¼åƒ¨ƒ¦æƒ¾ƒ°æƒ¶¹æ³ƒµåºƒ³\].Cambridge.Press.Numerical.Recipes.3rd.Edition.pdf Cambridge.Press.Numerical.Recipes.3rd.Edition.pdf
 rename ' ' '' *
-rm åƒ¨©çƒ´¨Pythonè¿ƒ»èƒƒ¬æƒµ°æƒ­®åƒ¨ƒ¦æƒ¾ƒ°\(PythonFor\ Data\ Analysisä¸­æƒ¶ƒ§çƒ©ƒ¨\).pdf
-rename '' _ *
-mv _21å¤©å­¦é€ƒºC++_\(ç¬¬6çƒ©ƒ¨\).pdf 21å¤©å­¦é€ƒºC++_ç¬¬6çƒ©ƒ¨.pdf
 mv _Cambridge.Press.Numerical.Recipes.3rd.Edition.pdf Cambridge.Press.Numerical.Recipes.3rd.Edition.pdf
 mv _Data-Driven.pdf Data-Driven.pdf
-mv _Fortran95ç¨ƒ«åºƒ¯è®¾è®ƒã€ƒ°å½­åƒ»½ä¼¦ã€ƒ±.pdf Fortran95ç¨ƒ«åºƒ¯è®¾_å½­åƒ»½ä¼¦.pdf
 mv _Python.Scripting.for.Computational.Science.3rd.Edition.pdf Python_Scripting_for_Computational_Science_3rd.Edition.pdf
 rm _IPythonInteractive\ Computing\ and\ Visualization\ Cookbook.pdf
 rm -rf CS
@@ -780,34 +586,23 @@ yay -S wine
 yay -Syu
 xrandr --output eDP1 --mode  1280x720 --primary  --set "scaling mode" Full
 exitr
-cd edid-generator
 vim 1280x1024.S
 vim edid.S
 rm -rf Wolfram\ Mathematica
 ls Zoom
 rm -rf Zoom
 rm fonts.*
-cd Research
-cd PHD_Apply_2015
 rm -rf GRE*
 rm -rf Toefl
 rm Untitled\ 1.ods
-cd Meetings
 rm -rf Meetings
-cd Courses
 rm -rf Schedule_Tables
 downloadBackup
 df -h
-sudo vim /etc/pacman.conf\
-\
-
-sudoedit /etc/pacman.conf\
-
+sudo vim /etc/pacman.conf
 sudo pacman -Syu
 sudo pacman -S wine
 rm FSF5444.pdf
-cd public_html
-cd Life
 rm -rf Share
 homepagePush
 backup
@@ -822,10 +617,6 @@ rate-mirrors --entry-country us arch
 sudoedit /etc/pacman.conf
 sudoedit /etc/pacman.d/mirrorlist
 pacman -Syyu
-cd ~/
-cd nvim
-cd .vim
-cd plugged
 rm -rf telescope*
 sudo pacman -S wine wine-mono wine-gecko
 ln -s ~/Documents/Wallpapers/Arch_Dark.png ./
@@ -845,7 +636,6 @@ lks
 vim autostart.sh
 which vim
 vim
-config status
 yay -S diff-so-fancy
 nvim install
 nvim install.sh
@@ -886,7 +676,6 @@ vim ~/install.sh
 locate lightdm
 vim /usr/share/bash-completion/completions/lightdm
 vim /usr/lib/lightdm/lightdm-guest-session\
-
 vim /etc/lightdm/users.conf
 locate .environment
 env | grep XDG
@@ -895,23 +684,12 @@ vim .xinitrc
 vim .xprofile
 rm .xprofile
 mv .xinitrc ~/.config/X11/
-ls -l
-ll
-la
-vim ~/.config/zsh/.zshrc 
 vim ~/.config/zsh/.zshrc
-cd .config/
-grep alias -r 
-cd ~
+grep alias -r
 vim .shell_aliases
 lla
 vim .bash_history
 mv .shell_aliases .config/zsh/zalias
-cd .config/zsh/
-vim .zshrc
-cd ..
-cd -
-cd zsh
 vim .zprofile
 rm .xsession-errors
 rm .xsession-errors.old
@@ -922,9 +700,8 @@ vim /var/log/Xorg.0.log
 dmesg
 lear
 exec startx ~/.config/X11/.xinitrc
-vim .zshenv 
-vim .config/zsh/.zshrc
 vim .zshenv
+vim .config/zsh/.zshrc
 vim ~/.config/zsh/.zprofile
 qtile -h
 qtile top
@@ -932,11 +709,7 @@ ps -aux
 ps -aux | grep qtile
 ps -aux | grep qtile start
 ps -aux | grep 'qtile start'
-ps -aux | grep 'qtile' 
-top
-cd .config/qtile
-cd ~/.local/xbin
-vim displaySetup
+ps -aux | grep 'qtile'
 echo $DISPLAY
 which displaySetup| vim
 rm a.aa
@@ -950,34 +723,26 @@ sudo xrandr --setprovideroffloadsink NVIDIA-G0 Intel
 xrandr --listproviders
 sudo xrandr --setprovideroutputsource Intel NVIDIA-G0
 sudo xrandr --setprovideroutputsource NVIDIA-G0 Intel
-xrandr
 man brave-bin
 brave-bin -h
 brave-bin --help
 brave -h
 brave --h
 brave --help
-man brave 
+man brave
 xdg-open -h
 xdg-open --help
 xdg-open --manual
 sudo pacman -Syyu
 vim $XDG_DATA_HOME/xorg/Xorg.0.log
 vim $XDG_DATA_HOME/qtile/qtile.log
-nvidia-settings
-cd  .config
-cd qtile
-cd confi
-vim config.py 
+vim config.py
 sudo pacman -S gcalcli conky-all
 yay -S gcalcli conky-all
 gcalcli list\
-
 gcalcli  --client-id 525070773528-v30d00dg2bbgbi7ugg4954t0ut3h448c.apps.googleusercontent.com
 gcalcli list  --client-id 525070773528-v30d00dg2bbgbi7ugg4954t0ut3h448c.apps.googleusercontent.com
 yay -R gcalcli\
-
-sudo updatedb
 yay -S conky-all
 yay -S conky
 conky-manager
@@ -990,7 +755,6 @@ conky
 conky &
 conky -c conky1 -a top_right -x 7 -y 70 -d
 conky -a top_right -x 7 -y 70 -d
-vpnCO
 /opt/cisco/anyconnect/bin/vpn disconnect
 ping google.com
 sudo dmsg
@@ -1000,60 +764,147 @@ snapShot
 yay -S scrot
 uname
 uname -a
-cd Packages
-cd dmenu
 vim dmenu_run
 vim dmenu_path
 vim dmenu
 vim config.h
 make install\
-
 man dmenu
-sudo shutdown 50
-displaySetup
-reboot
 vim .config/X11/.xinitrc
 xrdb -load ~/.config/X11/Xresources
 vim ~/.config/X11/Xresources
-xmodmap ~/.config/X11/Xmodmap
 yay -S ds9
-c
-vpnConnect
-exitg
 ds9
-echo $vera_psc
-cd Tmp
-clear
-cd F
-cd FPFS_autodiff
-sudo pacman -S pdflatex
-sudo pacman -S texlive-basic
-sudo pacman -S texlive-latexextra texlive-latexrecommended texlive-bibtexextra texlive-xetex texlive-fontsrecommended
-sudo pacman -S texlive-publishers texlive-fontsextra
-pdflatex main.tex
-sudo pacman -S texlive-latexextra 
-sudo pacman -S texlive-latex
-sudo pacman -S 	texlive-mathscience
-ls
-vim main.tex
+sudo pacman -S texlive-basic texlive-latexextra texlive-latexrecommended \
+    texlive-bibtexextra texlive-xetex texlive-fontsrecommended texlive-fontsextra \
+    texlive-mathscience texlive-publishers texlive-binextra
 ipython
-python
-exit
-nvidia-settings
 nvidia-settings -V
 nvidia-settings -l
 nvidia-settings -v
 nvidia-settings --help
-vim  ~/.config/X11/.xinitrc
 vim .local/xbin/exploreLocal
 vim .local/xbin/remoteTerm
 which dsf
 which dmenu
-ls
-config status
 config add -A
 config add -e
-config add -u
 config staus
+config add -u
+config commit -m "update dotfiles"
+config push
+config push --set-upstream origin main
+sl
+vim .git-credentials
+vim .nvidia-settings-rc
+nvidia-settings
+nvidia-settings -h
+nvidia-settings -q all
+nvidia-settings
+vim /etc/X11/xorg.conf
+sudoedit /etc/X11/xorg.conf
+sudo pacman -S texlive-luatex
+yay -S latexrun-git
+sudo pacman -S texlive-plaingeneric
+pacman -S ctags
+sudo pacman -S ctags
+axrandr
+vim displaySetup
+vim default.zsh
+xrandr
+arandr
+git commit -m "commit"
+xmodmap ~/.config/X11/Xmodmap
+scp $vera_psc:/hildafs/projects/phy200017p/share/ana/hist_20230811.md ./
+thunar
+exit
+displaySetup
+rm conkyrc
+rm hist_20230811.md
+yay -S XDG-ninja
+rm .xinputrc
+xdg-ninja
+mv .wine $XDG_DATA_HOME/wine
+rm .Xauthority
+mv .git-credentials $XDG_CONFIG_HOME/git/credentials
+rm .bash_history
+rm .nvidia-settings-rc
+rm install_artix.md
+mv install.sh Packages
+ls .screenlayout
+rm -rf .screenlayout
+config status
+python
+[ -f ~/.config/X11/Xmodmap ] && echo "a"
+vim .zshenv
+ls $XDG_RUNTIME_DIR
+rm FPFS2023
+rm FPFS2023.zip
+vim referee.md
+git pull
+git log
+diff 93a390acc14f53809a3f65d3bd13223722d6861d main.tex
+git diff 93a390acc14f53809a3f65d3bd13223722d6861d main.tex
+vim referee_report.md
+vim .gitigore
+vim .gitignore
+git add .gitignore
+git status
+git add -A
+git commit -m "prepare replying referee report"
+git push
+sudo shutdown 50
+vim .config/qtile/autostart.sh
+vim ~/.config/X11/Xmodmap
+sudo pacman -S gedit
+vim ~/.config/X11/.xinitrc
+vpNCop
+vpnCO
+vim .local/xbin/remoteNotebook
+[ -f ~/.config/X11/Xmodmap ] && xmodmap ~/.config/X11/Xmodmap
+vim ~/.config/nvim/init.vim
+sudo pacman -S texlive-binextra
+vim main.tex
+clear
+celar
+ssh-add li
+eval ssh-agent
+ssh-add -l 1>/dev/null
+vim ~/.config/zsh/.zshrc
+source ~/.config/zsh/.zshrc
+echo $SSH_AUTH_SOCK
+ls $XDG_RUNTIME_DIR/ssh-agent.env
+vim $XDG_RUNTIME_DIR/ssh-agent.env
+vim ~/.zshenv
+source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+eval source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+source $XDG_RUNTIME_DIR/ssh-agent.env
+eval $XDG_RUNTIME_DIR/ssh-agent.env
+eval source $XDG_RUNTIME_DIR/ssh-agent.env
+killall -9 ssh-agent
+sudo pacman -S x11-ssh-askpass
+ssh-add -l 2>/dev/null
+sudo updatdb
+sudo updatedb
+eval `ssh-agent`
+vim -O .local/xbin/remote*
+ls
+vim .local/xbin/recordClipBoard
+top
+/home/xiangchong/.local//xbin/remoteNotebook
+ssh-add ~/.ssh/id_rsa
+ssh-add -l
+ssh-add -l
+reboot
+xmodmap ~/.config/X11/Xmodmap\
+vim /home/xiangchong/.local//xbin/remoteNotebooK
+vpnConnect
+remoteNotebook
+vim /home/xiangchong/.local//xbin/remoteNotebook
+pacman -S lsof
+sudo pacman -S lsof
+config status
+vim .local/share/zsh_history
+ls
 config status
 config add -u

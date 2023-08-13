@@ -2,7 +2,7 @@
 # choose the server to login
 
 # Initialization
-[ "$(ssh-add -l 2>/dev/null)" ] || ssh-add ~/.ssh/id_rsa
+# xterm -T "dialog" -e "ssh-add ~/.ssh/id_rsa"
 
 # Which server to choose
 chosen=$(grep -v "#" $HOME/Documents/Share/server.info | awk '{print $1}'| dmenu -g 1 -i -p 'choose the ssh server' -l 20 -fn Arial)
@@ -18,6 +18,7 @@ p=$(echo "$info" | awk '{print $3}')
 # input is the $(which jupyter) on server
 
 port1="$p"
+xterm -T "dialog" -e ssh $s "echo 'login'"
 client=$(ssh "$s" cat \$HOME/.cache/jupyterlab.info | awk '{print $1}')
 port3=$(ssh "$s" cat \$HOME/.cache/jupyterlab.info | awk '{print $2}')
 # kill existing connections
@@ -26,7 +27,6 @@ if [ pids ]; then
     kill $pids
 fi
 
-rm -rf ~/.cache
 
 cmd="ssh -f -N -L "$port1":"$client":$port3 $s"
 echo "$cmd"

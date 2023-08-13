@@ -25,16 +25,16 @@ export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
 export SSB_HOME="$XDG_DATA_HOME"/zoom
+export WINEPREFIX="$XDG_DATA_HOME"/wine
 export ZDOTDIR="$HOME"/.config/zsh
+export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
+
 
 # SSH agent
-if [[ ! -f "$XDG_RUNTIME_DIR/ssh-agent.env" ]]; then
-    ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
+if [ "$SSH_AUTH_SOCK" = "" ]; then
+    eval `ssh-agent -s`
 fi
-if [[ ! -f "$SSH_AUTH_SOCK" ]]; then
-    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
-fi
-export SSH_ASKPASS=/usr/lib/ssh/x11-ssh-askpass
+# export SSH_ASKPASS=/usr/lib/ssh/x11-ssh-askpass
 
 # User PATH
 export homeSys="$HOME/.local/"
