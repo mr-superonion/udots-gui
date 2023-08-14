@@ -684,7 +684,6 @@ vim .xinitrc
 vim .xprofile
 rm .xprofile
 mv .xinitrc ~/.config/X11/
-vim ~/.config/zsh/.zshrc
 grep alias -r
 vim .shell_aliases
 lla
@@ -700,7 +699,6 @@ vim /var/log/Xorg.0.log
 dmesg
 lear
 exec startx ~/.config/X11/.xinitrc
-vim .zshenv
 vim .config/zsh/.zshrc
 vim ~/.config/zsh/.zprofile
 qtile -h
@@ -736,7 +734,6 @@ xdg-open --manual
 sudo pacman -Syyu
 vim $XDG_DATA_HOME/xorg/Xorg.0.log
 vim $XDG_DATA_HOME/qtile/qtile.log
-vim config.py
 sudo pacman -S gcalcli conky-all
 yay -S gcalcli conky-all
 gcalcli list\
@@ -790,14 +787,11 @@ which dmenu
 config add -A
 config add -e
 config staus
-config add -u
 config commit -m "update dotfiles"
-config push
 config push --set-upstream origin main
 sl
 vim .git-credentials
 vim .nvidia-settings-rc
-nvidia-settings
 nvidia-settings -h
 nvidia-settings -q all
 nvidia-settings
@@ -817,7 +811,6 @@ git commit -m "commit"
 xmodmap ~/.config/X11/Xmodmap
 scp $vera_psc:/hildafs/projects/phy200017p/share/ana/hist_20230811.md ./
 thunar
-exit
 displaySetup
 rm conkyrc
 rm hist_20230811.md
@@ -833,7 +826,6 @@ rm install_artix.md
 mv install.sh Packages
 ls .screenlayout
 rm -rf .screenlayout
-config status
 python
 [ -f ~/.config/X11/Xmodmap ] && echo "a"
 vim .zshenv
@@ -888,12 +880,10 @@ sudo updatdb
 sudo updatedb
 eval `ssh-agent`
 vim -O .local/xbin/remote*
-ls
 vim .local/xbin/recordClipBoard
 top
 /home/xiangchong/.local//xbin/remoteNotebook
 ssh-add ~/.ssh/id_rsa
-ssh-add -l
 ssh-add -l
 reboot
 xmodmap ~/.config/X11/Xmodmap\
@@ -903,8 +893,23 @@ remoteNotebook
 vim /home/xiangchong/.local//xbin/remoteNotebook
 pacman -S lsof
 sudo pacman -S lsof
-config status
 vim .local/share/zsh_history
 ls
+config status
+config add -u
+config commit -m "latex"
+config add Package/install.md
+config add Packages/install.md
+config add Packages/install.sh
+config commit -m "add intall commands"
+config push
+sexit
+exit
+rm .tmux/resurrect
+rm -rf .tmux/resurrect
+ls | wc -l
+ls -a | wc -l
+ls
+git status
 config status
 config add -u
