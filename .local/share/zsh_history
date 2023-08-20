@@ -913,3 +913,5 @@ ls
 git status
 config status
 config add -u
+config status
+config add -u
