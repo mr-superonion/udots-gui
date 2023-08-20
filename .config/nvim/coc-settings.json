@@ -1,6 +1,15 @@
 {
+    "diagnostic.level": "information",
+    "diagnostic.showUnused": true,
+    "coc.source.vimtex.enable": true,
 
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.analysis.useLibraryCodeForTypes": false,
     "python.analysis.stubPath": "/home/xiangchong/.local/cache/typings",
-    "python.analysis.useLibraryCodeForTypes": false
+    "pyright.inlayHints.variableTypes": false,
+    "pyright.inlayHints.functionReturnTypes": false,
+
+    "snippets.userSnippetsDirectory": "~/.config/nvim/snips"
 
 }
