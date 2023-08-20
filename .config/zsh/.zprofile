@@ -6,6 +6,7 @@ if [ -d "$shareDir" ]; then
         source "$script"
     done
 fi
+
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
     export XDG_SESSION_CLASS="user"
     export XDG_SESSION_DESKTOP="qtile"

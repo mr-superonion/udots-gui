@@ -23,17 +23,9 @@ nvidia glxinfo | grep 'OpenGL renderer string'
 nvidia
 glxinfo | grep 'OpenGL renderer string'
 yay -S asusctl
-systemctl enable asusd
-suod systemctl enable asusd
-sudo systemctl enable asusd
 sudo systemctl start asusd
 lsusb
-sudo pacman -S lsusb
-systemctl daemon-reload && systemctl restart asusd
-rog-control-center
-asusctl
 asusctl -h
-sudo asusctl
 sudo asusctl profile
 yay -Rns asusctl
 pacman -Qqd | pacman -Rsu -
@@ -131,19 +123,15 @@ xrandr --setprovideroutputsource NVIDIA-G0\
 xrandr --output eDP1 --primary --mode "1280x720"  --verbose
 nvidia-xconfig
 sudo nvidia-xconfig
-vim xorg.conf
 nvidia-ngx-updater
 sudo nvidia-settings
 sudo cp xorg.conf /etc/X11/xorg.conf
 sudo cp xorg.conf.backup /etc/X11/xorg.conf
 cp /var/log/Xorg.0.log ./
-vim /var/log/lightdm/lightdm.log
-clar
 rm xorg.*
 sudo systemctl stop nvidia-powerd.service
 sudo systemctl start nvidia-powerd.service
 sudo systemctl stop lightdm.service
-vim ~/.xinitrc
 rmmod ideapad_laptop
 sudo rmmod ideapad_laptop
 rmmod i915
@@ -158,16 +146,13 @@ sudo get-edid | parse-edid
 sudo pacman -S edid-decode automake dos2unix
 yay -S edid-decode-git
 git clone https://github.com/akatrevorjay/edid-generator.git
-vim ../Xorg.0.log
 cvt 860 720 60
 mv modeline.txt edid-generator
 git branch -n legion2018
 git branch legion2018
 git checkout -b legion2018
 git checkout legion2018
-vim modeline.txt
 cvt 1280 1024
-1920/1.5
 rm -rf *.bin
 rm -rf *.S
 ./modeline2edid ./modeline.txt
@@ -177,11 +162,8 @@ cp *.bin /usr/share/edid/
 sudo cp *.bin /usr/share/edid/
 sudoedit /boot/loader/loader.conf
 realpath 1280x720.bin
-vim /sys/class/drm/card0-eDP-1/edid
 sudo cp /sys/class/drm/card1-eDP-1/edid
 sudo cp /sys/class/drm/card1-eDP-1/edid ./
-vim edid
-vim Packages/edid-generator/1024x576.bin
 cp Packages/edid-generator/1280x720.bin  /sys/class/drm/card1-eDP-1/edid
 sudo cp Packages/edid-generator/1280x720.bin  /sys/class/drm/card1-eDP-1/edid
 sudoedit /etc/modprobe.d/blacklist.conf\
@@ -207,7 +189,6 @@ sudo modprobe -r nvidia-drm
 systemctl stop nvidia-persistenced.service
 systemctl disable nvidia-persistenced.service
 sudo modprobe -r nvidia
-lsmod
 rmmod nvidia_drm
 sudo rmmod nvidia_drm
 sudo rmmod nvidia_modeset
@@ -221,11 +202,8 @@ sudo pacman -Rns nvidia-settings nvidia-utils nvidia-prime
 sudo pacman -Rns nvidia-settings nvidia-prime
 sudo pacman -Rns $(pacman -Qqs)
 sudo pacman -S xorg-server
-vim /boot/loader/entries/arch.conf
 sudo pacman -S libdrm
 sudo rm /etc/X11/xorg.conf.nvidia-xconfig-original
-vim /usr/share/X11/xorg.conf.d/40-libinput.conf
-vim /usr/share/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf
 mkinitcpio -p linux
 sudo pacman -Rns nvidia-utils nvidia-dkms
 sudo rm -rf xorg.conf.d
@@ -240,7 +218,6 @@ sudo mv /etc/X11/xorg.conf ./
 xrandr --prop
 sudo systemctl stop lightdm
 sudo systemctl start lightdm.service
-vim /.config/monitors.xml\
 xrandr --output eDP-1 --primary --mode "1280x720"  --verbose
 xrandr --output eDP-1 --primary --mode "320x175"  --verbose
 xrandr --output eDP-1 --primary --mode "700x525"  --verbose
@@ -270,11 +247,7 @@ xrandr --output eDP-1 --mode "1024x768"  --verbose
 sudo dmesg | more
 sudo dmesg | less
 sudo cp /root/xorg.conf.new ~/
-vim xorg.conf.new
 sudo systemctrl restart lightdm.service
-xrandr --output eDP-1 --mode "1280x1024" --primary --verbose
-xrandr --screen screen1 --mode "1280x1024" --primary --verbose
-xrandr --screen 0 --mode "1280x1024" --primary --verbose
 xrandr -q1
 xrandr -q1 --help
 xrandr --q1 --help
@@ -283,7 +256,6 @@ xrandr --q12
 xrandr --listmonitors
 xrandr --screen 0 --output eDP-1 --mode "1280x1024" --primary --verbose
 xrandr --screen 0 --output eDP-1 --auto
-sudo reboot
 xrandr --screen 0 --output eDP-1 --mode 1280x1024 -f 60
 xrandr --screen 0 --output eDP-1 --mode 1280x1024 60
 $ glxinfo | grep "OpenGL"               \
@@ -315,7 +287,6 @@ xrandr --screen 0 --output eDP-1 --rotate normal
 sudo cat /lib/firmware/edid/1280x720.bin /sys/kernel/debug/dri/1/eDP-1/edid_override
 sudo cat /lib/firmware/edid /sys/class/drm/card1-eDP-1/edid
 sudo cat /lib/firmware/edid/1024x576.bin /sys/class/drm/card1-eDP-1/edid
-vim /sys/class/drm/card1-eDP-1/edid
 sudo chmod 544 /sys/class/drm/card1-eDP-1/edid
 sudo chmod 644 /sys/class/drm/card1-eDP-1/edid
 sudo chmod 777 /sys/class/drm/card1-eDP-1/edid
@@ -362,7 +333,6 @@ xrandr --output eDP1 --set "scaling mode" Full
 xrandr --output eDP1 --mode  1280x720 --primary --preferred
 xrandr --output eDP1 --mode  1280x720 --primary -
 sudoedit /etc/initcpio/install/edid
-sudoedit /etc/mkinitcpio.conf
 sudo mkinitcpio -p linux
 sudo pacman -S vulkan-intel
 xrandr --screen 0 --output eDP1 --mode  1280x720
@@ -380,29 +350,18 @@ gi tstatus
 git stash
 sudo edid-decode -X Packages/edid-generator/2880x1800.bin
 locate monitors.xml
-sudo pacman -Ss arch-boost
-sudo pacman -Ss arch
-sudo pacman -Ss arch | grep boo
-rm config.x*
 rm nvidia-bug-report.log.gz
 rm -rm xorg.*
 sudo rm  xorg.*
 rm -rf volumeicon
 sudo pacman -Rns volumeicon
 grep -r 'manfm'
-vim exploreLocal
-vim netTogg
-sudo pacman -Sy xback
-sudo pacman -Ss xback
-sudo pacman -S xorg-xbacklight
 sh ./anyconnect-linux64-4.10.06090-core-vpn-webdeploy-k9.sh
 sudo mkdir -r /opt/cisco/anyconnect
 suod sh ./anyconnect-linux64-4.10.06090-core-vpn-webdeploy-k9.sh
 sudo sh ./anyconnect-linux64-4.10.06090-core-vpn-webdeploy-k9.sh
 /opt/cisco/anyconnect/bin/vpnui
-vim vpnConnect
 sudo pacman -S expect
-vim ~/.ssh/config
 remoteTerm
 sudo pacman -S rsync
 fc-cache
@@ -434,8 +393,6 @@ yay -S wine
 yay -Syu
 xrandr --output eDP1 --mode  1280x720 --primary  --set "scaling mode" Full
 exitr
-vim 1280x1024.S
-vim edid.S
 rm -rf Wolfram\ Mathematica
 rm -rf Zoom
 rm fonts.*
@@ -444,9 +401,7 @@ rm -rf Toefl
 rm Untitled\ 1.ods
 rm -rf Meetings
 rm -rf Schedule_Tables
-downloadBackup
 df -h
-sudo vim /etc/pacman.conf
 sudo pacman -Syu
 sudo pacman -S wine
 rm FSF5444.pdf
@@ -455,50 +410,30 @@ homepagePush
 backup
 sudo pacman -S rankmirrors
 sudo pacman -S pacman-contrib
-vim install
 curl -s "https://archlinux.org/mirrorlist/?country=FR&country=GB&protocol=https&use_mirror_status=on" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 -
 sudo pacman -S rate-mirrors
 yay -S rate-mirrors
-vim install.sh
 rate-mirrors --entry-country us arch
-sudoedit /etc/pacman.conf
 sudoedit /etc/pacman.d/mirrorlist
 pacman -Syyu
 rm -rf telescope*
 sudo pacman -S wine wine-mono wine-gecko
 ln -s ~/Documents/Wallpapers/Arch_Dark.png ./
-which displaySetup
 rm Arch_Dark.png
-vim /home/xiangchong/.local//xbin/displaySetup
 sudo pacman -S feh
 cp ~/Documents/Wallpapers/Arch_Dark.png ./bg.png
 rm bg.png
-vim qtile/autostart.sh
-vim zls
-vim ~/.shell_aliases
 ln -s ~/Documents/Wallpapers/Arch_Dark.png ./bg.png
-lks
-vim autostart.sh
-which vim
-yay -S diff-so-fancy
-nvim install
-nvim install.sh
 config diff .shell_aliases
-nvim .shell_aliases
 . .zshenv
 sh .zshenv
 grep -r 'XDG'
 grep -r 'XDG' .*
 rm $XDG_DATA_HOME/xorg/Xorg.*
 wine
-wine windows
-wind notepad
-wine notepad
 wine list
 mkdir Tmp
-vim Xorg.0.log
 rm Xorg.0.log
-vim install_artix.md
 git clone https://git.overleaf.com/6372e7d889453d7d438352c7
 mv 6372e7d889453d7d438352c7 FPFS_autodiff
 git clone https://git.overleaf.com/633b5b55a8cc4eaa977310ed
@@ -511,35 +446,23 @@ git clone https://git.overleaf.com/647aef723719f60085ad935b
 mv 647aef723719f60085ad935b FLA
 pacman -S lxappearance
 sudo pacman -S lxappearance
-vim ~/install.sh
 locate lightdm
-vim /usr/share/bash-completion/completions/lightdm
-vim /usr/lib/lightdm/lightdm-guest-session\
-vim /etc/lightdm/users.conf
 locate .environment
 env | grep XDG
 echo $XDG_STATE_HOME
-vim .xinitrc
-vim .xprofile
 rm .xprofile
 mv .xinitrc ~/.config/X11/
 grep alias -r
-vim .shell_aliases
 lla
-vim .bash_history
 mv .shell_aliases .config/zsh/zalias
-vim .zprofile
 rm .xsession-errors
 rm .xsession-errors.old
 sudo pacman -Rns lightdm
 sudo pacman -Rns lightdm light-gtk-greeter
 sudo pacman -Rns lightdm lightdm-gtk-greeter
-vim /var/log/Xorg.0.log
 dmesg
 lear
 exec startx ~/.config/X11/.xinitrc
-vim .config/zsh/.zshrc
-vim ~/.config/zsh/.zprofile
 qtile -h
 qtile top
 ps -aux
@@ -548,11 +471,7 @@ ps -aux | grep qtile start
 ps -aux | grep 'qtile start'
 ps -aux | grep 'qtile'
 echo $DISPLAY
-which displaySetup| vim
 rm a.aa
-vim .local/xbin/displaySetup
-vim .config/zsh/.zprofile
-lspci -k | grep -A 2 -E "(VGA|3D)"
 xrandr --setprovideroutputsource NVIDIA-G0 Intel
 sudo xrandr --output eDP1 --mode  1280x720 --primary  --set "scaling mode" Full
 sudo xrandr --setprovideroffloadsink Intel NVIDIA-G0
@@ -570,7 +489,6 @@ man brave
 xdg-open -h
 xdg-open --help
 xdg-open --manual
-sudo pacman -Syyu
 vim $XDG_DATA_HOME/xorg/Xorg.0.log
 vim $XDG_DATA_HOME/qtile/qtile.log
 sudo pacman -S gcalcli conky-all
@@ -639,10 +557,8 @@ sudo pacman -S ctags
 axrandr
 vim displaySetup
 vim default.zsh
-xrandr
 arandr
 scp $vera_psc:/hildafs/projects/phy200017p/share/ana/hist_20230811.md ./
-displaySetup
 rm conkyrc
 rm hist_20230811.md
 yay -S XDG-ninja
@@ -658,14 +574,11 @@ rm -rf .screenlayout
 rm FPFS2023
 rm FPFS2023.zip
 vim referee.md
-git pull
-git log
 diff 93a390acc14f53809a3f65d3bd13223722d6861d main.tex
 git diff 93a390acc14f53809a3f65d3bd13223722d6861d main.tex
 vim .gitigore
 git add .gitignore
 git commit -m "prepare replying referee report"
-vim .config/qtile/autostart.sh
 vim ~/.config/X11/Xmodmap
 sudo pacman -S gedit
 vpNCop
@@ -673,18 +586,6 @@ vim .local/xbin/remoteNotebook
 [ -f ~/.config/X11/Xmodmap ] && xmodmap ~/.config/X11/Xmodmap
 sudo pacman -S texlive-binextra
 celar
-ssh-add li
-eval ssh-agent
-ssh-add -l 1>/dev/null
-vim ~/.config/zsh/.zshrc
-source ~/.config/zsh/.zshrc
-echo $SSH_AUTH_SOCK
-vim $XDG_RUNTIME_DIR/ssh-agent.env
-source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
-eval source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
-source $XDG_RUNTIME_DIR/ssh-agent.env
-eval $XDG_RUNTIME_DIR/ssh-agent.env
-eval source $XDG_RUNTIME_DIR/ssh-agent.env
 killall -9 ssh-agent
 sudo pacman -S x11-ssh-askpass
 ssh-add -l 2>/dev/null
@@ -699,7 +600,6 @@ xmodmap ~/.config/X11/Xmodmap\
 vim /home/xiangchong/.local//xbin/remoteNotebooK
 remoteNotebook
 vim /home/xiangchong/.local//xbin/remoteNotebook
-pacman -S lsof
 sudo pacman -S lsof
 config commit -m "latex"
 config add Package/install.md
@@ -709,7 +609,6 @@ config commit -m "add intall commands"
 sexit
 rm .tmux/resurrect
 rm -rf .tmux/resurrect
-config add -u
 config commit -m "del unused files"
 config push
 vim .gitignore
@@ -718,7 +617,6 @@ xbacklight
 xbacklight -dec 10
 vim exit
 scp $vera_psc:/hildafs/home/xiangchl/setups/setup_fpfs.sh ./
-sudo pamcan -S unzip
 sudo pacman -S unzip
 extract flask-master.zip
 vim .config/git/credentials
@@ -728,17 +626,14 @@ kls
 sudo shutdown 60
 vim .zshenv
 exec xstart 
-vim ~/.config/X11/.xinitrc
 xset r rate 300 50
 clwear
-vim ~/.zshenv
 rm .Xauthority
 rm setup_fpfs.sh
 rm .nvidia-settings-rc
 dmenu
 echo $PATH
 make
-make install
 dmenu_run
 git diff dmenu
 git diff config.h
@@ -750,7 +645,6 @@ sudo pacman -S fzf
 sudo pacman -S python-ipython
 sudo pacman -Ss ipython
 sudo pacman -S ipython
-yay -Syyu
 git staus
 sudo pacman -Rns slack-desktop
 sudo pacman -S flatpak
@@ -760,7 +654,6 @@ sudo pacman -Rns flatpak
 sudo pacman -S snap
 sudo pacman -Ss snap
 sudo pacman -Ss snapd
-yay -S snapd
 yay -R slack
 sudo snap install snap-store
 sudo pacman -S apparmor
@@ -773,7 +666,6 @@ sudo systemctl start snapd.service\
 sudo snap install slack snap-store
 snap search slack
 slack-desktop
-sudo updatedb
 snap slack
 sudo systemctl enable --now snapd.socket
 sudo systemctl start snapd.socket
@@ -786,9 +678,6 @@ snap snap-store
 snap-store
 snap
 slack
-mmmemo
-reboot
-cat ~/.ssh/id_rsa
 cat id_rsa.pub
 vim ~/.config/git/credentials
 zathura ms.pdf
@@ -800,9 +689,7 @@ sudo pacman -R flatppak
 sudo pacman -R flatpak
 vim .config/qtile/config.py
 locate bluetoothd
-top
 sudo pacman -S htop
-htop
 vpNCo
 pyhton
 sudo pacman -S pdfarranger
@@ -816,7 +703,6 @@ rnote
 sudo pacman -Rns rnote
 sudo pacman -Rns xournal
 yay -S xournal
-xmodmap ~/.config/X11/Xmodmap
 xournal
 pdflatex main.tex
 bibtex main.aux
@@ -828,18 +714,14 @@ git commit -m "commit"
 exiut
 zathura main.pdf
 python
-/opt/cisco/anyconnect/bin/vpn disconnect
-sh ./pullFigures.sh
 git add -A
 git commit -m "finish answering referee report"
 git push
 mv main.tex ms.tex
 mv ms.tex main.tex
-clear
 vim ~/.config/coc/extensions/package.json
 config add ~/.config/coc/extensions/package.json
 config checkout -- ../../.config/nvim/vimrc
-config status
 config checkout -- ../../.config/nvim/init.vim
 vim ~/.config/nvim/coc-settings.json
 mkdir ~/.config/nvim/snips
@@ -852,8 +734,6 @@ rm textile.snippets
 vim tex.snippets
 vim ~/.vim/plugged/vim-snippets/snippets/tex.snippets
 vim ~/.vim/plugged/vim-snippets/UltiSnips/tex.snippets
-sudo shutdown 50
-git status
 vim
 vim -u NONE a.tex
 sudo pacman -S alarcrity
@@ -870,25 +750,232 @@ vim ms.tex
 vim a.md
 vim ~/.config/nvim/init.vim
 vim minimal.tex
-vim .local/share/zsh_history
-cd Tmp
-cd cosmic_shear
-ls
 vim main.tex
-vpnConnect
-exit
 sh ./pullFigures.sh
-lspci -k | grep -A 2 -E "(VGA|3D)"
-vim Packages/install.sh
-ls
-vim Packages/install.sh
 visudo
-sudo visudo
 sudo pacman -S vi
 sudo visudo
 ls .config/zsh/zalias
 config add .config/zsh/zalias
-config status
 config add -u
+sudo pacman -S brave
+sudo pacman -S brave-bin
+clar
+sudo pacman -S xclip
+sudo pacman xsel
+sudo pacman -S xsel
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \\
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'\
+sudo pacman -S python-pynvim
+sudo pacman --noconfirm -S  bluez bluez-utils blueman\
+## check the kernel module\
+lsmod | grep btusb\
+sudo systemctl --user enable bluetooth.service\
+sudo systemctl --user start bluetooth.service\
+sudo pacman --noconfirm -S  bluez bluez-utils blueman\
+## check the kernel module\
+lsmod | grep btusb\
+sudo systemctl --user enable bluetooth.service\
+sudo pacman --noconfirm -S  bluez bluez-utils blueman\
+sudo systemctl --user start bluetooth.service\
+sudo pacman --noconfirm -S python-psutil qtile expect rsync thunar \\
+    lightdm-gtk-greeter thunar network-manager-applet \\
+    lxappearance\
+sudo pacman --noconfirm -S python-psutil qtile expect rsync thunar \\
+    lightdm-gtk-greeter thunar network-manager-applet \\
+    lxappearance blueman-applet
+vim README.md
+sudo pacman -S adobe-source-code-pro-fonts nerd-fonts
+sudo pacman -S adobe-source-code-pro-fonts
+sudo pacman -S nerd-fonts
+vim usefulpac.md
+sudo pacman -Rn nerd-fonts
+sudo pacman -S noto-fonts\
+sudo pacman -S xorg-font-utils\
+sudo pacman -S ttf-dejavu ttf-liberation\
+sudo pacman -S adobe-source-han-sans-otc-fonts\
+sudo pacman -S noto-fonts-emoji\
+sudo updatedb
+sudo pacman -S fcitx\
+sudo pacman -S fcitx-anthy\
+sudo pacman -S fcitx-googlepinyin\
+sudo pacman -S ds9\
+sudo pacman -S feh\
+sudo pacman -S sxiv\
+sudo pacman -S xournalpp\
+sudo pacman -S zathura\
+sudo pacman -S zathura-pdf-poppler zathura-ps zathura-djvu\
+git clone https://aur.archlinux.org/yay.git
+makepkg -si
+yay -S brave-bin
+sh anyconnect-linux64-4.10.06090-core-vpn-webdeploy-k9.sh
+sudo sh anyconnect-linux64-4.10.06090-core-vpn-webdeploy-k9.sh
+/opt/cisco/anyconnect/bin/vpn
+/opt/cisco/anyconnect/bin/vpn connect vpngw.ipmu.jp
+vim ~/.config/zsh/.zshrc
+mkdir Documents
+/opt/cisco/anyconnect/bin/vpn disconnect
+vim /home/xiangchong/.local//xbin/displaySetup
+vim Documents/Share/default.zsh
+xrandr
+vim ../README.md
+git clone https://github.com/mr-superonion/dmenu.git
+git checkout patched
+git fetch origin patched
+git pull
+yay -S diff-so-fancy
+git branch
+git status
+git log
+make install
+downloadBackup
+cp Documents/Share ./
+cp -r Documents/Share ./
+sudo shutdown 50
+vpnConnect
+top
+vim $XDG_DATA_HOME/zsh_history
+vim /etc/pacman.conf
+sudoedit /etc/pacman.conf
+sudo pacman -Syyu
+sudo pacman -S htop\
+
+sudo pacman -S pdfarranger\
+sudo pacman -S inkscape\
+
+sudo pacman -S ipython\
+
+sudo pacman -S apparmor\
+
+sudo systemctl enable apparmor.service\
+sudo systemctl start apparmor.service\
+
+sudo pacman -S zoom
+yay -S zoom
+htop
+sudo pacman --noconfirm -S  bluez bluez-utils blueman
+brave
+sudo pacman --noconfirm -S  bluez bluez-utils blueman bluethooth
+sudo pacman --noconfirm -S  bluez bluez-utils blueman bluetooth
+sudoedit /etc/mkinitcpio.conf
+modprobe btusb
+systemctl --user enable bluetooth.service\
+
+lsmod
+lsmod | grep btusb
+sudo systemctl --user enable bluetooth.service\
+sudo systemctl --user start bluetooth.service\
+
+sudo pacman -S bluez blueman
+systemctl --user enable bluetooth.service\
+systemctl --user start bluetooth.service\
+
+sudo systemctl enable bluetooth.service\
+sudo systemctl start bluetooth.service\
+
+yay -S snapd
+yay -S slack-desktop
+sudo pacman -S unzip\
+
+vim .local/share/zsh_history
+sudo updatedb
+asusctl
+sudo asusctl
+sudo asusctl fan-curve
+systemctl daemon-reload && systemctl restart asusd
+rog-gui
+asusd
+sudo asusd-user
+asusd-user
+yay -S rog-control-center
+sudo systemctl enable asusd\
+sudo systemctl start asusd\
+
+WINIT_UNIX_BACKEND=x11 rog-control-center
+systemctl start asusd\
+
+systemctl enable asusd\
+
+systemctl enable --user asusd\
+
+sudo systemctl enable asusd\
+
+sudo systemctl enable asusd
+mmmemo
+sudo reboot
+sudo systemctl enable asusd.service
+systemctl enable asusd.service
+systemctl enable --USER asusd.service
+systemctl enable --user asusd.service
+clear
+asusctl -s
+sudo asusctl -s
+asusctl -c limit 
+sudo asusctl -c limit 
+sudo asusctl 
+sudo asusctl graphics
+supergfxctl
+sudo asusctl anime
+sudo asusctl anime image
+sudo rog-control-center
+reboo
+vim ~/.zshenv
+vim .bashrc
+rm .bash*
+ls
+vim ~/.config/zsh/.zprofile
+rog-control-center
+vim ~/.config/X11/.xinitrc
+ln -s ~/Documents/Wallpapers/Arch_Dark.png .config
+which displaySetup
+vim /home/xiangchong/.local//xbin/displaySetup\
+
+ln -s ~/Documents/Wallpapers/Arch_Dark.png .config/bg.png
+rm .config/Arch_Dark.png
+displaySetup
+config status
+vim .config/qtile/autostart.sh
+fcitx
+fcitx-configtool
+echo $GTK_IM_MODULE
+sudo pacman -Ss fcitx-
+vim Packages/install.sh
+vim Packages/usefulpac.md
+sudo pacman -S fcitx\
+sudo pacman -S fcitx-anthy\
+sudo pacman -S fcitx-googlepinyin\
+sudo pacman -S fcitx-configtool\
+sudo pacman -S fcitx-im\
+
+reboot
+lspci -k | grep -A 2 -E "(VGA|3D)"
+xinput list-props "SynPS/2 Synaptics TouchPad" | grep Capabilities\
+
+xmodmap ~/.config/X11/Xmodmap
+yay -Syyu
+yay -S gpointing-device-settings
+synclient -l | grep BottomEdge
+xinput list-props "SynPS/2 Synaptics TouchPad" | grep Capabilities
+sudo pacman -S  xf86-input-synaptics
+xinput list
+xinput list-props "SynPS/2 Synaptics TouchPad" 
+yay -Rns gpointing-device-settings
+exit
+ping google.com
+reboot
+ping google.com
+vpnConnect
+ls
+cd Documents
+ls
+cp -r Share ../.local/xshare
+ls
+cd ~/.local/xbin
+ls
+vim
+vim Packages/usefulpac.md
+vim
+clear
+ls
 config status
 config add -u

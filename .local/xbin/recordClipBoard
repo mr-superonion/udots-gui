@@ -3,10 +3,10 @@
 [ "$(which dmenu)" ] || exit
 
 # choose the server to login
-chosen=$(grep -v "#" $HOME/Documents/Share/server.info | awk '{print $1}'| dmenu -i -p 'choose the ssh server' -l 20 -fn Arial)
+chosen=$(grep -v "#" $HOME/.local/xshare/server.info | awk '{print $1}'| dmenu -i -p 'choose the ssh server' -l 20 -fn Arial)
 [ "$chosen" != "" ] || exit
 
-info=$(grep "$chosen" $HOME/Documents/Share/server.info)
+info=$(grep "$chosen" $HOME/.local/xshare/server.info)
 s=$(echo "$info" | awk '{print $2}')
 
 xterm -T "dialog" -e scp "$s":~/.clipboard ~/.clipboard
