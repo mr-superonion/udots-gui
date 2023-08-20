@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "coc-pyright": ">=1.1.320",
+    "coc-vimtex": ">=1.1.5",
+    "coc-snippets": ">=3.1.6"
+  },
+  "lastUpdate": 1692437064263
+}
