@@ -890,3 +890,5 @@ ls .config/zsh/zalias
 config add .config/zsh/zalias
 config status
 config add -u
+config status
+config add -u
