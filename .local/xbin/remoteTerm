@@ -5,9 +5,9 @@
 [ "$(which dmenu 2>/dev/null)" ] || exit
 
 # Which server to choose
-chosen=$(grep -v "#" $HOME/Documents/Share/server.info | awk '{print $1}'| dmenu -g 1 -i -p 'choose the ssh server' -l 20 -fn Arial)
+chosen=$(grep -v "#" $HOME/.local/xshare/server.info | awk '{print $1}'| dmenu -g 1 -i -p 'choose the ssh server' -l 20 -fn Arial)
 [ "$chosen" != "" ] || exit
-c=$(grep "$chosen" $HOME/Documents/Share/server.info | awk '{print $2}')
+c=$(grep "$chosen" $HOME/.local/xshare/server.info | awk '{print $2}')
 
 # Login
 xterm -T "$chosen" -e "ssh "$c""

@@ -1,5 +1,3 @@
-! Esc on caps lock
+clear lock
 keysym Escape = grave asciitilde
-
-clear Lock
 keysym Caps_Lock = Escape

@@ -31,26 +31,31 @@ umount -R /mnt
 
 # terminal, non-GUI
 sudo pacman -S --noconfirm zsh locate sudo wget curl fzf openssh \
-        networkmanager git neovim python-pynvim lsof
+        networkmanager git neovim python-pynvim lsof htop ipython \
+        apparmor unzip ctags
+
+# apparmor
+sudo systemctl enable apparmor.service
+sudo systemctl start apparmor.service
 
 ## bluetooth
 sudo pacman --noconfirm -S  bluez bluez-utils blueman
 ## check the kernel module
 lsmod | grep btusb
-sudo systemctl --user enable bluetooth.service
-sudo systemctl --user start bluetooth.service
+sudo systemctl enable bluetooth.service
+sudo systemctl start bluetooth.service
 
 # WM
-sudo pacman --noconfirm -S python-psutil qtile expect rsync thunar lightdm\
+sudo pacman --noconfirm -S python-psutil qtile expect rsync thunar \
     lightdm-gtk-greeter thunar blueman-applet network-manager-applet\
-    lxappearance
+    lxappearance feh xsel xclip
 
 sudo pacman --noconfirm -S python-pywayland wayland python-pywlroots
 
 # audio
 ## install pulseaudio
 sudo pacman --noconfirm  -S pavucontrol pulseaudio pulseaudio-bluetooth
-yay pulseaudio-ctl
+yay -S pulseaudio-ctl
 
 ## start the service
 systemctl --user enable pulseaudio.socket
