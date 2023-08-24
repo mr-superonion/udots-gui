@@ -1,5 +1,5 @@
 {
-   "checksum": "4503eb1c8a2175e9b8ff32070e813011",
+   "checksum": "a44fb2e5b84da0c68e1928df24a276fe",
    "roots": {
       "bookmark_bar": {
          "children": [ {
@@ -357,10 +357,21 @@
                   "name": "[Solved] Unable to set custom resolution on Xorg with intel HD 620 / Kernel & Hardware / Arch Linux Forums",
                   "type": "url",
                   "url": "https://bbs.archlinux.org/viewtopic.php?id=284064"
+               }, {
+                  "date_added": "13337064496916480",
+                  "date_last_used": "0",
+                  "guid": "8e4eba6d-11e2-465e-9aac-2e7093134be7",
+                  "id": "213",
+                  "meta_info": {
+                     "power_bookmark_meta": ""
+                  },
+                  "name": "[SOLVED] \"Tiny sound\" on Asus ROG Zephyrus M16 2023 - Linux Mint Forums",
+                  "type": "url",
+                  "url": "https://forums.linuxmint.com/viewtopic.php?p=2315415#p2315415"
                } ],
                "date_added": "13335612258140396",
                "date_last_used": "0",
-               "date_modified": "13335976211561477",
+               "date_modified": "13337064496916480",
                "guid": "fed64e87-efa1-41d8-97d8-c3eb79f72cb7",
                "id": "207",
                "name": "linux",
