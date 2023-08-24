@@ -48,7 +48,7 @@ sudo systemctl start bluetooth.service
 # WM
 sudo pacman --noconfirm -S python-psutil qtile expect rsync thunar \
     lightdm-gtk-greeter thunar blueman-applet network-manager-applet\
-    lxappearance feh xsel xclip
+    lxappearance feh xsel xclip scrot
 
 sudo pacman --noconfirm -S python-pywayland wayland python-pywlroots
 
