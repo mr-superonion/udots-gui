@@ -324,7 +324,7 @@ nnoremap 0 g0
 
 augroup markdown_autocmds
     autocmd!
-    autocmd BufWritePost *.md silent! execute "!pandoc -c http://gfarm.ipmu.jp/~xiangchong.li/me/mystyle2.css -s % --katex -o '%:r'.html  >/dev/null 2>&1" | redraw!
+    autocmd BufWritePost *.md silent! execute "!pandoc -c http://gfarm.ipmu.jp/~xiangchong.li/me/mystyle2.css -s % --mathjax --katex -o '%:r'.html  >/dev/null 2>&1" | redraw!
     autocmd BufEnter,BufRead,BufNewFile *.md setlocal spell
     autocmd BufEnter,BufRead,BufNewFile *.md syntax on
 augroup END
