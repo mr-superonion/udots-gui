@@ -1,6 +1,6 @@
 # # Start X11
 
-shareDir="$HOME/Documents/Share/"
+shareDir="$HOME/.local/xshare/"
 if [ -d "$shareDir" ]; then
     for script in $shareDir/*sh; do
         source "$script"
