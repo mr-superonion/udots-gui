@@ -67,7 +67,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'preservim/tagbar'
     " txt (latex/markdown)
     Plug 'lervag/vimtex'
-    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
     " git
     Plug 'tpope/vim-fugitive'
     " files
@@ -122,7 +122,6 @@ hi link texStatement texCmd
 
 " markdown preview
 let g:mkdp_refresh_slow = 1
-let g:mkdp_browser = 'brave'
 let g:mkdp_markdown_css = expand('~/Documents/public_html/me/mystyle.css')
 nnoremap <leader>mv <cmd>MarkdownPreviewToggle<cr>
 let g:mkdp_preview_options = {
@@ -138,6 +137,7 @@ let g:mkdp_preview_options = {
     \ 'content_editable': v:false,
     \ 'disable_filename': 0
     \ }
+let g:mkdp_browser = '/usr/bin/brave'
 let g:mkdp_filetypes = ['markdown']
 
 " vim-commentary
@@ -324,7 +324,6 @@ nnoremap 0 g0
 
 augroup markdown_autocmds
     autocmd!
-    autocmd BufWritePost *.md silent! execute "!pandoc -c http://gfarm.ipmu.jp/~xiangchong.li/me/mystyle2.css -s % --mathjax --katex -o '%:r'.html  >/dev/null 2>&1" | redraw!
     autocmd BufEnter,BufRead,BufNewFile *.md setlocal spell
     autocmd BufEnter,BufRead,BufNewFile *.md syntax on
 augroup END
