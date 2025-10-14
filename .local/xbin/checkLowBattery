@@ -1,20 +1,19 @@
 #!/usr/bin/env sh
-export DISPLAY=:0
-# could be different on your system!
+export DISPLAY=${DISPLAY:-:0}
 POWERSUPPLY="/sys/class/power_supply/AC/online"
-# how low is too low?
 TOO_LOW=12
 NOT_CHARGING="0"
 
-ICON="$HOME/.config/qtile/battery-icons/battery-caution.png"
+ICON="$HOME/.config/sway/icons/battery_icons_vert/battery-caution.png"
 
 BATTERY_LEVEL=$(acpi -b | grep -P -o '[0-9]+(?=%)')
-STATUS=$(cat $POWERSUPPLY)
+STATUS=$(cat "$POWERSUPPLY")
 
-if [ $BATTERY_LEVEL -le $TOO_LOW -a $STATUS = $NOT_CHARGING ]
-then
+if [ "$BATTERY_LEVEL" -le "$TOO_LOW" ] && [ "$STATUS" = "$NOT_CHARGING" ]; then
     notify-send -i "$ICON" -t 30000 "Battery low" "Battery level is ${BATTERY_LEVEL}%!"
-    xbacklight -set 20
+    if command -v brightnessctl >/dev/null 2>&1; then
+        brightnessctl set 20%
+    fi
 fi
 
 exit 0
