@@ -54,23 +54,14 @@ exec swayidle -w \
 # Launchers
 # Clean up any potentially conflicting defaults
 
-unbindsym $mod+q
-unbindsym $mod+w
-unbindsym $mod+e
-unbindsym $mod+a
-unbindsym $mod+s
-unbindsym $mod+d
-
 
 # Your requested bindings:
 # Ctrl+Alt+T -> terminal
-bindsym Ctrl+Mod1+t exec $term
-
+bindsym Ctrl+Shift+t exec $term
 # Ctrl+Alt+Enter -> rofi runner (drun)
-bindsym Ctrl+Mod1+Return exec rofi -show drun
-
+bindsym Ctrl+Shift+Return exec rofi -show drun
 # Ctrl+Alt+W -> Brave
-bindsym Ctrl+Mod1+w exec brave-browser
+bindsym Ctrl+Shift+w exec brave-browser
 
 # Window focus (Vim keys)
 bindsym $mod+$left  focus left
@@ -86,7 +77,7 @@ bindsym $mod+Shift+$right move right
 
 # Split orientation (sway syntax)
 bindsym $mod+v split v
-bindsym $mod+Shift+h split h
+bindsym $mod+h split h
 
 # Layout controls
 bindsym $mod+space layout toggle split
