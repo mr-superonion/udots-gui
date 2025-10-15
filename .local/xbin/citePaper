@@ -6,7 +6,9 @@ cache="$cachedir/papers";
 
 [ ! -e "$cache" ] &&  recordPapers
 
-choose=$(cat $cache | dmenu)
+command -v rofi >/dev/null 2>&1 || exit
+
+choose=$(cat $cache | rofi -dmenu)
 bib=$(awk 'BEGIN {RS="#"; FS="\n"} '/$choose/' {if ($2 !="") print $1}' $cache)
 bib="$paperDir$bib.bib"
 awk 'BEGIN {RS="\n@"} '/$choose/' { print "@" $0}' $bib | xsel --clipboard

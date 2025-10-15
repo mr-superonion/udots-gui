@@ -4,8 +4,11 @@
 # Initialization
 # xterm -T "dialog" -e "ssh-add ~/.ssh/id_rsa"
 
+# Ensure menu launcher is available
+command -v rofi >/dev/null 2>&1 || exit
+
 # Which server to choose
-chosen=$(grep -v "#" $HOME/.local/xshare/server.info | awk '{print $1}'| dmenu -g 1 -i -p 'choose the ssh server' -l 20 -fn Arial)
+chosen=$(grep -v "#" $HOME/.local/xshare/server.info | awk '{print $1}'| rofi -dmenu -i -p 'choose the ssh server' -lines 20)
 [ "$chosen" != "" ] || exit
 
 info=$(grep "$chosen" $HOME/.local/xshare/server.info)
