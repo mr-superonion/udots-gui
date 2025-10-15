@@ -1,30 +1,31 @@
 # Sway configuration replacing the previous Qtile setup.
-# This configuration keeps a similar workflow while using the Sway Wayland compositor.
 
 set $mod Mod4
 set $term foot
-set $menu rofi -show run
+# Rofi "combi" like you described:
+set $menu rofi -modi combi -combi-modi drun,run,window -show combi
 set $lock swaylock -f -c 000000
 set $browser brave
 set $files thunar
 
+# Vim-like directions
 set $left h
 set $down j
 set $up k
 set $right l
 
-# Workspaces mirroring the old letter-based layout
-set $ws_a "a"
-set $ws_s "s"
-set $ws_d "d"
-set $ws_f "f"
-set $ws_g "g"
-set $ws_b "b"
-set $ws_q "q"
-set $ws_w "w"
-set $ws_e "e"
-set $ws_r "r"
-set $ws_t "t"
+# Workspace names (letters)
+set $ws_a a
+set $ws_s s
+set $ws_d d
+set $ws_f f
+set $ws_g g
+set $ws_b b
+set $ws_q q
+set $ws_w w
+set $ws_e e
+set $ws_r r
+set $ws_t t
 
 font pango:Source Code Pro Bold 11
 
@@ -33,27 +34,26 @@ gaps outer 4
 
 floating_maximum_size 0 x 0
 focus_follows_mouse yes
-focus_on_window_activation smart
+# focus_on_window_activation smart   # (works on i3; harmless to comment if sway warns)
 
-# Output configuration
+# Output
 output * bg #2E3440 solid_color
 
-# Input configuration (extend as required)
+# Input
 input type:keyboard {
     xkb_layout us
     xkb_options caps:ctrl_modifier
 }
 
-# Start utilities (replacing autostart.sh)
-exec_always --no-startup-id fcitx -d
-exec_always --no-startup-id blueman-applet
-exec_always --no-startup-id nm-applet
-exec_always --no-startup-id pasystray
-exec_always --no-startup-id waybar
-exec --no-startup-id checkLowBattery
+# Autostart (no --no-startup-id in sway)
+exec_always fcitx -d            # or fcitx5 -d
+exec_always blueman-applet
+exec_always nm-applet
+exec_always waybar
+
 
 # Screen locking and idle
-exec --no-startup-id swayidle -w \
+exec swayidle -w \
     timeout 600 '$lock' \
     timeout 900 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
@@ -66,55 +66,43 @@ bindsym $mod+Shift+Return exec $files
 bindsym $mod+d exec $menu
 bindsym $mod+b exec $browser
 
-# Window focus
-bindsym $mod+$left focus left
-bindsym $mod+$down focus down
-bindsym $mod+$up focus up
+# Window focus (Vim keys)
+bindsym $mod+$left  focus left
+bindsym $mod+$down  focus down
+bindsym $mod+$up    focus up
 bindsym $mod+$right focus right
 
 # Window movement
-bindsym $mod+Shift+$left move left
-bindsym $mod+Shift+$down move down
-bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$left  move left
+bindsym $mod+Shift+$down  move down
+bindsym $mod+Shift+$up    move up
 bindsym $mod+Shift+$right move right
 
-# Split orientation
-bindsym $mod+v split vertical
-bindsym $mod+Shift+v split horizontal
+# Split orientation (sway syntax)
+bindsym $mod+v split v
+bindsym $mod+Shift+h split h
 
 # Layout controls
 bindsym $mod+space layout toggle split
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+f fullscreen toggle
-bindsym $mod+Shift+f layout stacking
 bindsym $mod+Shift+m layout tabbed
-bindsym $mod+Shift+s layout splitv
-bindsym $mod+Shift+h layout splith
+bindsym $mod+Shift+f layout stacking
+# Avoid using Shift+s/h for layouts to prevent conflicts with move-to-workspace
+# bind the explicit layouts if you like:
+# bindsym $mod+Shift+v layout splitv
+# bindsym $mod+Shift+h layout splith
 
-# Scratchpad support (optional container move)
+# Scratchpad
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
-# Reloading and exiting
-bindsym $mod+Shift+c reload
-bindsym $mod+Shift+e exec "swaynag -t warning -m 'Exit Sway?' -B 'Logout' 'swaymsg exit'"
-
-# Audio
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-bindsym $mod+h exec pulseaudio-ctl down
-bindsym $mod+l exec pulseaudio-ctl up
-
-# Brightness (requires brightnessctl)
-bindsym $mod+j exec brightnessctl set 5%-
-bindsym $mod+k exec brightnessctl set +5%
-
-# Screenshots (requires grimshot)
-bindsym Print exec grimshot save area
-bindsym $mod+Print exec grimshot save screen
+# Screenshots (grimshot from sway-contrib)
+bindsym Print       exec grimshot save area
+bindsym $mod+Print  exec grimshot save screen
 bindsym Shift+Print exec grimshot copy area
 
-# Workspaces
+# Workspaces (letters)
 bindsym $mod+a workspace $ws_a
 bindsym $mod+s workspace $ws_s
 bindsym $mod+d workspace $ws_d
@@ -139,16 +127,6 @@ bindsym $mod+Shift+e move container to workspace $ws_e
 bindsym $mod+Shift+r move container to workspace $ws_r
 bindsym $mod+Shift+t move container to workspace $ws_t
 
-# Workspace auto-assignment examples
-assign [class="Brave-browser"] $ws_b
-assign [class="Thunar"] $ws_f
-assign [app_id="foot"] $ws_a
-assign [class="Slack"] $ws_w
 
-# Status Bar
-bar {
-    swaybar_command waybar
-}
-
-# Include site-specific overrides if present
+# (Optional) include overrides
 include ~/.config/sway/config.d/*.conf
