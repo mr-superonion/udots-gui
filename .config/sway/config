@@ -76,8 +76,8 @@ bindsym $mod+Shift+$up    move up
 bindsym $mod+Shift+$right move right
 
 # Split orientation (sway syntax)
-bindsym $mod+v split v
-bindsym $mod+h split h
+bindsym Ctrl+$mod+v split v
+bindsym Ctrl+$mod+h split h
 
 # Layout controls
 bindsym $mod+space layout toggle split
@@ -85,8 +85,8 @@ bindsym $mod+f floating toggle
 bindsym $mod+m fullscreen toggle
 bindsym $mod+t layout tabbed
 
-bindsym $mod+Shift+v layout splitv
-bindsym $mod+Shift+h layout splith
+bindsym $mod+% layout splitv
+bindsym $mod+h layout splith
 
 # Scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -104,7 +104,6 @@ bindsym $mod+d workspace $ws_d
 bindsym $mod+q workspace $ws_q
 bindsym $mod+w workspace $ws_w
 bindsym $mod+e workspace $ws_e
-
 
 bindsym $mod+Shift+a move container to workspace $ws_a
 bindsym $mod+Shift+s move container to workspace $ws_s
