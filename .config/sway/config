@@ -34,7 +34,6 @@ gaps outer 4
 
 floating_maximum_size 0 x 0
 focus_follows_mouse yes
-# focus_on_window_activation smart   # (works on i3; harmless to comment if sway warns)
 
 # Output
 output * bg #2E3440 solid_color
@@ -49,7 +48,7 @@ input type:keyboard {
 exec_always fcitx -d            # or fcitx5 -d
 exec_always blueman-applet
 exec_always nm-applet
-exec_always waybar
+exec waybar
 
 
 # Screen locking and idle
