@@ -1,11 +1,14 @@
 #!/usr/bin/env sh
 
+# Ensure menu launcher is available
+command -v rofi >/dev/null 2>&1 || exit
+
 # Which bookmark to choose
-bm=$(ls $HOME/.local/xshare/bookmarks | dmenu -i -p 'choose the bookmark' -l 20 -fn Arial)
+bm=$(ls $HOME/.local/xshare/bookmarks | rofi -dmenu -i -p 'choose the bookmark' -lines 20)
 [ "$bm" != "" ] || exit
 
 # Which concept to choose
-chosen=$(grep -v "#" $HOME/.local/xshare/bookmarks/$bm | awk '{print $1}'| dmenu -i -p 'choose the concept' -l 20 -fn Arial)
+chosen=$(grep -v "#" $HOME/.local/xshare/bookmarks/$bm | awk '{print $1}'| rofi -dmenu -i -p 'choose the concept' -lines 20)
 [ "$chosen" != "" ] || exit
 
 info=$(grep "$chosen" $HOME/.local/xshare/bookmarks/$bm)

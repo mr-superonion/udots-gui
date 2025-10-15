@@ -46,7 +46,7 @@ sudo systemctl enable bluetooth.service
 sudo systemctl start bluetooth.service
 
 # WM
-sudo pacman --noconfirm -S sway swaybg swayidle swaylock foot waybar wofi \
+sudo pacman --noconfirm -S sway swaybg swayidle swaylock foot waybar rofi \
     python-psutil expect rsync thunar blueman-applet network-manager-applet\
     grim slurp wl-clipboard brightnessctl lxappearance
 

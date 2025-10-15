@@ -220,7 +220,7 @@ swaybg
 swayidle
 swaylock
 waybar
-wofi
+rofi
 foot
 grim
 slurp

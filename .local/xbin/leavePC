@@ -2,8 +2,8 @@
 
 [ $atIPMU -eq 1 ] && backup
 
-[ "$(which dmenu 2>/dev/null)" ] || exit
-chosen=$(printf "Lock Screen\nLogout\nShut Down\nReboot" | dmenu -g 1 -i -l 4 -fn Arial -p "Choose Option")
+command -v rofi >/dev/null 2>&1 || exit
+chosen=$(printf "Lock Screen\nLogout\nShut Down\nReboot" | rofi -dmenu -i -p "Choose Option" -lines 4)
 [ "$chosen" != "" ] || exit
 
 case "$chosen" in

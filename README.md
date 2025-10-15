@@ -25,15 +25,10 @@ sudo pacman -S base-devel neovim zsh xterm tmux ripgrep nodejs npm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
-## Dmenu
+## Rofi
 
 ```shell
-git clone https://github.com/mr-superonion/dmenu.git
-
-cd dmenu
-
-git checkout patched
-make install
+sudo pacman -S rofi
 ```
 
 ## vim
