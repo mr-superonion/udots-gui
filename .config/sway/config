@@ -85,8 +85,6 @@ bindsym $mod+f floating toggle
 bindsym $mod+m fullscreen toggle
 bindsym $mod+t layout tabbed
 
-bindsym $mod+% layout splitv
-bindsym $mod+h layout splith
 
 # Scratchpad
 bindsym $mod+Shift+minus move scratchpad
