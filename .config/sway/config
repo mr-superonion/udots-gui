@@ -5,8 +5,6 @@ set $term foot
 # Rofi "combi" like you described:
 set $menu rofi -modi combi -combi-modi drun,run,window -show combi
 set $lock swaylock -f -c 000000
-set $browser brave
-set $files thunar
 
 # Vim-like directions
 set $left h
@@ -18,14 +16,9 @@ set $right l
 set $ws_a a
 set $ws_s s
 set $ws_d d
-set $ws_f f
-set $ws_g g
-set $ws_b b
 set $ws_q q
 set $ws_w w
 set $ws_e e
-set $ws_r r
-set $ws_t t
 
 font pango:Source Code Pro Bold 11
 
@@ -60,10 +53,25 @@ exec swayidle -w \
 
 # --- Keybindings ---
 # Launchers
-bindsym $mod+Return exec $term
-bindsym $mod+Shift+Return exec $files
-bindsym $mod+d exec $menu
-bindsym $mod+b exec $browser
+# Clean up any potentially conflicting defaults
+
+unbindsym $mod+q
+unbindsym $mod+w
+unbindsym $mod+e
+unbindsym $mod+a
+unbindsym $mod+s
+unbindsym $mod+d
+
+
+# Your requested bindings:
+# Ctrl+Alt+T -> terminal
+bindsym Ctrl+Mod1+t exec $term
+
+# Ctrl+Alt+Enter -> rofi runner (drun)
+bindsym Ctrl+Mod1+Return exec rofi -show drun
+
+# Ctrl+Alt+W -> Brave
+bindsym Ctrl+Mod1+w exec brave-browser
 
 # Window focus (Vim keys)
 bindsym $mod+$left  focus left
@@ -83,14 +91,12 @@ bindsym $mod+Shift+h split h
 
 # Layout controls
 bindsym $mod+space layout toggle split
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+f fullscreen toggle
-bindsym $mod+Shift+m layout tabbed
-bindsym $mod+Shift+f layout stacking
-# Avoid using Shift+s/h for layouts to prevent conflicts with move-to-workspace
-# bind the explicit layouts if you like:
-# bindsym $mod+Shift+v layout splitv
-# bindsym $mod+Shift+h layout splith
+bindsym $mod+f floating toggle
+bindsym $mod+m fullscreen toggle
+bindsym $mod+t layout tabbed
+
+bindsym $mod+Shift+v layout splitv
+bindsym $mod+Shift+h layout splith
 
 # Scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -105,26 +111,17 @@ bindsym Shift+Print exec grimshot copy area
 bindsym $mod+a workspace $ws_a
 bindsym $mod+s workspace $ws_s
 bindsym $mod+d workspace $ws_d
-bindsym $mod+f workspace $ws_f
-bindsym $mod+g workspace $ws_g
-bindsym $mod+b workspace $ws_b
 bindsym $mod+q workspace $ws_q
 bindsym $mod+w workspace $ws_w
 bindsym $mod+e workspace $ws_e
-bindsym $mod+r workspace $ws_r
-bindsym $mod+t workspace $ws_t
+
 
 bindsym $mod+Shift+a move container to workspace $ws_a
 bindsym $mod+Shift+s move container to workspace $ws_s
 bindsym $mod+Shift+d move container to workspace $ws_d
-bindsym $mod+Shift+f move container to workspace $ws_f
-bindsym $mod+Shift+g move container to workspace $ws_g
-bindsym $mod+Shift+b move container to workspace $ws_b
 bindsym $mod+Shift+q move container to workspace $ws_q
 bindsym $mod+Shift+w move container to workspace $ws_w
 bindsym $mod+Shift+e move container to workspace $ws_e
-bindsym $mod+Shift+r move container to workspace $ws_r
-bindsym $mod+Shift+t move container to workspace $ws_t
 
 
 # (Optional) include overrides
