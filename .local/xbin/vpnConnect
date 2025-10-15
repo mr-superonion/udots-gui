@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 # choose the server to login
 
-# Make sure we have dmemu
-[ "$(which dmenu)" ] || exit
+# Make sure we have rofi
+command -v rofi >/dev/null 2>&1 || exit
 # Make sure we have expect
 [ "$(which expect)" ] || exit
 
@@ -10,7 +10,7 @@
 # [ "$(tmux ls 2>/dev/null | grep background )" ] || tmux new-session -d -s background
 
 # Which server to choose
-server=$(grep -v "#" $HOME/.local/xshare/vpn.info | awk '{print $1}' | dmenu -i -p 'choose the vpn server' -l 20 -fn Arial)
+server=$(grep -v "#" $HOME/.local/xshare/vpn.info | awk '{print $1}' | rofi -dmenu -i -p 'choose the vpn server' -lines 20)
 [ "$server" != "" ] || exit
 
 chosen=$(grep "$server" $HOME/.local/xshare/vpn.info)

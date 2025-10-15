@@ -1,11 +1,11 @@
 #!/usr/bin/env sh
 # choose the server to login
 
-# Make sure we have dmemu
-[ "$(which dmenu)" ] || exit
+# Make sure we have rofi
+command -v rofi >/dev/null 2>&1 || exit
 
 # Chose option
-chosen=$(printf "Current Window\nRectangle Region" | dmenu -i -p 'snapshot on?' -l 20 -fn Arial)
+chosen=$(printf "Current Window\nRectangle Region" | rofi -dmenu -i -p 'snapshot on?' -lines 20)
 [ "$chosen" != "" ] || exit
 
 fname='%Y-%m-%d-%H-%M-%S.png'

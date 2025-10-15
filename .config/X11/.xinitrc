@@ -1,4 +1,6 @@
-xset r rate 300 50 &
-xrdb -load ~/.config/X11/Xresources &
-xmodmap ~/.config/X11/Xmodmap &
-exec qtile start
+#!/bin/sh
+# Sway is a Wayland compositor and does not require an X11 session.
+# This script is kept for compatibility so that running `startx`
+# launches Sway through dbus-run-session.
+
+exec dbus-run-session sway

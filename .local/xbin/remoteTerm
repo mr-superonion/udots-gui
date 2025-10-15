@@ -1,11 +1,11 @@
 #!/usr/bin/env sh
 # choose the server to login
 
-# Make sure we have dmemu
-[ "$(which dmenu 2>/dev/null)" ] || exit
+# Make sure we have rofi
+command -v rofi >/dev/null 2>&1 || exit
 
 # Which server to choose
-chosen=$(grep -v "#" $HOME/.local/xshare/server.info | awk '{print $1}'| dmenu -g 1 -i -p 'choose the ssh server' -l 20 -fn Arial)
+chosen=$(grep -v "#" $HOME/.local/xshare/server.info | awk '{print $1}'| rofi -dmenu -i -p 'choose the ssh server' -lines 20)
 [ "$chosen" != "" ] || exit
 c=$(grep "$chosen" $HOME/.local/xshare/server.info | awk '{print $2}')
 

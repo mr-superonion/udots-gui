@@ -30,7 +30,7 @@ export BROWSER="brave"
 export IMAGE="sxiv"
 export OPENER="xdg-open"
 export PAGER="less"
-export WM="qtile"
+export WM="sway"
 export FILEMANAGER="thunar"
 
 export sysShell="usr/bin/zsh"
